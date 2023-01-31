@@ -6,24 +6,14 @@ using UnityEngine;
 
 namespace GrilledCheese.GrilledCheeseProcess
 {
-    class CookedGrilledCheese : CustomItem
+    class BurnedGrilledCheese : CustomItem
     {
-        public override string UniqueNameID => "Cooked Grilled Cheese";
-        public override GameObject Prefab => Main.CookedDumplings.Prefab; // Temp prefab until models are made
+        public override string UniqueNameID => "Burned Grilled Cheese";
+        public override GameObject Prefab => Main.Cheese.Prefab; // Temp item until models are made
         public override ItemCategory ItemCategory => ItemCategory.Generic;
-        public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
-        public override ItemValue ItemValue => ItemValue.Medium;
+        public override string ColourBlindTag => "BGC";
 
-        public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
-        {
-            new Item.ItemProcess
-            {
-                Duration = 7,
-                Process = Main.Cook,
-                IsBad = true,
-                Result = Main.BurnedGrilledCheese
-            }
-        };
+
         /*
         public override void OnRegister(GameDataObject gameDataObject)
         {

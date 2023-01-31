@@ -4,15 +4,16 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GrilledCheese.MonteCristoProcess
+namespace GrilledCheese.GrilledCheeseProcess
 {
-    class CookedMonteCristo : CustomItem
+    class CookedGrilledCheese : CustomItem
     {
-        public override string UniqueNameID => "Cooked Monte Cristo";
-        public override GameObject Prefab => Main.Onion.Prefab; // Temp prefab until models are made
+        public override string UniqueNameID => "Cooked Grilled Cheese";
+        public override GameObject Prefab => Main.CookedDumplings.Prefab; // Temp prefab until models are made
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
-        public override ItemValue ItemValue => ItemValue.MediumLarge;
+        public override ItemValue ItemValue => ItemValue.Medium;
+        public override string ColourBlindTag => "CGC";
 
         public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
         {
@@ -21,7 +22,7 @@ namespace GrilledCheese.MonteCristoProcess
                 Duration = 7,
                 Process = Main.Cook,
                 IsBad = true,
-                Result = Main.BurnedMonteCristo
+                Result = Main.BurnedGrilledCheese
             }
         };
         /*

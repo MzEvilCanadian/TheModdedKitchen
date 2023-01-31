@@ -4,13 +4,14 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GrilledCheese.GrilledCheeseProcess
+namespace GrilledCheese.MonteCristoProcess
 {
-    class BurnedGrilledCheese : CustomItem
+    class BurntMonteCristo : CustomItem
     {
-        public override string UniqueNameID => "Burned Grilled Cheese";
+        public override string UniqueNameID => "Burned Monte Cristo";
         public override GameObject Prefab => Main.Cheese.Prefab; // Temp item until models are made
         public override ItemCategory ItemCategory => ItemCategory.Generic;
+        public override string ColourBlindTag => "BMC";
 
 
         /*

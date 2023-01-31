@@ -43,7 +43,7 @@ namespace GrilledCheese.Dishes
         };
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {
-            { Locale.English, LocalisationUtils.CreateUnlockInfo("Apple Crisp - Grilled Cheese", "Adds Apple Crisp as a Dessert", "I didn't start the fire!") }
+            { Locale.English, LocalisationUtils.CreateUnlockInfo("Apple Crisp - Grilled Cheese", "Adds Apple Crisp as a Dessert", "Moooooove over Jay!") }
         };
     }
 }

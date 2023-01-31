@@ -1,14 +1,15 @@
-﻿using GrilledCheese.GrilledCheeseProcess;
-using GrilledCheese.MonteCristoProcess;
+﻿using GrilledCheese.AppleCrisp;
 using GrilledCheese.ApplePiewIceCream;
+using GrilledCheese.GrilledCheeseProcess;
+using GrilledCheese.MonteCristoProcess;
 using GrilledCheese.Registry;
 using GrilledCheese.Dishes;
 using KitchenData;
 using KitchenLib;
+using KitchenLib.Event;
 using KitchenLib.References;
 using KitchenLib.Utils;
 using KitchenMods;
-using KitchenLib.Event;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -19,9 +20,9 @@ namespace GrilledCheese
 {
     class Main : BaseMod
     {
-        internal const string MOD_ID = "Grilled Cheese";
-        internal const string MOD_NAME = "Grilled Cheese";
-        internal const string MOD_VERSION = "0.0.4";
+        internal const string MOD_ID = "MzEvil'sKitchen";
+        internal const string MOD_NAME = "MzEvil's Kitchen";
+        internal const string MOD_VERSION = "0.0.6";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
@@ -51,12 +52,15 @@ namespace GrilledCheese
         internal static Item Apple => GetExistingGDO<Item>(ItemReference.Apple);
         internal static Item AppleSlices => GetExistingGDO<Item>(ItemReference.AppleSlices);
         internal static Item Sugar => GetExistingGDO<Item>(ItemReference.Sugar);
+        internal static Item BreadCrumbs => GetExistingGDO<Item>(ItemReference.BreadBaked);
         internal static Item VanillaIceCream => GetExistingGDO<Item>(ItemReference.IceCreamVanilla);
         internal static Item ApplePie => GetExistingGDO<Item>(ItemReference.PieAppleCooked);
  
         // Vanilla Items
         internal static Item Plate => GetExistingGDO<Item>(ItemReference.Plate);
         internal static Item DirtyPlate => GetExistingGDO<Item>(ItemReference.PlateDirty);
+        internal static Item Ketchup => GetExistingGDO<Item>(ItemReference.CondimentKetchup);
+        internal static Item Mustard => GetExistingGDO <Item>(ItemReference.CondimentMustard);
 
 
         // Ingredients Lib Ingredients
@@ -84,6 +88,8 @@ namespace GrilledCheese
 
         // Desserts
         internal static ItemGroup ApplePiewIceCream => GetModdedGDO<ItemGroup, ApplePieWithIceCream>();
+        internal static Item CookedAppleCrisp => GetModdedGDO<Item, CookedAppleCrisp>();
+        internal static Item BurntAppleCrisp => GetModdedGDO<Item, BurntAppleCrisp>();
 
 
 
@@ -121,8 +127,12 @@ namespace GrilledCheese
             AddGameDataObject<PlatedMonteCristo>();
            // AddGameDataObject<MonteCristoDish>();
 
-            AddGameDataObject<AdditionalToppings>();
+            // Cards
+
+          //  AddGameDataObject<AdditionalToppings>();
             AddGameDataObject<GrilledCheeseAdditionalToppings>();
+          //  AddGameDataObject<KetchupDish>();
+            AddGameDataObject<MustardDish>();
 
             Events.BuildGameDataEvent += delegate (object s, BuildGameDataEventArgs args)
             {

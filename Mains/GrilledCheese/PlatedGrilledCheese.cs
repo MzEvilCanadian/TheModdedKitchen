@@ -16,7 +16,7 @@ namespace GrilledCheese.GrilledCheeseProcess
         public override ItemValue ItemValue => ItemValue.Large;
         public override Item DisposesTo => Main.Plate;
         public override Item DirtiesTo => Main.DirtyPlate;
-        public override string ColourBlindTag => "GC";
+        public override string ColourBlindTag => "PGC";
         public override bool CanContainSide => true;
 
         public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()

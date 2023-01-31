@@ -15,6 +15,10 @@ namespace GrilledCheese.Dishes
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Large;
         public override CardType CardType => CardType.Default;
         public override bool IsUnlockable => true;
+        public HashSet<Dish> PrerequisiteDishes => new HashSet<Dish>()
+        {
+            Main.GrilledCheeseDish
+        };
 
         public override List<Dish.MenuItem> ResultingMenuItems => new List<Dish.MenuItem>
         {

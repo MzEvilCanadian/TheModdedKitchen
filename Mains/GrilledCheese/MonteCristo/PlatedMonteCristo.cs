@@ -15,7 +15,7 @@ namespace GrilledCheese.MonteCristoProcess
         public override ItemValue ItemValue => ItemValue.Large;
         public override Item DisposesTo => Main.Plate;
         public override Item DirtiesTo => Main.DirtyPlate;
-        public override string ColourBlindTag => "MC";
+        public override string ColourBlindTag => "PMC";
         public override bool CanContainSide => true;
 
         public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
