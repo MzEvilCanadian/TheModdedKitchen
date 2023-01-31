@@ -9,6 +9,7 @@
     <RootNamespace>GrilledCheese</RootNamespace>
     <AssemblyName>GrilledCheese</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <LangVersion>latest</LangVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -42,27 +43,46 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppleCrisp\AppleCrispDish.cs" />
-    <Compile Include="AppleCrisp\BurntAppleCrisp.cs" />
-    <Compile Include="AppleCrisp\CookedAppleCrisp.cs" />
-    <Compile Include="AppleCrisp\UncookedAppleCrisp.cs" />
-    <Compile Include="ApplePiewIceCream\ApplePiewIceCream.cs" />
-    <Compile Include="ApplePiewIceCream\ApplePiewIceCreamDish.cs" />
-    <Compile Include="GrilledCheese\Cards\AdditionalToppings.cs" />
-    <Compile Include="GrilledCheese\BurnedGrilledCheese.cs" />
-    <Compile Include="GrilledCheese\Cards\MustardDish.cs" />
-    <Compile Include="GrilledCheese\Cards\KetchupDish.cs" />
-    <Compile Include="GrilledCheese\CookedGrilledCheese.cs" />
-    <Compile Include="GrilledCheese\GrilledCheeseAdditionalToppings.cs" />
-    <Compile Include="GrilledCheese\GrilledCheeseDish.cs" />
-    <Compile Include="GrilledCheese\PlatedGrilledCheese.cs" />
-    <Compile Include="GrilledCheese\UncookedGrilledCheese.cs" />
+    <Compile Include="Desserts\AppleCrisp\AppleCrispDish.cs" />
+    <Compile Include="Desserts\AppleCrisp\BurntAppleCrisp.cs" />
+    <Compile Include="Desserts\AppleCrisp\CookedAppleCrisp.cs" />
+    <Compile Include="Desserts\AppleCrisp\UncookedAppleCrisp.cs" />
+    <Compile Include="Desserts\ApplePiewIceCream\ApplePiewIceCream.cs" />
+    <Compile Include="Desserts\ApplePiewIceCream\ApplePiewIceCreamDish.cs" />
+    <Compile Include="Starters\Bruschetta\AssembledBruschetta.cs" />
+    <Compile Include="Starters\Bruschetta\BruschettaDish.cs" />
+    <Compile Include="Starters\Bruschetta\BurntBruschetta.cs" />
+    <Compile Include="Starters\Bruschetta\CookedBread.cs" />
+    <Compile Include="Starters\Bruschetta\PlatedBruschetta.cs" />
+    <Compile Include="Starters\Bruschetta\UncookedBruschetta.cs" />
+    <Compile Include="Desserts\ChocolatePuddingPie\ChocolatePuddingPieA.cs" />
+    <Compile Include="Desserts\ChocolatePuddingPie\ChocolatePuddingPieDish.cs" />
+    <Compile Include="Desserts\ChocolatePuddingPie\ChocolatePuddingPieServing.cs" />
+    <Compile Include="Starters\GarlicBread\BurntGarlicBread.cs" />
+    <Compile Include="Starters\GarlicBread\CookedGarlicBread.cs" />
+    <Compile Include="Starters\GarlicBread\GarlicBreadDish.cs" />
+    <Compile Include="Starters\GarlicBread\PlatedGarlicBread.cs" />
+    <Compile Include="Starters\GarlicBread\UncookedGarlicBread.cs" />
+    <Compile Include="Sides\MacAndCheese\CookedMacNCheeseHalfPot.cs" />
+    <Compile Include="Sides\MacAndCheese\CookedMacNCheesePot.cs" />
+    <Compile Include="Sides\MacAndCheese\MacNCheeseDish.cs" />
+    <Compile Include="Sides\MacAndCheese\MacNCheeseServing.cs" />
+    <Compile Include="Sides\MacAndCheese\UncookedPot.cs" />
+    <Compile Include="Mains\GrilledCheese\Cards\AdditionalToppings.cs" />
+    <Compile Include="Mains\GrilledCheese\BurnedGrilledCheese.cs" />
+    <Compile Include="Mains\GrilledCheese\Cards\MustardDish.cs" />
+    <Compile Include="Mains\GrilledCheese\Cards\KetchupDish.cs" />
+    <Compile Include="Mains\GrilledCheese\CookedGrilledCheese.cs" />
+    <Compile Include="Mains\GrilledCheese\GrilledCheeseAdditionalToppings.cs" />
+    <Compile Include="Mains\GrilledCheese\GrilledCheeseDish.cs" />
+    <Compile Include="Mains\GrilledCheese\PlatedGrilledCheese.cs" />
+    <Compile Include="Mains\GrilledCheese\UncookedGrilledCheese.cs" />
     <Compile Include="Main.cs" />
-    <Compile Include="GrilledCheese\MonteCristo\BurntMonteCristo.cs" />
-    <Compile Include="GrilledCheese\MonteCristo\CookedMonteCristo.cs" />
-    <Compile Include="GrilledCheese\MonteCristo\MonteCristoDish.cs" />
-    <Compile Include="GrilledCheese\MonteCristo\PlatedMonteCristo.cs" />
-    <Compile Include="GrilledCheese\MonteCristo\UncookedMonteCristo.cs" />
+    <Compile Include="Mains\GrilledCheese\MonteCristo\BurntMonteCristo.cs" />
+    <Compile Include="Mains\GrilledCheese\MonteCristo\CookedMonteCristo.cs" />
+    <Compile Include="Mains\GrilledCheese\MonteCristo\MonteCristoDish.cs" />
+    <Compile Include="Mains\GrilledCheese\MonteCristo\PlatedMonteCristo.cs" />
+    <Compile Include="Mains\GrilledCheese\MonteCristo\UncookedMonteCristo.cs" />
     <Compile Include="Registry\ILocalisedRecipeHolder.cs" />
     <Compile Include="Registry\ModDish.cs" />
     <Compile Include="Registry\ModRegistry.cs" />
