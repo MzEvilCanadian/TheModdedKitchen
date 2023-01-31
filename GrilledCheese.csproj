@@ -42,6 +42,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppleCrisp\AppleCrispDish.cs" />
+    <Compile Include="ApplePiewIceCream\ApplePiewIceCream.cs" />
+    <Compile Include="ApplePiewIceCream\ApplePiewIceCreamDish.cs" />
     <Compile Include="Cards\AdditionalToppings.cs" />
     <Compile Include="GrilledCheeseProcess\BurnedGrilledCheese.cs" />
     <Compile Include="GrilledCheeseProcess\CookedGrilledCheese.cs" />

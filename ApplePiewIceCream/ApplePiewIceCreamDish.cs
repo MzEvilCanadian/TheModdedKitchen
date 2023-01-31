@@ -7,12 +7,12 @@ using KitchenLib.References;
 
 namespace GrilledCheese.Dishes
 {
-    class MonteCristoDish : ModDish
+    class ApplePiewIceCreamDish : ModDish
     {
-        public override string UniqueNameID => "Monte Cristo Dish";
-        public override DishType Type => DishType.Main;
-        public override DishCustomerChange CustomerMultiplier => DishCustomerChange.LargeDecrease;
-        public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Large;
+        public override string UniqueNameID => "Apple Pie with Ice Cream Dish";
+        public override DishType Type => DishType.Dessert;
+        public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
+        public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Small;
         public override CardType CardType => CardType.Default;
         public override bool IsUnlockable => true;
 
@@ -20,20 +20,15 @@ namespace GrilledCheese.Dishes
         {
             new Dish.MenuItem
             {
-                Item = Main.PlatedMonteCristo,
-                Phase = MenuPhase.Main,
+                Item = Main.ApplePiewIceCream,
+                Phase = MenuPhase.Dessert,
                 Weight = 1,
-                DynamicMenuType = DynamicMenuType.Static,
-                DynamicMenuIngredient = null
             }
         };
         public override HashSet<Item> MinimumIngredients => new HashSet<Item>
         {
-            Main.Cheese,
-            Main.Flour,
-            Main.Butter,
-            Main.Pork,
-            Main.Egg
+            Main.Apple,
+            Main.VanillaIceCream
         };
         public override HashSet<Process> RequiredProcesses => new HashSet<Process>
         {
@@ -44,11 +39,11 @@ namespace GrilledCheese.Dishes
 
         public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
         {
-            { Locale.English, "Knead flour into dough and cook. Combine two bread slices with a cracked egg, cheese, and cooked ham then cook. It assists with revenge." }
+            { Locale.English, "Combine a chopped apple, sugar, and bread crumbs and cook." }
         };
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {
-            { Locale.English, LocalisationUtils.CreateUnlockInfo("Monte Cristo - Grilled Cheese", "Adds Monte Cristo sandwich as a Main", "Ham and cheese between french toast. Yummm.") }
+            { Locale.English, LocalisationUtils.CreateUnlockInfo("Apple Crisp - Grilled Cheese", "Adds Apple Crisp as a Dessert", "I didn't start the fire!") }
         };
     }
 }

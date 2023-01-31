@@ -1,5 +1,6 @@
 ﻿using GrilledCheese.GrilledCheeseProcess;
 using GrilledCheese.MonteCristoProcess;
+using GrilledCheese.ApplePiewIceCream;
 using GrilledCheese.Registry;
 using GrilledCheese.Dishes;
 using KitchenData;
@@ -20,7 +21,7 @@ namespace GrilledCheese
     {
         internal const string MOD_ID = "Grilled Cheese";
         internal const string MOD_NAME = "Grilled Cheese";
-        internal const string MOD_VERSION = "0.0.3";
+        internal const string MOD_VERSION = "0.0.4";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
@@ -47,6 +48,11 @@ namespace GrilledCheese
         internal static Item TomatoSlice => GetExistingGDO<Item>(ItemReference.TomatoChopped);
         internal static Item Egg => GetExistingGDO<Item>(ItemReference.Egg);
         internal static Item EggCracked => GetExistingGDO<Item>(ItemReference.EggCracked);
+        internal static Item Apple => GetExistingGDO<Item>(ItemReference.Apple);
+        internal static Item AppleSlices => GetExistingGDO<Item>(ItemReference.AppleSlices);
+        internal static Item Sugar => GetExistingGDO<Item>(ItemReference.Sugar);
+        internal static Item VanillaIceCream => GetExistingGDO<Item>(ItemReference.IceCreamVanilla);
+        internal static Item ApplePie => GetExistingGDO<Item>(ItemReference.PieAppleCooked);
  
         // Vanilla Items
         internal static Item Plate => GetExistingGDO<Item>(ItemReference.Plate);
@@ -58,8 +64,6 @@ namespace GrilledCheese
         public static Item Butter => Find<Item>(IngredientLib.References.GetIngredient("butter"));
         public static Item ButterSlice => Find<Item>(IngredientLib.References.GetSplitIngredient("butter"));
         public static Item Bacon => Find<Item>(IngredientLib.References.GetIngredient("bacon"));
-        public static Item Peppers => Find<Item>(IngredientLib.References.GetIngredient("peppers"));
-        public static Item ChoppedPeppers => Find<Item>(IngredientLib.References.GetIngredient("chopped peppers"));
         public static Item Pork => Find<Item>(IngredientLib.References.GetIngredient("pork"));
         public static Item Ham => Find<Item>(IngredientLib.References.GetIngredient("porkchop"));
 
@@ -77,6 +81,9 @@ namespace GrilledCheese
 
         internal static Dish GrilledCheeseDish => GetModdedGDO<Dish, GrilledCheeseDish>();
         internal static ItemGroup GrilledCheeseAdditionalToppings => GetModdedGDO<ItemGroup, GrilledCheeseAdditionalToppings>();
+
+        // Desserts
+        internal static ItemGroup ApplePiewIceCream => GetModdedGDO<ItemGroup, ApplePieWithIceCream>();
 
 
 
