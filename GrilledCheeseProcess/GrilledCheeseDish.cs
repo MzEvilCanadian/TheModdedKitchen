@@ -16,15 +16,9 @@ namespace GrilledCheese.Dishes
         public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Medium;
         public override CardType CardType => CardType.Default;
-        public override int MinimumFranchiseTier => 0;
         public override bool IsSpecificFranchiseTier => false;
-        public override float SelectionBias => 0;
-        public override List<Unlock> HardcodedRequirements => new List<Unlock> { };
-        public override List<Unlock> HardcodedBlockers => new List<Unlock> { };
         public override bool IsAvailableAsLobbyOption => true;
         public override bool DestroyAfterModUninstall => false;
-        public override int BaseGameDataObjectID => DishReferences.BurgerBase;
-
         public override bool IsUnlockable => false;
         
 
@@ -47,8 +41,6 @@ namespace GrilledCheese.Dishes
                 Item = Main.PlatedGrilledCheese,
                 Phase = MenuPhase.Main,
                 Weight = 1,
-                DynamicMenuType = DynamicMenuType.Static,
-                DynamicMenuIngredient = null
             }
         };
         public override HashSet<Item> MinimumIngredients => new HashSet<Item>
@@ -59,7 +51,6 @@ namespace GrilledCheese.Dishes
         };
         public override HashSet<Process> RequiredProcesses => new HashSet<Process>
         {
-            Main.Cook,
             Main.Chop,
             Main.Knead,
             Main.Oven

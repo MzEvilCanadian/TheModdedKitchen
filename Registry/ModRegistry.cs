@@ -16,7 +16,7 @@ namespace GrilledCheese.Registry
         private static readonly List<Tuple<ILocalisedRecipeHolder, Dish>> RecipeHolders = new List<Tuple<ILocalisedRecipeHolder, Dish>>();
         private static readonly List<Dish> BaseDishes = new List<Dish>();
 
-        private static bool GameDataBuilt = false;
+     //   private static bool GameDataBuilt = false;
 
         public static void AddLocalisedRecipe(ILocalisedRecipeHolder holder, Dish dish)
         {
@@ -30,25 +30,6 @@ namespace GrilledCheese.Registry
 
         public static void HandleBuildGameDataEvent(BuildGameDataEventArgs args)
         {
-            if (GameDataBuilt)
-            {
-                return;
-            }
-
-            // Recipe holders
-            foreach (var holder in RecipeHolders)
-            {
-                foreach (var entry in holder.Item1.LocalisedRecipe)
-                {
-                    args.gamedata.GlobalLocalisation.Recipes.Info.Get(entry.Key).Text.Add(holder.Item2, entry.Value);
-                    Main.LogInfo($"Registered recipe \"{entry.Key}\" localization entry for dish {holder.Item2.Name} ({holder.Item2.ID}): \"{entry.Value}\"");
-
-                }
-            }
-
-            Main.LogInfo("Done building additional game data.");
-
-            GameDataBuilt = true;
         }
 
         protected override void Initialise()

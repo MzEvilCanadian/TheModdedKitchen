@@ -1,4 +1,5 @@
 ﻿using GrilledCheese.GrilledCheeseProcess;
+using GrilledCheese.MonteCristoProcess;
 using GrilledCheese.Registry;
 using GrilledCheese.Dishes;
 using KitchenData;
@@ -19,7 +20,7 @@ namespace GrilledCheese
     {
         internal const string MOD_ID = "Grilled Cheese";
         internal const string MOD_NAME = "Grilled Cheese";
-        internal const string MOD_VERSION = "0.0.1";
+        internal const string MOD_VERSION = "0.0.3";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
@@ -27,7 +28,7 @@ namespace GrilledCheese
 
         // Filler prefabs
         internal static Item CookedDumplings => GetExistingGDO<Item>(ItemReference.CookedDumplings);
-        internal static Item PlatedDumplings => GetExistingGDO<Item>(ItemReference.DumplingsPlated);
+        internal static Item Onion => GetExistingGDO<Item>(ItemReference.Onion);
 
         // Vanilla Processes
         internal static Process Cook => GetExistingGDO<Process>(ProcessReferences.Cook);
@@ -44,7 +45,9 @@ namespace GrilledCheese
         internal static Item BreadSlice => GetExistingGDO<Item>(ItemReference.BreadSlice);
         internal static Item Tomato => GetExistingGDO<Item>(ItemReference.Tomato);
         internal static Item TomatoSlice => GetExistingGDO<Item>(ItemReference.TomatoChopped);
-        
+        internal static Item Egg => GetExistingGDO<Item>(ItemReference.Egg);
+        internal static Item EggCracked => GetExistingGDO<Item>(ItemReference.EggCracked);
+ 
         // Vanilla Items
         internal static Item Plate => GetExistingGDO<Item>(ItemReference.Plate);
         internal static Item DirtyPlate => GetExistingGDO<Item>(ItemReference.PlateDirty);
@@ -57,14 +60,23 @@ namespace GrilledCheese
         public static Item Bacon => Find<Item>(IngredientLib.References.GetIngredient("bacon"));
         public static Item Peppers => Find<Item>(IngredientLib.References.GetIngredient("peppers"));
         public static Item ChoppedPeppers => Find<Item>(IngredientLib.References.GetIngredient("chopped peppers"));
+        public static Item Pork => Find<Item>(IngredientLib.References.GetIngredient("pork"));
+        public static Item Ham => Find<Item>(IngredientLib.References.GetIngredient("porkchop"));
 
-
+        // Grilled Cheese
         internal static Item BurnedGrilledCheese => GetModdedGDO<Item, BurnedGrilledCheese>();
         internal static Item CookedGrilledCheese => GetModdedGDO<Item, CookedGrilledCheese>();
         internal static ItemGroup PlatedGrilledCheese => GetModdedGDO<ItemGroup, PlatedGrilledCheese>();
         internal static ItemGroup UncookedGrilledCheese => GetModdedGDO<ItemGroup, UncookedGrilledCheese>();
 
+        // Monte Cristo
+        internal static Item BurnedMonteCristo => GetModdedGDO<Item, BurntMonteCristo>();
+        internal static Item CookedMonteCristo => GetModdedGDO<Item, CookedMonteCristo>();
+        internal static ItemGroup PlatedMonteCristo => GetModdedGDO<ItemGroup, PlatedMonteCristo>();
+        internal static ItemGroup UncookedMonteCristo => GetModdedGDO<ItemGroup, UncookedMonteCristo>();
+
         internal static Dish GrilledCheeseDish => GetModdedGDO<Dish, GrilledCheeseDish>();
+        internal static ItemGroup GrilledCheeseAdditionalToppings => GetModdedGDO<ItemGroup, GrilledCheeseAdditionalToppings>();
 
 
 
@@ -88,12 +100,22 @@ namespace GrilledCheese
             base.PostActivate(mod);
           //  bundle = mod.GetPacks<AssetBundleModPack>().SelectMany(e => e.AssetBundles).ToList()[0];
 
+            // Grilled cheese
             AddGameDataObject<BurnedGrilledCheese>();
             AddGameDataObject<CookedGrilledCheese>();
             AddGameDataObject<UncookedGrilledCheese>();
             AddGameDataObject<PlatedGrilledCheese>();
-
             AddGameDataObject<GrilledCheeseDish>();
+
+            // Monte Cristo
+            AddGameDataObject<BurntMonteCristo>();
+            AddGameDataObject<CookedMonteCristo>();
+            AddGameDataObject<UncookedMonteCristo>();
+            AddGameDataObject<PlatedMonteCristo>();
+           // AddGameDataObject<MonteCristoDish>();
+
+            AddGameDataObject<AdditionalToppings>();
+            AddGameDataObject<GrilledCheeseAdditionalToppings>();
 
             Events.BuildGameDataEvent += delegate (object s, BuildGameDataEventArgs args)
             {
