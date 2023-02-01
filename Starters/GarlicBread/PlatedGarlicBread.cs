@@ -5,7 +5,7 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GarlicBreadMod
+namespace GrilledCheese.Starters.GarlicBread
 {
     internal class PlatedGarlicBread : CustomItemGroup
     {

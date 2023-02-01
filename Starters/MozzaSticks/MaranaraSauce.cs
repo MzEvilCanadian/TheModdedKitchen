@@ -1,16 +1,15 @@
-﻿using GrilledCheese;
-using KitchenData;
+﻿using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GrilledCheese.Starters.Bruschetta
+namespace GrilledCheese.Starters.MozzaSticks
 {
-    class UncookedBruschetta : CustomItemGroup
+    class MaranaraSauce : CustomItemGroup
     {
-        public override string UniqueNameID => "UncookedBruschetta";
-        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("BruschettaBread");
+        public override string UniqueNameID => "MaranaraSauce";
+        public override GameObject Prefab => Main.Cheese.Prefab;
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
 
@@ -18,24 +17,25 @@ namespace GrilledCheese.Starters.Bruschetta
         {
             new ItemGroup.ItemSet()
             {
-                Max = 2,
-                Min = 2,
+                Max = 1,
+                Min = 1,
                 Items = new List<Item>()
                 {
-                    Main.BreadSlice,
                     Main.OilIngredient
+                }
+            },
+            new ItemGroup.ItemSet()
+            {
+                Max = 1,
+                Min = 1,
+                Items = new List<Item>()
+                {
+                    Main.TomatoSauce
                 }
             }
         };
-        public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
-        {
-            new Item.ItemProcess
-            {
-                Duration = 3,
-                Process = Main.Cook,
-                Result = Main.CookedBread
-            }
-        };
+
+        /*
         public override void OnRegister(GameDataObject gameDataObject)
         {
             var materials = new Material[]
@@ -50,6 +50,6 @@ namespace GrilledCheese.Starters.Bruschetta
 
             // MaterialUtils.ApplyMaterial([object], [name], [material list]
         }
-     
+        */
     }
 }

@@ -6,7 +6,7 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Bruschetta
+namespace GrilledCheese.Starters.Bruschetta
 {
     internal class AssembledBruschetta : CustomItemGroup<MyItemGroupView>
     {

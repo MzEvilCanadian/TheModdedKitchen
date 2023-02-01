@@ -5,7 +5,7 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ChocolatePuddingPie
+namespace GrilledCheese.Desserts.ChocolatePuddingPie
 {
     class ChocolatePuddingPieA : CustomItemGroup
     {

@@ -3,10 +3,8 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using GrilledCheese.Dishes;
-using GrilledCheese;
 
-namespace GarlicBreadMod.Dishes
+namespace GrilledCheese.Dishes
 {
     public class GarlicBreadDish : ModDish
     {

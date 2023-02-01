@@ -23,6 +23,11 @@ using GarlicBreadMod;
 using GarlicBreadMod.Dishes;
 using ChocolatePuddingPie;
 using ChocolatePuddingPie.Dishes;
+using GrilledCheese.Starters.MozzaSticks;
+using GrilledCheese.Starters.Bruschetta;
+using GrilledCheese.Starters.GarlicBread;
+using GrilledCheese.Desserts.ChocolatePuddingPie;
+using GrilledCheese.Desserts.AppleRings;
 
 namespace GrilledCheese
 {
@@ -30,7 +35,7 @@ namespace GrilledCheese
     {
         internal const string MOD_ID = "MzEvil'sKitchen";
         internal const string MOD_NAME = "MzEvil's Kitchen";
-        internal const string MOD_VERSION = "0.0.6";
+        internal const string MOD_VERSION = "0.0.7";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
@@ -54,6 +59,7 @@ namespace GrilledCheese
         internal static Item BreadSlice => GetExistingGDO<Item>(ItemReference.BreadSlice);
         internal static Item Tomato => GetExistingGDO<Item>(ItemReference.Tomato);
         internal static Item TomatoSlice => GetExistingGDO<Item>(ItemReference.TomatoChopped);
+        internal static Item TomatoSauce => GetExistingGDO<Item>(ItemReference.TomatoSauce);
         internal static Item Egg => GetExistingGDO<Item>(ItemReference.Egg);
         internal static Item EggCracked => GetExistingGDO<Item>(ItemReference.EggCracked);
         internal static Item Apple => GetExistingGDO<Item>(ItemReference.Apple);
@@ -92,6 +98,7 @@ namespace GrilledCheese
         public static Item MincedGarlic => Find<Item>(IngredientLib.References.GetIngredient("minced garlic"));
         public static Item Chocolate => Find<Item>(IngredientLib.References.GetIngredient("chocolate"));
         public static Item ChocolateFilling => Find<Item>(IngredientLib.References.GetIngredient("chocolate sauce"));
+        public static Item Cinnamon => Find<Item>(IngredientLib.References.GetIngredient("cinnamon"));
 
         // Grilled Cheese
         internal static Item BurnedGrilledCheese => GetModdedGDO<Item, BurnedGrilledCheese>();
@@ -117,7 +124,6 @@ namespace GrilledCheese
         internal static Item CookedMacNCheesePot => GetModdedGDO<Item, CookedMacNCheesePot>();
         internal static Item CookedMacNCheeseHalfPot => GetModdedGDO<Item, CookedMacNCheeseHalfPot>();
         internal static Item MacNCheeseServing => GetModdedGDO<Item, MacNCheeseServing>();
-        internal static Dish MacNCheeseDish => GetModdedGDO<Dish, MacNCheeseDish>();
 
         // Bruschetta
         internal static Item BurntBruschetta => GetModdedGDO<Item, BurntBruschetta>();
@@ -125,18 +131,28 @@ namespace GrilledCheese
         internal static ItemGroup UncookedBruschetta => GetModdedGDO<ItemGroup, UncookedBruschetta>();
         internal static ItemGroup AssembledBruschetta => GetModdedGDO<ItemGroup, AssembledBruschetta>();
         internal static ItemGroup PlatedBruschetta => GetModdedGDO<ItemGroup, PlatedBruschetta>();
-        internal static Dish BruschettaDish => GetModdedGDO<Dish, BruschettaDish>();
 
         // Garlic Bread
         internal static Item BurntGarlicBread => GetModdedGDO<Item, BurntGarlicBread>();
         internal static ItemGroup UncookedGarlicBread => GetModdedGDO<ItemGroup, UncookedGarlicBread>();
         internal static ItemGroup PlatedGarlicBread => GetModdedGDO<ItemGroup, PlatedGarlicBread>();
         internal static Item CookedGarlicBread => GetModdedGDO<Item, CookedGarlicBread>();
-        internal static Dish GarlicBreadDish => GetModdedGDO<Dish, GarlicBreadDish>();
 
         // Chocolate Pudding Pie
         internal static ItemGroup ChocolatePuddingPieA => GetModdedGDO<ItemGroup, ChocolatePuddingPieA>();
         internal static Item ChocolatePuddingPieServing => GetModdedGDO<Item, ChocolatePuddingPieServing>();
+
+        // Mozza Sticks
+        internal static Item BurntMozzaSticks => GetModdedGDO<Item, BurntMozzaSticks>();
+        internal static ItemGroup CombinedMozzaSticks => GetModdedGDO<ItemGroup, CombinedMozzaSticks>();
+        internal static Item CookedMozzaSticks => GetModdedGDO<Item, CookedMozzaSticks>();
+        internal static ItemGroup MaranaraSauce => GetModdedGDO<ItemGroup, MaranaraSauce>();
+        internal static ItemGroup UncookedMozzaSticks => GetModdedGDO<ItemGroup, UncookedMozzaSticks>();
+
+        // Apple Rings
+        internal static Item BurntAppleRings => GetModdedGDO<Item, BurntAppleRings>();
+        internal static Item CookedAppleRings => GetModdedGDO<Item, CookedAppleRings>();
+        internal static ItemGroup UncookeAppleRings => GetModdedGDO<ItemGroup, UncookedAppleRings>();
 
 
 
@@ -153,23 +169,32 @@ namespace GrilledCheese
             Debug.Log($"{MOD_NAME} {MOD_VERSION} {MOD_AUTHOR}: Loaded");
             Debug.Log($"Assets Loaded From {bundlePath}");
         }
-
-
         public override void PostActivate(KitchenMods.Mod mod)
         {
             base.PostActivate(mod);
             bundle = mod.GetPacks<AssetBundleModPack>().SelectMany(e => e.AssetBundles).ToList()[0];
 
             // Dishes
-            AddGameDataObject<GrilledCheeseDish>();
-            AddGameDataObject<MonteCristoDish>();
+                // Starters
+            AddGameDataObject<BruschettaDish>();
+            AddGameDataObject<Dishes.GarlicBreadDish>();
+            AddGameDataObject<MozzaSticksDish>();       // No Models yet
+
+                // Mains
+            AddGameDataObject<GrilledCheeseDish>();     // No Models yet
+            AddGameDataObject<MonteCristoDish>();       // No Models yet
+
+                // Extras
             AddGameDataObject<KetchupDish>();
             AddGameDataObject<MustardDish>();
-            AddGameDataObject<AdditionalToppings>();
-          //  AddGameDataObject<MacNCheeseDish>();
-            AddGameDataObject<BruschettaDish>();
-            AddGameDataObject<GarlicBreadDish>();
+            AddGameDataObject<AdditionalToppings>();    // No Models yet
+
+                // Sides
+           // AddGameDataObject<MacNCheeseDish>();        // Currently broken, wont show when merged on the plate
+
+            // Desserts
             AddGameDataObject<ChocolatePuddingPieDish>();
+            AddGameDataObject<AppleRingsDish>();        // No Models Yet
 
             // Grilled cheese
             AddGameDataObject<BurnedGrilledCheese>();
@@ -205,10 +230,22 @@ namespace GrilledCheese
             AddGameDataObject<UncookedGarlicBread>();
             AddGameDataObject<PlatedGarlicBread>();
 
-            // Chocolate PuddingPie
+            // Chocolate Pudding Pie
 
             AddGameDataObject<ChocolatePuddingPieServing>();
             AddGameDataObject<ChocolatePuddingPieA>();
+
+            // Mozza Sticks
+            AddGameDataObject<BurntMozzaSticks>();
+            AddGameDataObject<CombinedMozzaSticks>();
+            AddGameDataObject<CookedMozzaSticks>();
+            AddGameDataObject<MaranaraSauce>();
+            AddGameDataObject<UncookedMozzaSticks>();
+
+            // Apple Rings
+            AddGameDataObject<BurntAppleRings>();
+            AddGameDataObject<CookedAppleRings>();
+            AddGameDataObject<UncookedAppleRings>();
 
 
             Events.BuildGameDataEvent += delegate (object s, BuildGameDataEventArgs args)

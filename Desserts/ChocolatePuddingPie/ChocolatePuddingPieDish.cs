@@ -6,7 +6,7 @@ using System;
 using GrilledCheese;
 using GrilledCheese.Dishes;
 
-namespace ChocolatePuddingPie.Dishes
+namespace GrilledCheese.Dishes
 {
     class ChocolatePuddingPieDish : ModDish
     {

@@ -27,8 +27,6 @@ namespace GrilledCheese.Dishes
                 Item = Main.PlatedMonteCristo,
                 Phase = MenuPhase.Main,
                 Weight = 1,
-                DynamicMenuType = DynamicMenuType.Static,
-                DynamicMenuIngredient = null
             }
         };
         public override HashSet<Item> MinimumIngredients => new HashSet<Item>
