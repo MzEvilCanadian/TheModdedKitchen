@@ -19,29 +19,22 @@ namespace GrilledCheese.GrilledCheeseProcess
         {
             new ItemGroup.ItemSet()
             {
-                Max = 2,
-                Min = 2,
+                Max = 1,
+                Min = 1,
+                IsMandatory = true,
                 Items = new List<Item>()
                 {
                     Main.BreadSlice,
-                    Main.BreadSlice
                 }
             },
             new ItemGroup.ItemSet()
             {
-                Max = 1,
-                Min = 1,
+                Max = 3,
+                Min = 3,
                 Items = new List<Item>()
                 {
-                    Main.GratedCheese
-                }
-            },
-            new ItemGroup.ItemSet()
-            {
-                Max = 1,
-                Min = 1,
-                Items = new List<Item>()
-                {
+                    Main.BreadSlice,
+                    Main.GratedCheese,
                     Main.ButterSlice
                 }
             }
@@ -101,16 +94,6 @@ namespace GrilledCheese.GrilledCheeseProcess
                 {
                     GameObject = GameObjectUtils.GetChildObject(prefab, "Butter"),
                     Item = Main.ButterSlice
-                },
-                new()
-                {
-                    GameObject = GameObjectUtils.GetChildObject(prefab, "Tomato"),
-                    Item = Main.TomatoSlice
-                },
-                new()
-                {
-                    GameObject = GameObjectUtils.GetChildObject(prefab, "Bacon"),
-                    Item = Main.Bacon
                 },
             };
         }

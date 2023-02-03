@@ -43,7 +43,7 @@ namespace GrilledCheese.Dishes
 
         public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
         {
-            { Locale.English, "Cut pork into bacon strips and cook, then add to the plate. Slice Tomatos and add to the place" }
+            { Locale.English, "Cut pork into bacon strips and cook. Slice Tomatos. Add to the plate." }
         };
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {

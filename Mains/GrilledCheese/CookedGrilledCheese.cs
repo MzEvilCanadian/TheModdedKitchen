@@ -30,12 +30,11 @@ namespace GrilledCheese.GrilledCheeseProcess
            var materials = new Material[]
            {
                 MaterialUtils.GetExistingMaterial("Bread - Inside Cooked"),
-           };
+                MaterialUtils.GetExistingMaterial("Bread - Cooked")
+        };
             MaterialUtils.ApplyMaterial(Prefab, "Bread Bottom", materials);
             MaterialUtils.ApplyMaterial(Prefab, "Bread Top", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Bread - Cooked");
-            MaterialUtils.ApplyMaterial(Prefab, "Bread Bottom)", materials);
-            MaterialUtils.ApplyMaterial(Prefab, "Bread Top", materials);
+
             materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
             MaterialUtils.ApplyMaterial(Prefab, "Cheese", materials);
         }       

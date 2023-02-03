@@ -19,38 +19,23 @@ namespace GrilledCheese.MonteCristoProcess
         {
             new ItemGroup.ItemSet()
             {
-                Max = 2,
-                Min = 2,
+                Max = 1,
+                Min = 1,
+                IsMandatory = true,
                 Items = new List<Item>()
                 {
-                    Main.BreadSlice,
                     Main.BreadSlice
                 }
             },
             new ItemGroup.ItemSet()
             {
-                Max = 1,
-                Min = 1,
+                Max = 4,
+                Min = 4,
                 Items = new List<Item>()
                 {
-                    Main.GratedCheese
-                }
-            },
-            new ItemGroup.ItemSet()
-            {
-                Max = 1,
-                Min = 1,
-                Items = new List<Item>()
-                {
-                    Main.EggCracked
-                }
-            },
-            new ItemGroup.ItemSet()
-            {
-                Max = 1,
-                Min = 1,
-                Items = new List<Item>()
-                {
+                    Main.BreadSlice,
+                    Main.GratedCheese,
+                    Main.EggCracked,
                     Main.Ham
                 }
             }
@@ -78,7 +63,7 @@ namespace GrilledCheese.MonteCristoProcess
 
             materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
             MaterialUtils.ApplyMaterial(Prefab, "Cheese", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Dark Metal");
+            materials[0] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Bacon\"");
             MaterialUtils.ApplyMaterial(Prefab, "Pork", materials);
 
             Prefab.GetComponent<MyItemGroupView>()?.Setup(Prefab);
@@ -110,7 +95,7 @@ namespace GrilledCheese.MonteCristoProcess
                 new()
                 {
                     GameObject = GameObjectUtils.GetChildObject(prefab, "Pork"),
-                    Item = Main.Pork
+                    Item = Main.Ham
                 },
             };
     }

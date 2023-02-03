@@ -5,7 +5,7 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GrilledCheese.GrilledCheeseProcess
+namespace GrilledCheese.GrilledCheeseXToppings
 {
     class GrilledCheeseAdditionalToppings : CustomItemGroup<MyItemGroupView>
     {
@@ -48,18 +48,57 @@ namespace GrilledCheese.GrilledCheeseProcess
             var materials = new Material[]
             {
                 MaterialUtils.GetExistingMaterial("Bread - Inside Cooked"),
-             };
+                MaterialUtils.GetExistingMaterial("Bread - Cooked")
+        };
             MaterialUtils.ApplyMaterial(Prefab, "Bread Bottom", materials);
             MaterialUtils.ApplyMaterial(Prefab, "Bread Top", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Bread - Cooked");
-            MaterialUtils.ApplyMaterial(Prefab, "Bread Bottom)", materials);
-            MaterialUtils.ApplyMaterial(Prefab, "Bread Top", materials);
+
+            materials[0] = MaterialUtils.GetExistingMaterial("Plate");
+            materials[1] = MaterialUtils.GetExistingMaterial("Plate - Ring");
+            MaterialUtils.ApplyMaterial(Prefab, "Plate", materials);
+
             materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
             MaterialUtils.ApplyMaterial(Prefab, "Cheese", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Butter\"");
-            MaterialUtils.ApplyMaterial(Prefab, "Butter", materials);
+
+            materials[0] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Bacon\"");
+            materials[1] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Bacon Fat\"");
+            MaterialUtils.ApplyMaterial(Prefab, "Bacon/Bacon Strip (0)", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "Bacon/Bacon Strip (1)", materials);
+
+            materials[0] = MaterialUtils.GetExistingMaterial("Tomato");
+            MaterialUtils.ApplyMaterial(Prefab, "Tomato/Tomato Sliced/Liquid", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "Tomato/Tomato Sliced (1)/Liquid", materials);
+
+            materials[0] = MaterialUtils.GetExistingMaterial("Tomato Flesh 2");
+            MaterialUtils.ApplyMaterial(Prefab, "Tomato/Tomato Sliced/Inner", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "Tomato/Tomato Sliced (1)/Inner", materials);
+
+            materials[0] = MaterialUtils.GetExistingMaterial("Tomato");
+            MaterialUtils.ApplyMaterial(Prefab, "Tomato/Tomato Sliced/Skin", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "Tomato/Tomato Sliced (1)/Skin", materials);
 
             Prefab.GetComponent<MyItemGroupView>()?.Setup(Prefab);
         }        
+    }
+    public class MyItemGroupView : ItemGroupView
+    {
+        internal void Setup(GameObject prefab)
+        {
+            // This tells which sub-object of the prefab corresponds to each component of the ItemGroup
+            // All of these sub-objects are hidden unless the item is present
+            ComponentGroups = new()
+            {
+                new()
+                {
+                    GameObject = GameObjectUtils.GetChildObject(prefab, "Tomato"),
+                    Item = Main.TomatoSlice
+                },
+                new()
+                {
+                    GameObject = GameObjectUtils.GetChildObject(prefab, "Bacon"),
+                    Item = Main.Bacon
+                },
+            };
+        }
     }
 }

@@ -23,7 +23,7 @@ using GrilledCheese.Starters.Bruschetta;
 using GrilledCheese.Starters.GarlicBread;
 using GrilledCheese.Desserts.ChocolatePuddingPie;
 using GrilledCheese.Desserts.AppleRings;
-using MacNCheese.Dishes;
+using GrilledCheese.GrilledCheeseXToppings;
 
 namespace GrilledCheese
 {
@@ -31,7 +31,7 @@ namespace GrilledCheese
     {
         internal const string MOD_ID = "MzEvil'sKitchen";
         internal const string MOD_NAME = "MzEvil's Kitchen";
-        internal const string MOD_VERSION = "0.0.8";
+        internal const string MOD_VERSION = "0.0.9";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
@@ -183,7 +183,7 @@ namespace GrilledCheese
                 // Extras
         //    AddGameDataObject<KetchupDish>();
         //    AddGameDataObject<MustardDish>();
-        //    AddGameDataObject<AdditionalToppings>();    
+            AddGameDataObject<AdditionalToppings>();    
 
                 // Sides
         //    AddGameDataObject<MacNCheeseDish>();        // Currently broken, wont show when merged on the plate
