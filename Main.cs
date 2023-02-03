@@ -16,18 +16,14 @@ using System.Reflection;
 using UnityEngine;
 using ItemReference = KitchenLib.References.ItemReferences;
 using MacNCheese.Customs.MacNCheeseProcess;
-using MacNCheese.Dishes;
 using Bruschetta;
-using Bruschetta.Dishes;
 using GarlicBreadMod;
-using GarlicBreadMod.Dishes;
-using ChocolatePuddingPie;
-using ChocolatePuddingPie.Dishes;
 using GrilledCheese.Starters.MozzaSticks;
 using GrilledCheese.Starters.Bruschetta;
 using GrilledCheese.Starters.GarlicBread;
 using GrilledCheese.Desserts.ChocolatePuddingPie;
 using GrilledCheese.Desserts.AppleRings;
+using MacNCheese.Dishes;
 
 namespace GrilledCheese
 {
@@ -35,7 +31,7 @@ namespace GrilledCheese
     {
         internal const string MOD_ID = "MzEvil'sKitchen";
         internal const string MOD_NAME = "MzEvil's Kitchen";
-        internal const string MOD_VERSION = "0.0.7";
+        internal const string MOD_VERSION = "0.0.8";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
@@ -115,7 +111,7 @@ namespace GrilledCheese
         internal static Dish GrilledCheeseDish => GetModdedGDO<Dish, GrilledCheeseDish>();
         internal static ItemGroup GrilledCheeseAdditionalToppings => GetModdedGDO<ItemGroup, GrilledCheeseAdditionalToppings>();
 
-        // Desserts
+        // Apple Crisp & Apple Pie w Ice Cream
         internal static ItemGroup ApplePiewIceCream => GetModdedGDO<ItemGroup, ApplePieWithIceCream>();
         internal static Item CookedAppleCrisp => GetModdedGDO<Item, CookedAppleCrisp>();
         internal static Item BurntAppleCrisp => GetModdedGDO<Item, BurntAppleCrisp>();
@@ -176,25 +172,29 @@ namespace GrilledCheese
 
             // Dishes
                 // Starters
-            AddGameDataObject<BruschettaDish>();
-            AddGameDataObject<Dishes.GarlicBreadDish>();
-            AddGameDataObject<MozzaSticksDish>();       // No Models yet
+         //   AddGameDataObject<BruschettaDish>();
+         //   AddGameDataObject<Dishes.GarlicBreadDish>();
+         //   AddGameDataObject<MozzaSticksDish>();       // No Models yet. Not Tested
 
                 // Mains
-            AddGameDataObject<GrilledCheeseDish>();     // No Models yet
-            AddGameDataObject<MonteCristoDish>();       // No Models yet
+            AddGameDataObject<GrilledCheeseDish>();     
+            AddGameDataObject<MonteCristoDish>();       
 
                 // Extras
-            AddGameDataObject<KetchupDish>();
-            AddGameDataObject<MustardDish>();
-            AddGameDataObject<AdditionalToppings>();    // No Models yet
+        //    AddGameDataObject<KetchupDish>();
+        //    AddGameDataObject<MustardDish>();
+        //    AddGameDataObject<AdditionalToppings>();    
 
                 // Sides
-           // AddGameDataObject<MacNCheeseDish>();        // Currently broken, wont show when merged on the plate
+        //    AddGameDataObject<MacNCheeseDish>();        // Currently broken, wont show when merged on the plate
 
             // Desserts
-            AddGameDataObject<ChocolatePuddingPieDish>();
-            AddGameDataObject<AppleRingsDish>();        // No Models Yet
+         //   AddGameDataObject<ChocolatePuddingPieDish>();
+         //   AddGameDataObject<AppleRingsDish>();        // No Models Yet. Not tested
+         //   AddGameDataObject<AppleCrispDish>();        // Not tested
+
+
+
 
             // Grilled cheese
             AddGameDataObject<BurnedGrilledCheese>();
@@ -246,6 +246,11 @@ namespace GrilledCheese
             AddGameDataObject<BurntAppleRings>();
             AddGameDataObject<CookedAppleRings>();
             AddGameDataObject<UncookedAppleRings>();
+
+            // Apple Crisp
+            AddGameDataObject<BurntAppleCrisp>();
+            AddGameDataObject<CookedAppleCrisp>();
+            AddGameDataObject<UncookedAppleCrisp>();
 
 
             Events.BuildGameDataEvent += delegate (object s, BuildGameDataEventArgs args)

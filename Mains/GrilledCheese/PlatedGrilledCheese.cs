@@ -10,7 +10,7 @@ namespace GrilledCheese.GrilledCheeseProcess
     class PlatedGrilledCheese : CustomItemGroup
     {
         public override string UniqueNameID => "Plated Grilled Cheese";
-        public override GameObject Prefab => Main.TomatoSlice.Prefab; //Filler line until Models are made
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Grilled Cheese");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.Large;
@@ -18,7 +18,6 @@ namespace GrilledCheese.GrilledCheeseProcess
         public override Item DirtiesTo => Main.DirtyPlate;
         public override string ColourBlindTag => "PGC";
         public override bool CanContainSide => true;
-
         public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
         {
             new ItemGroup.ItemSet()
@@ -41,70 +40,24 @@ namespace GrilledCheese.GrilledCheeseProcess
                     Main.Plate
                 }
             }
-
-            /*
-              public override void OnRegister(GameDataObject gameDataObject)
-            {
-
-                // setup materials on prefab
-
-                Prefab.GetComponent<MyItemGroupView>()?.Setup();
-             }
-            */
-        };
-
-    }
-
-    /*
-    public class MyItemGroupView : ItemGroupView
-    {
-        internal void Setup()
+        };           
+        public override void OnRegister(GameDataObject gameDataObject)
         {
-            // This tells which sub-object of the prefab corresponds to each component of the ItemGroup
-            // All of these sub-objects are hidden unless the item is present
-            ComponentGroups = new List<ComponentGroup>()
+            var materials = new Material[]
             {
-                new ComponentGroup()
-                {
-                    GameObject = Prefab.GetChildFromPath("MilkshakeCup/Cup"),
-                    Item = Refs.Cup
-                },
-                new ComponentGroup()
-                {
-                    Objects = new List<GameObject>()
-                    {
-                        prefab.GetChildFromPath("MilkshakeCup/IceCream1"),
-                        prefab.GetChildFromPath("MilkshakeCup/IceCream2"),
-                        prefab.GetChildFromPath("MilkshakeCup/IceCream3")
-                    },
-                    DrawAll = true, // this makes it so that the entire list is handled at once (otherwise, if you have multiple instances of the same item in the itemgroup (i.e. icecream), it will enable one at a time)
-                    Item = Refs.IceCream
-                },
-                new ComponentGroup()
-                {
-                    Objects = new List<GameObject>()
-                    {
-                        prefab.GetChildFromPath("MilkshakeCup/MyOptionalIngredient")
-                    },
-                    Item = Refs.MyOptionalIngredient
-                }
+                MaterialUtils.GetExistingMaterial("Bread - Inside Cooked"),
             };
-
-            // Colorblind labels; text is the label; item is the item to display it for (all present ingredients have their labels combined)
-            ComponentLabels = new List<ColourBlindLabel>()
-            {
-                new ColourBlindLabel()
-                {
-                    Text = "A",
-                    Item = Refs.IceCream
-                },
-                new ColourBlindLabel()
-                {
-                    Text = "B",
-                    Item = Refs.MyOptionalIngredient
-                },
-            };
+            MaterialUtils.ApplyMaterial(Prefab, "Bread Bottom", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "Bread Top", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Bread - Cooked");
+            MaterialUtils.ApplyMaterial(Prefab, "Bread Bottom)", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "Bread Top", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
+            MaterialUtils.ApplyMaterial(Prefab, "Cheese", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Plate");
+            MaterialUtils.ApplyMaterial(Prefab, "Plate", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Plate - Ring");
+            MaterialUtils.ApplyMaterial(Prefab, "Plate", materials);
         }
     }
-    */
 }

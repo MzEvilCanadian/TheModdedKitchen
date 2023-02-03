@@ -9,7 +9,7 @@ namespace GrilledCheese.MonteCristoProcess
     class PlatedMonteCristo : CustomItemGroup
     {
         public override string UniqueNameID => "Plated Monte Cristo";
-        public override GameObject Prefab => Main.Tomato.Prefab; //Filler line until Models are made
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Monte Cristo");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.Large;
@@ -53,22 +53,27 @@ namespace GrilledCheese.MonteCristoProcess
                     Main.TomatoSlice
                 }
             }
-            /*
-              public override void OnRegister(GameDataObject gameDataObject)
-            {
+        };
+        public override void OnRegister(GameDataObject gameDataObject)
+        {
 
             var materials = new Material[]
-             {
-                 MaterialUtils.GetExistingMaterial("Plate"),
-             };
+            {
+                MaterialUtils.GetExistingMaterial("Bread - Inside Cooked"),
+            };
+            MaterialUtils.ApplyMaterial(Prefab, "Bread Bottom", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "Bread Top", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Bread - Cooked");
+            MaterialUtils.ApplyMaterial(Prefab, "Bread Bottom)", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "Bread Top", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
+            MaterialUtils.ApplyMaterial(Prefab, "Cheese", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
+            MaterialUtils.ApplyMaterial(Prefab, "Pork", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Plate");
             MaterialUtils.ApplyMaterial(Prefab, "Plate", materials);
-            MaterialUtils.ApplyMaterial(Prefab, "Bowl", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
-            MaterialUtils.ApplyMaterial(Prefab, "Pile", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
-            MaterialUtils.ApplyMaterial(Prefab, "Mac", materials);
-             }
-            */
-        };
+            materials[0] = MaterialUtils.GetExistingMaterial("Plate - Ring");
+            MaterialUtils.ApplyMaterial(Prefab, "Plate", materials);
+        }
     }
 }

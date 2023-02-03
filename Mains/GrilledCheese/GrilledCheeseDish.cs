@@ -47,7 +47,8 @@ namespace GrilledCheese.Dishes
         {
             Main.Cheese,
             Main.Flour,
-            Main.Butter
+            Main.Butter,
+            Main.Plate
         };
         public override HashSet<Process> RequiredProcesses => new HashSet<Process>
         {

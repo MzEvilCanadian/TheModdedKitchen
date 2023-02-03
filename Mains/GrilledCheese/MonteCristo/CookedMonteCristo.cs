@@ -9,12 +9,11 @@ namespace GrilledCheese.MonteCristoProcess
     class CookedMonteCristo : CustomItem
     {
         public override string UniqueNameID => "Cooked Monte Cristo";
-        public override GameObject Prefab => Main.Onion.Prefab; // Temp prefab until models are made
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("CookedMonteCristo");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.MediumLarge;
         public override string ColourBlindTag => "CMC";
-
         public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
         {
             new Item.ItemProcess
@@ -24,28 +23,22 @@ namespace GrilledCheese.MonteCristoProcess
                 IsBad = true,
                 Result = Main.BurnedMonteCristo
             }
-        };
-        /*
+        };    
         public override void OnRegister(GameDataObject gameDataObject)
         {
             var materials = new Material[]
             {
-                   MaterialUtils.GetExistingMaterial("Metal"),
-             };
-            MaterialUtils.ApplyMaterial(Prefab, "Pot/Pot", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Metal Dark");
-            MaterialUtils.ApplyMaterial(Prefab, "Pot/Handles", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Piano White");
-            MaterialUtils.ApplyMaterial(Prefab, "Milk", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Egg Dough\"");
-            MaterialUtils.ApplyMaterial(Prefab, "Mac", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Butter\"");
-            MaterialUtils.ApplyMaterial(Prefab, "Butter", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Cheese - Default");
-            MaterialUtils.ApplyMaterial(Prefab, "Cheese/Shaving0", materials);
-            MaterialUtils.ApplyMaterial(Prefab, "Cheese/Shaving1", materials);
-            MaterialUtils.ApplyMaterial(Prefab, "Cheese/Shaving2", materials);
-        }
-        */
+                MaterialUtils.GetExistingMaterial("Bread - Inside Cooked"),
+            };
+            MaterialUtils.ApplyMaterial(Prefab, "Bread Bottom", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "Bread Top", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Bread - Cooked");
+            MaterialUtils.ApplyMaterial(Prefab, "Bread Bottom)", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "Bread Top", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
+            MaterialUtils.ApplyMaterial(Prefab, "Cheese", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
+            MaterialUtils.ApplyMaterial(Prefab, "Pork", materials);
+        }      
     }
 }

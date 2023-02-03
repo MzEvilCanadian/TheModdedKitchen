@@ -8,7 +8,7 @@ namespace GrilledCheese.Starters.MozzaSticks
 {
     class UncookedMozzaSticks : CustomItemGroup
     {
-        public override string UniqueNameID => "Uncooked Grilled Cheese";
+        public override string UniqueNameID => "Uncooked Mozza Sticks";
         public override GameObject Prefab => Main.Cheese.Prefab;
         public override ItemCategory ItemCategory => ItemCategory.Generic;
 

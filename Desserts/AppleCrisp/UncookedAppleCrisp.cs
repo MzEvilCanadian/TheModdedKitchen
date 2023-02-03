@@ -1,4 +1,5 @@
-﻿using KitchenData;
+﻿using Kitchen;
+using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
 using System.Collections.Generic;
@@ -6,10 +7,10 @@ using UnityEngine;
 
 namespace GrilledCheese.AppleCrisp
 {
-    class UncookedAppleCrisp : CustomItemGroup
+    class UncookedAppleCrisp : CustomItemGroup<MyItemGroupView>
     {
         public override string UniqueNameID => "Uncooked Apple Crisp";
-        public override GameObject Prefab => Main.Cheese.Prefab;
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("UncookedAppleCrisp");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override string ColourBlindTag => "UAC";
@@ -54,21 +55,48 @@ namespace GrilledCheese.AppleCrisp
             }
         };
 
-        /*
+        
         public override void OnRegister(GameDataObject gameDataObject)
         {
             var materials = new Material[]
             {
-                MaterialUtils.GetExistingMaterial("Bread - Inside"),
-             };
-            MaterialUtils.ApplyMaterial(Prefab, "GameObject", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Bread");
-            MaterialUtils.ApplyMaterial(Prefab, "GameObject (1)", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Olive Oil Bottle");
-            MaterialUtils.ApplyMaterial(Prefab, "GameObject (2)", materials);
+                MaterialUtils.GetExistingMaterial("Apple Flesh"),
+                MaterialUtils.GetExistingMaterial("Apple Green"),
+                MaterialUtils.GetExistingMaterial("Baked Apple"),
+                MaterialUtils.GetExistingMaterial("Baked Apple"),
+            };
+            MaterialUtils.ApplyMaterial(Prefab, "Apple", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Sugar");
+            MaterialUtils.ApplyMaterial(Prefab, "Sugar", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Bread - Inside Cooked");
+            MaterialUtils.ApplyMaterial(Prefab, "BreadCrumbs", materials);
 
-            // MaterialUtils.ApplyMaterial([object], [name], [material list]
+            Prefab.GetComponent<MyItemGroupView>()?.Setup(Prefab);
         }
-        */
+        
+    }
+    public class MyItemGroupView : ItemGroupView
+    {
+        internal void Setup(GameObject prefab) =>
+            // This tells which sub-object of the prefab corresponds to each component of the ItemGroup
+            // All of these sub-objects are hidden unless the item is present
+            ComponentGroups = new()
+            {
+                new()
+                {
+                    GameObject = GameObjectUtils.GetChildObject(prefab, "Apple"),
+                    Item = Main.AppleSlices
+                },
+                new()
+                {
+                    GameObject = GameObjectUtils.GetChildObject(prefab, "Sugar"),
+                    Item = Main.Sugar,
+                },
+                new()
+                {
+                    GameObject = GameObjectUtils.GetChildObject(prefab, "Breadcrumbs"),
+                    Item = Main.BreadCrumbs
+                }
+            };
     }
 }

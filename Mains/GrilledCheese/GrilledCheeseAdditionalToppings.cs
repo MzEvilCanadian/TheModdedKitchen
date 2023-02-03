@@ -7,10 +7,10 @@ using UnityEngine;
 
 namespace GrilledCheese.GrilledCheeseProcess
 {
-    class GrilledCheeseAdditionalToppings : CustomItemGroup
+    class GrilledCheeseAdditionalToppings : CustomItemGroup<MyItemGroupView>
     {
         public override string UniqueNameID => "Plated Grilled Cheese with toppings";
-        public override GameObject Prefab => Main.Cheese.Prefab; //Filler line until Models are made
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("GrilledCheeseXToppings");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.Large;
@@ -41,15 +41,25 @@ namespace GrilledCheese.GrilledCheeseProcess
                     Main.TomatoSlice
                 }
             }
-            /*
-              public override void OnRegister(GameDataObject gameDataObject)
-            {
-
-                // setup materials on prefab
-
-                Prefab.GetComponent<MyItemGroupView>()?.Setup();
-             }
-            */
         };
+        public override void OnRegister(GameDataObject gameDataObject)
+        {
+
+            var materials = new Material[]
+            {
+                MaterialUtils.GetExistingMaterial("Bread - Inside Cooked"),
+             };
+            MaterialUtils.ApplyMaterial(Prefab, "Bread Bottom", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "Bread Top", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Bread - Cooked");
+            MaterialUtils.ApplyMaterial(Prefab, "Bread Bottom)", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "Bread Top", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
+            MaterialUtils.ApplyMaterial(Prefab, "Cheese", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Butter\"");
+            MaterialUtils.ApplyMaterial(Prefab, "Butter", materials);
+
+            Prefab.GetComponent<MyItemGroupView>()?.Setup(Prefab);
+        }        
     }
 }

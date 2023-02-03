@@ -9,7 +9,7 @@ namespace GrilledCheese.AppleCrisp
     class CookedAppleCrisp : CustomItem
     {
         public override string UniqueNameID => "Cooked Apple Crisp";
-        public override GameObject Prefab => Main.CookedDumplings.Prefab; // Temp prefab until models are made
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("CookedAppleCrisp");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.Medium;
@@ -25,27 +25,21 @@ namespace GrilledCheese.AppleCrisp
                 Result = Main.BurntAppleCrisp
             }
         };
-        /*
+        
         public override void OnRegister(GameDataObject gameDataObject)
         {
             var materials = new Material[]
             {
-                   MaterialUtils.GetExistingMaterial("Metal"),
+                   MaterialUtils.GetExistingMaterial("Plate"),
              };
-            MaterialUtils.ApplyMaterial(Prefab, "Pot/Pot", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Metal Dark");
-            MaterialUtils.ApplyMaterial(Prefab, "Pot/Handles", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Piano White");
-            MaterialUtils.ApplyMaterial(Prefab, "Milk", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Egg Dough\"");
-            MaterialUtils.ApplyMaterial(Prefab, "Mac", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Butter\"");
-            MaterialUtils.ApplyMaterial(Prefab, "Butter", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Cheese - Default");
-            MaterialUtils.ApplyMaterial(Prefab, "Cheese/Shaving0", materials);
-            MaterialUtils.ApplyMaterial(Prefab, "Cheese/Shaving1", materials);
-            MaterialUtils.ApplyMaterial(Prefab, "Cheese/Shaving2", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "Bowl", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Apple Flesh");
+            MaterialUtils.ApplyMaterial(Prefab, "AppleSliced", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Bread - Cooked");
+            MaterialUtils.ApplyMaterial(Prefab, "BreadCrumbs", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Baked Apple");
+            MaterialUtils.ApplyMaterial(Prefab, "Sugar", materials);
         }
-        */
+        
     }
 }

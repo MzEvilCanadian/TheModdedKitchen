@@ -8,7 +8,7 @@ namespace GrilledCheese.Starters.MozzaSticks
 {
     class MaranaraSauce : CustomItemGroup
     {
-        public override string UniqueNameID => "MaranaraSauce";
+        public override string UniqueNameID => "Maranara Sauce";
         public override GameObject Prefab => Main.Cheese.Prefab;
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;

@@ -8,8 +8,8 @@ namespace GrilledCheese.Desserts.AppleRings
 {
     class CookedAppleRings : CustomItem
     {
-        public override string UniqueNameID => "CookedGarlicBread";
-        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("cookedGarlicBread");
+        public override string UniqueNameID => "Cooked Apple Rings";
+        public override GameObject Prefab => Main.Cheese.Prefab;
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.Small;

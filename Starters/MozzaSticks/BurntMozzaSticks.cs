@@ -8,7 +8,7 @@ namespace GrilledCheese.Starters.MozzaSticks
 {
     class BurntMozzaSticks : CustomItem
     {
-        public override string UniqueNameID => "Cooked Mozza Sticks";
+        public override string UniqueNameID => "Burnt Mozza Sticks";
         public override GameObject Prefab => Main.CookedDumplings.Prefab; // Temp prefab until models are made
         public override ItemCategory ItemCategory => ItemCategory.Generic;
 
