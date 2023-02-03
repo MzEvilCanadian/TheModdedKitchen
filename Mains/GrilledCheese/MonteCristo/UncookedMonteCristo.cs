@@ -72,15 +72,16 @@ namespace GrilledCheese.MonteCristoProcess
     }
     public class MyItemGroupView : ItemGroupView
     {
-        internal void Setup(GameObject prefab) =>
+        internal void Setup(GameObject prefab)
+        {
             // This tells which sub-object of the prefab corresponds to each component of the ItemGroup
             // All of these sub-objects are hidden unless the item is present
             ComponentGroups = new()
             {
                 new()
                 {
-                    Objects = new() 
-                    { 
+                    Objects = new()
+                    {
                         GameObjectUtils.GetChildObject(prefab, "Bread Bottom"),
                         GameObjectUtils.GetChildObject(prefab, "Bread Top")
                     },
@@ -96,11 +97,7 @@ namespace GrilledCheese.MonteCristoProcess
                     GameObject = GameObjectUtils.GetChildObject(prefab, "Pork"),
                     Item = Main.Ham
                 },
-                new()
-                {
-                    GameObject = GameObjectUtils.GetChildObject(prefab, "Egg"),
-                    Item = Main.EggCracked
-                }
             };
+        }
     }
 }
