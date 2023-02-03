@@ -79,13 +79,12 @@ namespace GrilledCheese.MonteCristoProcess
             {
                 new()
                 {
-                    GameObject = GameObjectUtils.GetChildObject(prefab, "Bread Bottom"),
+                    Objects = new() 
+                    { 
+                        GameObjectUtils.GetChildObject(prefab, "Bread Bottom"),
+                        GameObjectUtils.GetChildObject(prefab, "Bread Top")
+                    },
                     Item = Main.BreadSlice
-                },
-                new()
-                {
-                    GameObject = GameObjectUtils.GetChildObject(prefab, "Bread Top"),
-                    Item = Main.BreadSlice,
                 },
                 new()
                 {
@@ -97,6 +96,11 @@ namespace GrilledCheese.MonteCristoProcess
                     GameObject = GameObjectUtils.GetChildObject(prefab, "Pork"),
                     Item = Main.Ham
                 },
+                new()
+                {
+                    GameObject = GameObjectUtils.GetChildObject(prefab, "Egg"),
+                    Item = Main.EggCracked
+                }
             };
     }
 }

@@ -77,12 +77,11 @@ namespace GrilledCheese.GrilledCheeseProcess
             {
                 new()
                 {
-                    GameObject = GameObjectUtils.GetChildObject(prefab, "Bread Bottom"),
-                    Item = Main.BreadSlice
-                },
-                new()
-                {
-                    GameObject = GameObjectUtils.GetChildObject(prefab, "Bread Top"),
+                    Objects = new()
+                    {
+                        GameObjectUtils.GetChildObject(prefab, "Bread Bottom"),
+                        GameObjectUtils.GetChildObject(prefab, "Bread Top")
+                    },
                     Item = Main.BreadSlice
                 },
                 new()
