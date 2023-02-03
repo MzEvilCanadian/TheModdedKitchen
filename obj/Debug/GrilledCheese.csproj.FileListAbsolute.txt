@@ -1,7 +1,0 @@
-C:\Users\Amber-PC2\source\repos\GrilledCheese\GrilledCheese\bin\Debug\GrilledCheese.dll.config
-C:\Users\Amber-PC2\source\repos\GrilledCheese\GrilledCheese\bin\Debug\GrilledCheese.dll
-C:\Users\Amber-PC2\source\repos\GrilledCheese\GrilledCheese\bin\Debug\GrilledCheese.pdb
-C:\Users\Amber-PC2\source\repos\GrilledCheese\GrilledCheese\obj\Debug\GrilledCheese.csproj.CoreCompileInputs.cache
-C:\Users\Amber-PC2\source\repos\GrilledCheese\GrilledCheese\obj\Debug\GrilledCheese.dll
-C:\Users\Amber-PC2\source\repos\GrilledCheese\GrilledCheese\obj\Debug\GrilledCheese.pdb
-C:\Users\Amber-PC2\source\repos\GrilledCheese\GrilledCheese\obj\Debug\GrilledCheese.csproj.AssemblyReference.cache

@@ -1,112 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1E324F84-CA28-4BE2-8771-ED6C2E3D1664}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>GrilledCheese</RootNamespace>
-    <AssemblyName>GrilledCheese</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <LangVersion>latest</LangVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Desserts\AppleCrisp\AppleCrispDish.cs" />
-    <Compile Include="Desserts\AppleCrisp\BurntAppleCrisp.cs" />
-    <Compile Include="Desserts\AppleCrisp\CookedAppleCrisp.cs" />
-    <Compile Include="Desserts\AppleCrisp\UncookedAppleCrisp.cs" />
-    <Compile Include="Desserts\ApplePiewIceCream\ApplePiewIceCream.cs" />
-    <Compile Include="Desserts\ApplePiewIceCream\ApplePiewIceCreamDish.cs" />
-    <Compile Include="Desserts\AppleRings\AppleRingsDish.cs" />
-    <Compile Include="Desserts\AppleRings\BurntAppleRings.cs" />
-    <Compile Include="Desserts\AppleRings\CookedAppleRings.cs" />
-    <Compile Include="Desserts\AppleRings\UncookedAppleRings.cs" />
-    <Compile Include="Starters\Bruschetta\AssembledBruschetta.cs" />
-    <Compile Include="Starters\Bruschetta\BruschettaDish.cs" />
-    <Compile Include="Starters\Bruschetta\BurntBruschetta.cs" />
-    <Compile Include="Starters\Bruschetta\CookedBread.cs" />
-    <Compile Include="Starters\Bruschetta\PlatedBruschetta.cs" />
-    <Compile Include="Starters\Bruschetta\UncookedBruschetta.cs" />
-    <Compile Include="Desserts\ChocolatePuddingPie\ChocolatePuddingPieA.cs" />
-    <Compile Include="Desserts\ChocolatePuddingPie\ChocolatePuddingPieDish.cs" />
-    <Compile Include="Desserts\ChocolatePuddingPie\ChocolatePuddingPieServing.cs" />
-    <Compile Include="Starters\GarlicBread\BurntGarlicBread.cs" />
-    <Compile Include="Starters\GarlicBread\CookedGarlicBread.cs" />
-    <Compile Include="Starters\GarlicBread\GarlicBreadDish.cs" />
-    <Compile Include="Starters\GarlicBread\PlatedGarlicBread.cs" />
-    <Compile Include="Starters\GarlicBread\UncookedGarlicBread.cs" />
-    <Compile Include="Sides\MacAndCheese\CookedMacNCheeseHalfPot.cs" />
-    <Compile Include="Sides\MacAndCheese\CookedMacNCheesePot.cs" />
-    <Compile Include="Sides\MacAndCheese\MacNCheeseDish.cs" />
-    <Compile Include="Sides\MacAndCheese\MacNCheeseServing.cs" />
-    <Compile Include="Sides\MacAndCheese\UncookedPot.cs" />
-    <Compile Include="Mains\GrilledCheese\Cards\AdditionalToppings.cs" />
-    <Compile Include="Mains\GrilledCheese\BurnedGrilledCheese.cs" />
-    <Compile Include="Mains\GrilledCheese\Cards\MustardDish.cs" />
-    <Compile Include="Mains\GrilledCheese\Cards\KetchupDish.cs" />
-    <Compile Include="Mains\GrilledCheese\CookedGrilledCheese.cs" />
-    <Compile Include="Mains\GrilledCheese\GrilledCheeseAdditionalToppings.cs" />
-    <Compile Include="Mains\GrilledCheese\GrilledCheeseDish.cs" />
-    <Compile Include="Mains\GrilledCheese\PlatedGrilledCheese.cs" />
-    <Compile Include="Mains\GrilledCheese\UncookedGrilledCheese.cs" />
-    <Compile Include="Main.cs" />
-    <Compile Include="Mains\GrilledCheese\MonteCristo\BurntMonteCristo.cs" />
-    <Compile Include="Mains\GrilledCheese\MonteCristo\CookedMonteCristo.cs" />
-    <Compile Include="Mains\GrilledCheese\MonteCristo\MonteCristoDish.cs" />
-    <Compile Include="Mains\GrilledCheese\MonteCristo\PlatedMonteCristo.cs" />
-    <Compile Include="Mains\GrilledCheese\MonteCristo\UncookedMonteCristo.cs" />
-    <Compile Include="Registry\ILocalisedRecipeHolder.cs" />
-    <Compile Include="Registry\ModDish.cs" />
-    <Compile Include="Registry\ModRegistry.cs" />
-    <Compile Include="Starters\MozzaSticks\BurntMozzaSticks.cs" />
-    <Compile Include="Starters\MozzaSticks\CombinedMozzaSticks.cs" />
-    <Compile Include="Starters\MozzaSticks\CookedMozzaSticks.cs" />
-    <Compile Include="Starters\MozzaSticks\MaranaraSauce.cs" />
-    <Compile Include="Starters\MozzaSticks\MozzaSticksDish.cs" />
-    <Compile Include="Starters\MozzaSticks\UncookedMozzaSticks.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-  </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\Yariazen.PlateUp.ModBuildUtilities.1.6.16\build\Yariazen.PlateUp.ModBuildUtilities.targets" Condition="Exists('..\packages\Yariazen.PlateUp.ModBuildUtilities.1.6.16\build\Yariazen.PlateUp.ModBuildUtilities.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Yariazen.PlateUp.ModBuildUtilities.1.6.16\build\Yariazen.PlateUp.ModBuildUtilities.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Yariazen.PlateUp.ModBuildUtilities.1.6.16\build\Yariazen.PlateUp.ModBuildUtilities.targets'))" />
-  </Target>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net472</TargetFramework>
+		<Configurations>Release;Debug</Configurations>
+		<AssemblyName>$(MSBuildProjectName)-Workshop</AssemblyName>
+		<LangVersion>latest</LangVersion>
+		<NoWarn>CS0114</NoWarn>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<!-- Where you want the content/ folder to go (the parent of this folder is your "workshop folder" when uploading). By default, this is the root folder of the project. -->
+		<WorkshopDir>$(ProjectDir)content</WorkshopDir>
+		
+		<!-- ASSET BUNDLES -->
+
+		<!-- Set the next line to 'true' if you have an asset bundle -->
+		<EnableAssetBundleDeploy>true</EnableAssetBundleDeploy>
+		<!-- Change this if your mod.assets is located elsewhere than the default location -->
+		<AssetBundlePath>$(ProjectDir)content\mod.assets</AssetBundlePath>
+	</PropertyGroup>
+	
+	<!-- Exclude build artifacts and Unity project -->
+	<ItemGroup>
+	  <Compile Remove="content\**" />
+	  <Compile Remove="UnityProject\**" />
+	  <EmbeddedResource Remove="content\**" />
+	  <EmbeddedResource Remove="UnityProject\**" />
+	  <None Remove="content\**" />
+	  <None Remove="UnityProject\**" />
+	</ItemGroup>
+	
+	<!-- Exclude workshop metadata -->
+	<ItemGroup>
+	  <None Remove="plateup_mod_metadata.json" />
+	  <None Remove="*.png" />
+	</ItemGroup>
+  
+	<ItemGroup>
+		<PackageReference Include="MessagePack.Annotations" Version="2.4.59" />
+		<PackageReference Include="Yariazen.PlateUp.ModBuildUtilities" Version="1.6.16" />
+	
+		<!-- For if you build KitchenLib locally -->
+		<Reference Include="KitchenLib">
+			<HintPath>$(PlateUpGameFolder)\Mods\KitchenLib\content\KitchenLib-Workshop.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<Target Name="BundleWorkshop" AfterTargets="Build" Condition="$(EnableModDeployLocal) == 'true'">
+		<Copy SourceFiles="$(TargetDir)$(MSBuildProjectName)-Workshop.dll" DestinationFolder="$(WorkshopDir)" />
+	</Target>
 </Project>
