@@ -12,7 +12,7 @@ namespace GrilledCheese.AppleCrisp
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("CookedAppleCrisp");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
-        public override ItemValue ItemValue => ItemValue.Medium;
+        public override ItemValue ItemValue => ItemValue.Small;
         public override string ColourBlindTag => "CAC";
 
         public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
@@ -34,7 +34,7 @@ namespace GrilledCheese.AppleCrisp
              };
             MaterialUtils.ApplyMaterial(Prefab, "Bowl", materials);
             materials[0] = MaterialUtils.GetExistingMaterial("Apple Flesh");
-            MaterialUtils.ApplyMaterial(Prefab, "AppleSliced", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "AppleSlices", materials);
             materials[0] = MaterialUtils.GetExistingMaterial("Bread - Cooked");
             MaterialUtils.ApplyMaterial(Prefab, "BreadCrumbs", materials);
             materials[0] = MaterialUtils.GetExistingMaterial("Baked Apple");

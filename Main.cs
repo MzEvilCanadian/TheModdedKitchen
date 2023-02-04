@@ -24,6 +24,7 @@ using GrilledCheese.Starters.GarlicBread;
 using GrilledCheese.Desserts.ChocolatePuddingPie;
 using GrilledCheese.Desserts.AppleRings;
 using GrilledCheese.GrilledCheeseXToppings;
+using MacNCheese.Dishes;
 
 namespace GrilledCheese
 {
@@ -31,7 +32,7 @@ namespace GrilledCheese
     {
         internal const string MOD_ID = "MzEvil'sKitchen";
         internal const string MOD_NAME = "MzEvil's Kitchen";
-        internal const string MOD_VERSION = "0.0.9";
+        internal const string MOD_VERSION = "0.1.0";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
@@ -61,7 +62,7 @@ namespace GrilledCheese
         internal static Item Apple => GetExistingGDO<Item>(ItemReference.Apple);
         internal static Item AppleSlices => GetExistingGDO<Item>(ItemReference.AppleSlices);
         internal static Item Sugar => GetExistingGDO<Item>(ItemReference.Sugar);
-        internal static Item BreadCrumbs => GetExistingGDO<Item>(ItemReference.BreadBaked);
+        internal static Item BreadCrumbs => GetExistingGDO<Item>(ItemReference.Breadcrumbs);
         internal static Item VanillaIceCream => GetExistingGDO<Item>(ItemReference.IceCreamVanilla);
         internal static Item ApplePie => GetExistingGDO<Item>(ItemReference.PieAppleCooked);
         internal static Item Oil => GetExistingGDO<Item>(ItemReference.Oil);
@@ -172,26 +173,27 @@ namespace GrilledCheese
 
             // Dishes
                 // Starters
-         //   AddGameDataObject<BruschettaDish>();
-         //   AddGameDataObject<Dishes.GarlicBreadDish>();
-         //   AddGameDataObject<MozzaSticksDish>();       // No Models yet. Not Tested
+            AddGameDataObject<BruschettaDish>();
+            AddGameDataObject<Dishes.GarlicBreadDish>();
+        //   AddGameDataObject<MozzaSticksDish>();       // No Models yet. Not Tested
+            AddGameDataObject<MacNCheeseDish>();        // Side but wont show when merged on the plate
 
-                // Mains
+            // Mains
             AddGameDataObject<GrilledCheeseDish>();     
             AddGameDataObject<MonteCristoDish>();       
 
                 // Extras
-        //    AddGameDataObject<KetchupDish>();
-        //    AddGameDataObject<MustardDish>();
+            AddGameDataObject<KetchupDish>();
+            AddGameDataObject<MustardDish>();
             AddGameDataObject<AdditionalToppings>();    
 
                 // Sides
-        //    AddGameDataObject<MacNCheeseDish>();        // Currently broken, wont show when merged on the plate
+         
 
             // Desserts
-         //   AddGameDataObject<ChocolatePuddingPieDish>();
+            AddGameDataObject<ChocolatePuddingPieDish>();
          //   AddGameDataObject<AppleRingsDish>();        // No Models Yet. Not tested
-         //   AddGameDataObject<AppleCrispDish>();        // Not tested
+            AddGameDataObject<AppleCrispDish>();        
 
 
 

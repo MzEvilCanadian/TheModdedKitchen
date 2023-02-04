@@ -9,7 +9,7 @@ namespace GrilledCheese.AppleCrisp
     class BurntAppleCrisp : CustomItem
     {
         public override string UniqueNameID => "Burnt Apple Crisp";
-        public override GameObject Prefab => Main.Cheese.Prefab;
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("BurntAppleCrisp");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override string ColourBlindTag => "BAC";   
         public override void OnRegister(GameDataObject gameDataObject)
@@ -19,10 +19,13 @@ namespace GrilledCheese.AppleCrisp
                    MaterialUtils.GetExistingMaterial("Plate"),
              };
             MaterialUtils.ApplyMaterial(Prefab, "Bowl", materials);
+
             materials[0] = MaterialUtils.GetExistingMaterial("Burned");
             MaterialUtils.ApplyMaterial(Prefab, "AppleSlices", materials);
+
             materials[0] = MaterialUtils.GetExistingMaterial("Burned - Light");
             MaterialUtils.ApplyMaterial(Prefab, "BreadCrumbs", materials);
+
             materials[0] = MaterialUtils.GetExistingMaterial("Burned");
             MaterialUtils.ApplyMaterial(Prefab, "Sugar", materials);
         }

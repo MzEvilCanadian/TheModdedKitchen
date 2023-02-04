@@ -13,7 +13,8 @@ namespace MacNCheese.Customs.MacNCheeseProcess
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Mac and Cheese");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
-        public override bool IsMergeableSide =>  true;
+        public override ItemValue ItemValue => ItemValue.Small;
+        //public override bool IsMergeableSide =>  true;
 
         public override void OnRegister(GameDataObject gameDataObject)
           {

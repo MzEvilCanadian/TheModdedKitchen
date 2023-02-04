@@ -52,6 +52,7 @@ namespace GrilledCheese.GrilledCheeseProcess
             MaterialUtils.ApplyMaterial(Prefab, "Bread Top", materials);
 
             materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
+            materials[1] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
             MaterialUtils.ApplyMaterial(Prefab, "Cheese", materials);
 
             materials[0] = MaterialUtils.GetExistingMaterial("Plate");

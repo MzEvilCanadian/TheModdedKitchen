@@ -60,15 +60,20 @@ namespace GrilledCheese.AppleCrisp
         {
             var materials = new Material[]
             {
-                MaterialUtils.GetExistingMaterial("Apple Flesh"),
-                MaterialUtils.GetExistingMaterial("Apple Green"),
+                MaterialUtils.GetExistingMaterial("AppleRed"),
                 MaterialUtils.GetExistingMaterial("Baked Apple"),
+                MaterialUtils.GetExistingMaterial("Apple Flesh"),
                 MaterialUtils.GetExistingMaterial("Baked Apple"),
             };
             MaterialUtils.ApplyMaterial(Prefab, "Apple", materials);
+
             materials[0] = MaterialUtils.GetExistingMaterial("Sugar");
             MaterialUtils.ApplyMaterial(Prefab, "Sugar", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Bread - Inside Cooked");
+
+            materials[0] = MaterialUtils.GetExistingMaterial("Bread");
+            materials[1] = MaterialUtils.GetExistingMaterial("Bread");
+            materials[2] = MaterialUtils.GetExistingMaterial("Bread");
+            materials[3] = MaterialUtils.GetExistingMaterial("Bread");
             MaterialUtils.ApplyMaterial(Prefab, "BreadCrumbs", materials);
 
             Prefab.GetComponent<MyItemGroupView>()?.Setup(Prefab);
@@ -94,7 +99,7 @@ namespace GrilledCheese.AppleCrisp
                 },
                 new()
                 {
-                    GameObject = GameObjectUtils.GetChildObject(prefab, "Breadcrumbs"),
+                    GameObject = GameObjectUtils.GetChildObject(prefab, "BreadCrumbs"),
                     Item = Main.BreadCrumbs
                 }
             };

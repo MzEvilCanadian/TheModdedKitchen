@@ -10,9 +10,7 @@ namespace GrilledCheese.Dishes
     class MustardDish : ModDish
     {
         public override DishType Type => DishType.Extra;
-        public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Medium;
-
         public override CardType CardType => CardType.Default;
         public override bool IsUnlockable => true;
         public HashSet<Dish> PrerequisiteDishes => new HashSet<Dish>()

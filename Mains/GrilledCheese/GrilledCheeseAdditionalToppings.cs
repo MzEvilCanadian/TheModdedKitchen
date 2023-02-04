@@ -58,6 +58,7 @@ namespace GrilledCheese.GrilledCheeseXToppings
             MaterialUtils.ApplyMaterial(Prefab, "Plate", materials);
 
             materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
+            materials[1] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
             MaterialUtils.ApplyMaterial(Prefab, "Cheese", materials);
 
             materials[0] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Bacon\"");

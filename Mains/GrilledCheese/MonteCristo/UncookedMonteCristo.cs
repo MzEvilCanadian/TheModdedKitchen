@@ -62,7 +62,9 @@ namespace GrilledCheese.MonteCristoProcess
             MaterialUtils.ApplyMaterial(Prefab, "Bread Top", materials);
 
             materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
+            materials[1] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
             MaterialUtils.ApplyMaterial(Prefab, "Cheese", materials);
+
             materials[0] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Bacon\"");
             MaterialUtils.ApplyMaterial(Prefab, "Pork", materials);
 
@@ -96,11 +98,6 @@ namespace GrilledCheese.MonteCristoProcess
                     GameObject = GameObjectUtils.GetChildObject(prefab, "Pork"),
                     Item = Main.Ham
                 },
-                new()
-                {
-                    GameObject = GameObjectUtils.GetChildObject(prefab, "Egg"),
-                    Item = Main.EggCracked
-                }
             };
     }
 }
