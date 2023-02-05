@@ -17,28 +17,12 @@ namespace GrilledCheese.Desserts.AppleRings
         {
             new ItemGroup.ItemSet()
             {
-                Max = 1,
-                Min = 1,
+                Max = 3,
+                Min = 3,
                 Items = new List<Item>()
                 {
-                    Main.Apple
-                }
-            },
-            new ItemGroup.ItemSet()
-            {
-                Max = 1,
-                Min = 1,
-                Items = new List<Item>()
-                {
-                    Main.Sugar
-                }
-            },
-            new ItemGroup.ItemSet()
-            {
-                Max = 1,
-                Min = 1,
-                Items = new List<Item>()
-                {
+                    Main.Apple,
+                    Main.Sugar,
                     Main.Cinnamon
                 }
             }

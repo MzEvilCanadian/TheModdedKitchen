@@ -18,28 +18,12 @@ namespace GrilledCheese.AppleCrisp
         {
             new ItemGroup.ItemSet()
             {
-                Max = 1,
-                Min = 1,
+                Max = 3,
+                Min = 3,
                 Items = new List<Item>()
                 {
-                    Main.AppleSlices
-                }
-            },
-            new ItemGroup.ItemSet()
-            {
-                Max = 1,
-                Min = 1,
-                Items = new List<Item>()
-                {
-                    Main.Sugar
-                }
-            },
-            new ItemGroup.ItemSet()
-            {
-                Max = 1,
-                Min = 1,
-                Items = new List<Item>()
-                {
+                    Main.AppleSlices,
+                    Main.Sugar,
                     Main.BreadCrumbs
                 }
             }

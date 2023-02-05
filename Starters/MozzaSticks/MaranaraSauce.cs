@@ -17,19 +17,11 @@ namespace GrilledCheese.Starters.MozzaSticks
         {
             new ItemGroup.ItemSet()
             {
-                Max = 1,
-                Min = 1,
+                Max = 2,
+                Min = 2,
                 Items = new List<Item>()
                 {
-                    Main.OilIngredient
-                }
-            },
-            new ItemGroup.ItemSet()
-            {
-                Max = 1,
-                Min = 1,
-                Items = new List<Item>()
-                {
+                    Main.OilIngredient,
                     Main.TomatoSauce
                 }
             }

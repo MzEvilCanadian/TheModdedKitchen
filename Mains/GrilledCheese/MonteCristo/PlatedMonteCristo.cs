@@ -23,7 +23,6 @@ namespace GrilledCheese.MonteCristoProcess
             {
                 Max = 1,
                 Min = 1,
-                IsMandatory = true,
                 Items = new List<Item>()
                 {
                     Main.CookedMonteCristo
@@ -34,22 +33,9 @@ namespace GrilledCheese.MonteCristoProcess
             {
                 Max = 1,
                 Min = 1,
-                IsMandatory = true,
                 Items = new List<Item>()
                 {
                     Main.Plate
-                }
-            },
-            new ItemGroup.ItemSet()
-            {
-                Max = 2,
-                Min = 0,
-                IsMandatory = false,
-                RequiresUnlock = true,
-                Items = new List<Item>()
-                {
-                    Main.Bacon,
-                    Main.TomatoSlice
                 }
             }
         };

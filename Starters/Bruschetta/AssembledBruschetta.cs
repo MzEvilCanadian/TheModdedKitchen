@@ -29,19 +29,11 @@ namespace GrilledCheese.Starters.Bruschetta
             },
             new ItemGroup.ItemSet()
             {
-                Max = 1,
-                Min = 1,
+                Max = 2,
+                Min = 2,
                 Items = new List<Item>()
                 {
-                    Main.TomatoSlice
-                }
-            },
-                        new ItemGroup.ItemSet()
-            {
-                Max = 1,
-                Min = 1,
-                Items = new List<Item>()
-                {
+                    Main.TomatoSlice,
                     Main.OnionChopped
                 }
             }
