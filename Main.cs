@@ -25,6 +25,7 @@ using GrilledCheese.Desserts.ChocolatePuddingPie;
 using GrilledCheese.Desserts.AppleRings;
 using GrilledCheese.GrilledCheeseXToppings;
 using MacNCheese.Dishes;
+using KitchenLib.Customs;
 
 namespace GrilledCheese
 {
@@ -75,9 +76,9 @@ namespace GrilledCheese
         internal static Item Plate => GetExistingGDO<Item>(ItemReference.Plate);
         internal static Item DirtyPlate => GetExistingGDO<Item>(ItemReference.PlateDirty);
         internal static Item Ketchup => GetExistingGDO<Item>(ItemReference.CondimentKetchup);
-        internal static Item Mustard => GetExistingGDO <Item>(ItemReference.CondimentMustard);
+        internal static Item Mustard => GetExistingGDO<Item>(ItemReference.CondimentMustard);
         internal static Item Pot => GetExistingGDO<Item>(ItemReference.Pot);
-        internal static Item Water => GetExistingGDO <Item> (ItemReference.Water);
+        internal static Item Water => GetExistingGDO<Item>(ItemReference.Water);
         internal static Item ServingBoard => GetExistingGDO<Item>(ItemReference.ServingBoard);
 
         // Ingredients Lib Ingredients
@@ -166,34 +167,43 @@ namespace GrilledCheese
             Debug.Log($"{MOD_NAME} {MOD_VERSION} {MOD_AUTHOR}: Loaded");
             Debug.Log($"Assets Loaded From {bundlePath}");
         }
+
         public override void PostActivate(KitchenMods.Mod mod)
         {
             base.PostActivate(mod);
             bundle = mod.GetPacks<AssetBundleModPack>().SelectMany(e => e.AssetBundles).ToList()[0];
 
+            Events.BuildGameDataEvent += delegate (object s, BuildGameDataEventArgs args)
+            {
+                Find<Unlock, AdditionalToppings>().BlockedBy.Clear();
+                Find<Unlock, KetchupDish>().BlockedBy.Clear();
+                Find<Unlock, MustardDish>().BlockedBy.Clear();
+                Find<Unlock, MonteCristoDish>().BlockedBy.Clear();
+            };
+
             // Dishes
-                // Starters
+            // Starters
             AddGameDataObject<BruschettaDish>();
             AddGameDataObject<Dishes.GarlicBreadDish>();
-        //   AddGameDataObject<MozzaSticksDish>();       // No Models yet. Not Tested
+            //   AddGameDataObject<MozzaSticksDish>();       // No Models yet. Not Tested
             AddGameDataObject<MacNCheeseDish>();        // Side but wont show when merged on the plate
 
             // Mains
-            AddGameDataObject<GrilledCheeseDish>();     
-            AddGameDataObject<MonteCristoDish>();       
+            AddGameDataObject<GrilledCheeseDish>();
+            AddGameDataObject<MonteCristoDish>();
 
-                // Extras
+            // Extras
             AddGameDataObject<KetchupDish>();
             AddGameDataObject<MustardDish>();
-            AddGameDataObject<AdditionalToppings>();    
+            AddGameDataObject<AdditionalToppings>();
 
-                // Sides
-         
+            // Sides
+
 
             // Desserts
             AddGameDataObject<ChocolatePuddingPieDish>();
-         //   AddGameDataObject<AppleRingsDish>();        // No Models Yet. Not tested
-            AddGameDataObject<AppleCrispDish>();        
+            //   AddGameDataObject<AppleRingsDish>();        // No Models Yet. Not tested
+            AddGameDataObject<AppleCrispDish>();
 
 
 
@@ -272,6 +282,16 @@ namespace GrilledCheese
         internal static T Find<T>(int id) where T : GameDataObject
         {
             return (T)GDOUtils.GetExistingGDO(id) ?? (T)GDOUtils.GetCustomGameDataObject(id)?.GameDataObject;
+        }
+
+        internal static T Find<T, C>() where T : GameDataObject where C : CustomGameDataObject
+        {
+            return GDOUtils.GetCastedGDO<T, C>();
+        }
+
+        internal static T Find<T>(string modName, string name) where T : GameDataObject
+        {
+            return GDOUtils.GetCastedGDO<T>(modName, name);
         }
     }
 }

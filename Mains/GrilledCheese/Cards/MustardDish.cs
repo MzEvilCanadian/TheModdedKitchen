@@ -14,7 +14,7 @@ namespace GrilledCheese.Dishes
         public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
         public override CardType CardType => CardType.Default;
         public override bool IsUnlockable => true;
-        public HashSet<Dish> PrerequisiteDishes => new HashSet<Dish>()
+        public override List<Unlock> HardcodedRequirements => new()
         {
             Main.GrilledCheeseDish
         };

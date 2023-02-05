@@ -16,10 +16,11 @@ namespace GrilledCheese.Dishes
         public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
         public override CardType CardType => CardType.Default;
         public override bool IsUnlockable => true;
-        public  HashSet<Dish> PrerequisiteDishes => new HashSet<Dish>()
-        {
+        public override List<Unlock> HardcodedRequirements => new () 
+        { 
             Main.GrilledCheeseDish
         };
+
 
         public override List<Dish.MenuItem> ResultingMenuItems => new List<Dish.MenuItem>
         {
