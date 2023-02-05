@@ -7,15 +7,16 @@ using KitchenLib.References;
 
 namespace GrilledCheese.Dishes
 {
-    class MonteCristoDish : ModDish
+    class AdditionalToppings : ModDish
     {
-        public override string UniqueNameID => "Monte Cristo Dish";
+        public override string UniqueNameID => "Grilled Cheese Extras";
         public override DishType Type => DishType.Main;
         public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Medium;
+        public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
         public override CardType CardType => CardType.Default;
         public override bool IsUnlockable => true;
-        public HashSet<Dish> PrerequisiteDishes => new HashSet<Dish>()
+        public  HashSet<Dish> PrerequisiteDishes => new HashSet<Dish>()
         {
             Main.GrilledCheeseDish
         };
@@ -24,33 +25,42 @@ namespace GrilledCheese.Dishes
         {
             new Dish.MenuItem
             {
-                Item = Main.PlatedMonteCristo,
-                Phase = MenuPhase.Main,
-                Weight = 1,
+               Item = Main.GrilledCheeseBacon,
+               Phase = MenuPhase.Main,
+               Weight = 1
+            },
+            new Dish.MenuItem
+            {
+               Item = Main.GrilledCheeseTomato,
+               Phase = MenuPhase.Main,
+               Weight = 1
+            },
+            new Dish.MenuItem
+            {
+               Item = Main.GrilledCheeseBT,
+               Phase = MenuPhase.Main,
+               Weight = 1
             }
         };
         public override HashSet<Item> MinimumIngredients => new HashSet<Item>
         {
-            Main.Cheese,
-            Main.Flour,
-            Main.Butter,
-            Main.Pork,
-            Main.Egg
+            Main.Tomato,
+            Main.Pork
         };
         public override HashSet<Process> RequiredProcesses => new HashSet<Process>
         {
-            Main.Oven,
+            Main.Cook,
             Main.Chop,
-            Main.Knead,
         };
 
         public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
         {
-            { Locale.English, "Knead flour into dough and cook. Combine two bread slices with a cracked egg, cheese, and cooked ham then cook. It assists with revenge." }
+            { Locale.English, "Cut pork into bacon strips and cook. Slice Tomatos. Add to the plate." }
         };
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {
-            { Locale.English, LocalisationUtils.CreateUnlockInfo("Monte Cristo - Grilled Cheese", "Adds Monte Cristo sandwich as a Main", "Ham and cheese between french toast. Yummm.") }
+            { Locale.English, LocalisationUtils.CreateUnlockInfo("Grilled Cheese Toppings", "Adds Bacon and Tomato slices for Grilled Cheese", "Ohhhh yeahh.") }
         };
+
     }
 }

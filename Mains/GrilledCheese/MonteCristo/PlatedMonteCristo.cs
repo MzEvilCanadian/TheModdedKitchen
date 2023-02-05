@@ -11,8 +11,7 @@ namespace GrilledCheese.MonteCristoProcess
         public override string UniqueNameID => "Plated Monte Cristo";
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Monte Cristo");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
-        public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
-        public override ItemValue ItemValue => ItemValue.Large;
+        public override ItemValue ItemValue => ItemValue.MediumLarge;
         public override Item DisposesTo => Main.Plate;
         public override Item DirtiesTo => Main.DirtyPlate;
         public override string ColourBlindTag => "PMC";
@@ -59,7 +58,7 @@ namespace GrilledCheese.MonteCristoProcess
 
             var materials = new Material[]
             {
-                MaterialUtils.GetExistingMaterial("Bread - Inside Cooked"),
+                MaterialUtils.GetExistingMaterial("IngredientLib - \"Egg Dough\""),
                 MaterialUtils.GetExistingMaterial("Bread - Cooked")
             };
             MaterialUtils.ApplyMaterial(Prefab, "Bread Bottom", materials);

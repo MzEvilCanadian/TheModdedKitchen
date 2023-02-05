@@ -53,6 +53,8 @@
     <Compile Include="Desserts\AppleRings\BurntAppleRings.cs" />
     <Compile Include="Desserts\AppleRings\CookedAppleRings.cs" />
     <Compile Include="Desserts\AppleRings\UncookedAppleRings.cs" />
+    <Compile Include="Mains\GrilledCheese\Cards\AdditionalToppings\GrilledCheeseTomato.cs" />
+    <Compile Include="Mains\GrilledCheese\Cards\AdditionalToppings\GrilledCheeseBacon.cs" />
     <Compile Include="Starters\Bruschetta\AssembledBruschetta.cs" />
     <Compile Include="Starters\Bruschetta\BruschettaDish.cs" />
     <Compile Include="Starters\Bruschetta\BurntBruschetta.cs" />
@@ -72,12 +74,12 @@
     <Compile Include="Sides\MacAndCheese\MacNCheeseDish.cs" />
     <Compile Include="Sides\MacAndCheese\MacNCheeseServing.cs" />
     <Compile Include="Sides\MacAndCheese\UncookedPot.cs" />
-    <Compile Include="Mains\GrilledCheese\Cards\AdditionalToppings.cs" />
+    <Compile Include="Mains\GrilledCheese\Cards\AdditionalToppings\AdditionalToppings.cs" />
     <Compile Include="Mains\GrilledCheese\BurnedGrilledCheese.cs" />
     <Compile Include="Mains\GrilledCheese\Cards\MustardDish.cs" />
     <Compile Include="Mains\GrilledCheese\Cards\KetchupDish.cs" />
     <Compile Include="Mains\GrilledCheese\CookedGrilledCheese.cs" />
-    <Compile Include="Mains\GrilledCheese\GrilledCheeseAdditionalToppings.cs" />
+    <Compile Include="Mains\GrilledCheese\Cards\AdditionalToppings\GrilledCheeseBT.cs" />
     <Compile Include="Mains\GrilledCheese\GrilledCheeseDish.cs" />
     <Compile Include="Mains\GrilledCheese\PlatedGrilledCheese.cs" />
     <Compile Include="Mains\GrilledCheese\UncookedGrilledCheese.cs" />

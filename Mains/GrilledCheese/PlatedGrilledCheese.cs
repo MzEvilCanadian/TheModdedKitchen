@@ -12,8 +12,7 @@ namespace GrilledCheese.GrilledCheeseProcess
         public override string UniqueNameID => "Plated Grilled Cheese";
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Grilled Cheese");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
-        public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
-        public override ItemValue ItemValue => ItemValue.Large;
+        public override ItemValue ItemValue => ItemValue.MediumLarge;
         public override Item DisposesTo => Main.Plate;
         public override Item DirtiesTo => Main.DirtyPlate;
         public override string ColourBlindTag => "PGC";

@@ -28,7 +28,7 @@ namespace GrilledCheese.MonteCristoProcess
         {
             var materials = new Material[]
             {
-                MaterialUtils.GetExistingMaterial("Bread - Inside Cooked"),
+                MaterialUtils.GetExistingMaterial("IngredientLib - \"Egg Dough\""),
                 MaterialUtils.GetExistingMaterial("Bread - Cooked")
             };
             MaterialUtils.ApplyMaterial(Prefab, "Bread Bottom", materials);
