@@ -19,22 +19,22 @@ namespace GrilledCheese.GrilledCheeseProcess
         {
             new ItemGroup.ItemSet()
             {
-                Max = 1,
-                Min = 1,
+                Max = 2,
+                Min = 2,
                 IsMandatory = true,
                 Items = new List<Item>()
                 {
                     Main.BreadSlice,
+                    Main.GratedCheese,
                 }
             },
             new ItemGroup.ItemSet()
             {
-                Max = 3,
-                Min = 3,
+                Max = 2,
+                Min = 2,
                 Items = new List<Item>()
                 {
                     Main.BreadSlice,
-                    Main.GratedCheese,
                     Main.ButterSlice
                 }
             }

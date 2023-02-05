@@ -19,22 +19,22 @@ namespace GrilledCheese.MonteCristoProcess
         {
             new ItemGroup.ItemSet()
             {
-                Max = 1,
-                Min = 1,
+                Max = 2,
+                Min = 2,
                 IsMandatory = true,
                 Items = new List<Item>()
                 {
-                    Main.BreadSlice
+                    Main.BreadSlice,
+                    Main.GratedCheese
                 }
             },
             new ItemGroup.ItemSet()
             {
-                Max = 4,
-                Min = 4,
+                Max = 3,
+                Min = 3,
                 Items = new List<Item>()
                 {
                     Main.BreadSlice,
-                    Main.GratedCheese,
                     Main.EggCracked,
                     Main.Ham
                 }
@@ -68,6 +68,14 @@ namespace GrilledCheese.MonteCristoProcess
             materials[0] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Bacon\"");
             MaterialUtils.ApplyMaterial(Prefab, "Pork", materials);
 
+            materials[0] = MaterialUtils.GetExistingMaterial("Egg - White");
+            materials[1] = MaterialUtils.GetExistingMaterial("Egg - White");
+            MaterialUtils.ApplyMaterial(Prefab, "Eggwite", materials);
+
+            materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
+            materials[1] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
+            MaterialUtils.ApplyMaterial(Prefab, "Eggyolk", materials);
+
             Prefab.GetComponent<MyItemGroupView>()?.Setup(Prefab);
         }
         
@@ -98,6 +106,16 @@ namespace GrilledCheese.MonteCristoProcess
                     GameObject = GameObjectUtils.GetChildObject(prefab, "Pork"),
                     Item = Main.Ham
                 },
+                new()
+                {
+                    Objects = new()
+                    {
+                        GameObjectUtils.GetChildObject(prefab, "Eggyolk"),
+                        GameObjectUtils.GetChildObject(prefab, "Eggwite")
+                    },
+                    Item = Main.EggCracked,
+                    DrawAll = true
+                }, 
             };
     }
 }

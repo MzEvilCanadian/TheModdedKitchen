@@ -32,7 +32,7 @@ namespace GrilledCheese
     {
         internal const string MOD_ID = "MzEvil'sKitchen";
         internal const string MOD_NAME = "MzEvil's Kitchen";
-        internal const string MOD_VERSION = "0.1.1";
+        internal const string MOD_VERSION = "0.1.2";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
