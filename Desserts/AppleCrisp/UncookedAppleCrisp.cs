@@ -13,7 +13,6 @@ namespace GrilledCheese.AppleCrisp
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("UncookedAppleCrisp");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
-        public override string ColourBlindTag => "UAC";
 
         public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
         {

@@ -16,6 +16,7 @@ namespace GrilledCheese.Starters.GarlicBread
         public override Item DirtiesTo => Main.ServingBoard;
         public override Item DisposesTo => Main.ServingBoard;
         public override int MaxOrderSharers => 2;
+        public override string ColourBlindTag => "GB";
         public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>
         {
             new ItemGroup.ItemSet

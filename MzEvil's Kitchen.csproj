@@ -53,8 +53,6 @@
     <Compile Include="Desserts\AppleRings\BurntAppleRings.cs" />
     <Compile Include="Desserts\AppleRings\CookedAppleRings.cs" />
     <Compile Include="Desserts\AppleRings\UncookedAppleRings.cs" />
-    <Compile Include="Mains\GrilledCheese\Cards\AdditionalToppings\GrilledCheeseTomato.cs" />
-    <Compile Include="Mains\GrilledCheese\Cards\AdditionalToppings\GrilledCheeseBacon.cs" />
     <Compile Include="Starters\Bruschetta\AssembledBruschetta.cs" />
     <Compile Include="Starters\Bruschetta\BruschettaDish.cs" />
     <Compile Include="Starters\Bruschetta\BurntBruschetta.cs" />

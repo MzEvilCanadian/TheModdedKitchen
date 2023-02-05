@@ -10,8 +10,7 @@ namespace GrilledCheese.AppleCrisp
     {
         public override string UniqueNameID => "Burnt Apple Crisp";
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("BurntAppleCrisp");
-        public override ItemCategory ItemCategory => ItemCategory.Generic;
-        public override string ColourBlindTag => "BAC";   
+        public override ItemCategory ItemCategory => ItemCategory.Generic;  
         public override void OnRegister(GameDataObject gameDataObject)
         {
             var materials = new Material[]

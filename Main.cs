@@ -32,7 +32,7 @@ namespace GrilledCheese
     {
         internal const string MOD_ID = "MzEvil'sKitchen";
         internal const string MOD_NAME = "MzEvil's Kitchen";
-        internal const string MOD_VERSION = "0.1.2";
+        internal const string MOD_VERSION = "1.0.0";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
@@ -111,8 +111,6 @@ namespace GrilledCheese
 
         internal static Dish GrilledCheeseDish => GetModdedGDO<Dish, GrilledCheeseDish>();
         internal static ItemGroup GrilledCheeseBT => GetModdedGDO<ItemGroup, GrilledCheeseBT>();
-        internal static ItemGroup GrilledCheeseBacon => GetModdedGDO<ItemGroup, GrilledCheeseBacon>();
-        internal static ItemGroup GrilledCheeseTomato => GetModdedGDO<ItemGroup, GrilledCheeseTomato>();
 
         // Apple Crisp & Apple Pie w Ice Cream
         internal static ItemGroup ApplePiewIceCream => GetModdedGDO<ItemGroup, ApplePieWithIceCream>();
@@ -214,8 +212,6 @@ namespace GrilledCheese
 
             // Cards
             AddGameDataObject<GrilledCheeseBT>();
-            AddGameDataObject<GrilledCheeseBacon>();
-            AddGameDataObject<GrilledCheeseTomato>();
 
             // Mac n Cheese
             AddGameDataObject<UncookedPot>();

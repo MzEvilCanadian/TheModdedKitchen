@@ -14,7 +14,7 @@ namespace GrilledCheese.Dishes
         public override DishType Type => DishType.Starter;
         public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
         public override CardType CardType => CardType.Default;
-        public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Small;
+        public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Medium;
         public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
         public override List<Dish.MenuItem> ResultingMenuItems => new List<Dish.MenuItem>
         {

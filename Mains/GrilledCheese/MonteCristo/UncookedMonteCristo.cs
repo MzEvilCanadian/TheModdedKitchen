@@ -13,7 +13,6 @@ namespace GrilledCheese.MonteCristoProcess
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Uncooked Monte Cristo");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
-        public override string ColourBlindTag => "UMC";
 
         public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
         {
@@ -82,15 +81,16 @@ namespace GrilledCheese.MonteCristoProcess
     }
     public class MyItemGroupView : ItemGroupView
     {
-        internal void Setup(GameObject prefab) =>
+        internal void Setup(GameObject prefab) 
+            {
             // This tells which sub-object of the prefab corresponds to each component of the ItemGroup
             // All of these sub-objects are hidden unless the item is present
             ComponentGroups = new()
             {
                 new()
                 {
-                    Objects = new() 
-                    { 
+                    Objects = new()
+                    {
                         GameObjectUtils.GetChildObject(prefab, "Bread Bottom"),
                         GameObjectUtils.GetChildObject(prefab, "Bread Top")
                     },
@@ -115,7 +115,8 @@ namespace GrilledCheese.MonteCristoProcess
                     },
                     Item = Main.EggCracked,
                     DrawAll = true
-                }, 
+                },
             };
+        }
     }
 }

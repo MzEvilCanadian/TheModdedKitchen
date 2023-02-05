@@ -25,18 +25,6 @@ namespace GrilledCheese.Dishes
         {
             new Dish.MenuItem
             {
-               Item = Main.GrilledCheeseBacon,
-               Phase = MenuPhase.Main,
-               Weight = 1
-            },
-            new Dish.MenuItem
-            {
-               Item = Main.GrilledCheeseTomato,
-               Phase = MenuPhase.Main,
-               Weight = 1
-            },
-            new Dish.MenuItem
-            {
                Item = Main.GrilledCheeseBT,
                Phase = MenuPhase.Main,
                Weight = 1

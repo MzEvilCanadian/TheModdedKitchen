@@ -13,7 +13,7 @@ namespace GrilledCheese.AppleCrisp
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.Small;
-        public override string ColourBlindTag => "CAC";
+        public override string ColourBlindTag => "AC";
 
         public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
         {

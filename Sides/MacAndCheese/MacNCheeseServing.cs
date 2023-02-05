@@ -15,6 +15,7 @@ namespace MacNCheese.Customs.MacNCheeseProcess
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.Small;
         //public override bool IsMergeableSide =>  true;
+        public override string ColourBlindTag => "M&C";
 
         public override void OnRegister(GameDataObject gameDataObject)
           {

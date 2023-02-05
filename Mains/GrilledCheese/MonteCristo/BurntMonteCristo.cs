@@ -11,7 +11,6 @@ namespace GrilledCheese.MonteCristoProcess
         public override string UniqueNameID => "Burned Monte Cristo";
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("BurntMonteCristo");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
-        public override string ColourBlindTag => "BMC";
         
         public override void OnRegister(GameDataObject gameDataObject)
         {

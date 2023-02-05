@@ -13,6 +13,7 @@ namespace GrilledCheese.Desserts.AppleRings
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.Small;
+        public override string ColourBlindTag => "AR";
 
         public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
         {

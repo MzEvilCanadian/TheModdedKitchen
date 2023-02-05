@@ -1,5 +1,6 @@
 ﻿using Kitchen;
 using KitchenData;
+using KitchenLib.Colorblind;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
 using System.Collections.Generic;
@@ -16,8 +17,8 @@ namespace GrilledCheese.GrilledCheeseXToppings
         public override ItemValue ItemValue => ItemValue.Large;
         public override Item DisposesTo => Main.Plate;
         public override Item DirtiesTo => Main.DirtyPlate;
-        public override string ColourBlindTag => "GCBT";
         public override bool CanContainSide => true;
+        
 
         public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
         {
@@ -34,7 +35,7 @@ namespace GrilledCheese.GrilledCheeseXToppings
              new ItemGroup.ItemSet()
             {
                 Max = 2,
-                Min = 2,
+                Min = 1,
                 Items = new List<Item>()
                 {
                     Main.Bacon,
@@ -42,14 +43,20 @@ namespace GrilledCheese.GrilledCheeseXToppings
                 }
             }
         };
+
+        private bool GameDataBuilt = false;
         public override void OnRegister(GameDataObject gameDataObject)
         {
+            if (GameDataBuilt)
+            {
+                return;
+            }
 
             var materials = new Material[]
             {
                 MaterialUtils.GetExistingMaterial("Bread - Inside Cooked"),
                 MaterialUtils.GetExistingMaterial("Bread - Cooked")
-        };
+             };
             MaterialUtils.ApplyMaterial(Prefab, "Bread Bottom", materials);
             MaterialUtils.ApplyMaterial(Prefab, "Bread Top", materials);
 
@@ -79,10 +86,19 @@ namespace GrilledCheese.GrilledCheeseXToppings
             MaterialUtils.ApplyMaterial(Prefab, "Tomato/Tomato Sliced (1)/Skin", materials);
 
             Prefab.GetComponent<MyItemGroupView>()?.Setup(Prefab);
+
+            if (Prefab.TryGetComponent<ItemGroupView>(out var itemGroupView))
+            {
+                GameObject clonedColourBlind = ColorblindUtils.cloneColourBlindObjectAndAddToItem(GameDataObject as ItemGroup);
+                ColorblindUtils.setColourBlindLabelObjectOnItemGroupView(itemGroupView, clonedColourBlind);
+            }
+
+            GameDataBuilt = true;
         }        
     }
     public class MyItemGroupView : ItemGroupView
     {
+        
         internal void Setup(GameObject prefab)
         {
             // This tells which sub-object of the prefab corresponds to each component of the ItemGroup
@@ -92,13 +108,33 @@ namespace GrilledCheese.GrilledCheeseXToppings
                 new()
                 {
                     GameObject = GameObjectUtils.GetChildObject(prefab, "Tomato"),
-                    Item = Main.TomatoSlice
+                    Item = Main.TomatoSlice,
+                    
                 },
                 new()
                 {
                     GameObject = GameObjectUtils.GetChildObject(prefab, "Bacon"),
                     Item = Main.Bacon
                 },
+
+            };
+            ComponentLabels = new()
+            {
+                new()
+                {
+                    Item = Main.PlatedGrilledCheese,
+                    Text = "PGC"
+                },
+                new()
+                {
+                    Item = Main.TomatoSlice,
+                    Text = "T"
+                },
+                new()
+                {
+                    Item = Main.Bacon,
+                    Text = "B"
+                }
             };
         }
     }
