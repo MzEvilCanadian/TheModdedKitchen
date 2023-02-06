@@ -1,7 +1,7 @@
 ﻿using KitchenData;
 using System.Collections.Generic;
 
-namespace GrilledCheese.Registry
+namespace ModdedKitchen.Registry
 {
     public interface ILocalisedRecipeHolder
     {

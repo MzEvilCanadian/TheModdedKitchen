@@ -4,7 +4,7 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GrilledCheese.MonteCristoProcess
+namespace ModdedKitchen.Mains.GrilledCheese.MonteCristo
 {
     class PlatedMonteCristo : CustomItemGroup
     {
@@ -21,20 +21,11 @@ namespace GrilledCheese.MonteCristoProcess
         {
             new ItemGroup.ItemSet()
             {
-                Max = 1,
-                Min = 1,
+                Max = 2,
+                Min = 2,
                 Items = new List<Item>()
                 {
-                    Main.CookedMonteCristo
-
-                }
-            },
-            new ItemGroup.ItemSet()
-            {
-                Max = 1,
-                Min = 1,
-                Items = new List<Item>()
-                {
+                    Main.CookedMonteCristo,
                     Main.Plate
                 }
             }

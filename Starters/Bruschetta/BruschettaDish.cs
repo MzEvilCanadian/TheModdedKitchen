@@ -1,12 +1,9 @@
 ﻿using KitchenData;
 using KitchenLib.Utils;
 using System.Collections.Generic;
-using UnityEngine;
-using System;
-using GrilledCheese.Dishes;
-using GrilledCheese;
 
-namespace GrilledCheese.Dishes
+
+namespace ModdedKitchen.Dishes
 {
     class BruschettaDish : ModDish
     {

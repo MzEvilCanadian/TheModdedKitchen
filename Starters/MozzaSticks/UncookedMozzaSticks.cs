@@ -1,10 +1,9 @@
 ﻿using KitchenData;
 using KitchenLib.Customs;
-using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GrilledCheese.Starters.MozzaSticks
+namespace ModdedKitchen.Starters.MozzaSticks
 {
     class UncookedMozzaSticks : CustomItemGroup
     {

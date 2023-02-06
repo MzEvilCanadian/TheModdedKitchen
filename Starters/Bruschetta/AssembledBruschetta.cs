@@ -1,12 +1,11 @@
-﻿using GrilledCheese;
-using Kitchen;
+﻿using Kitchen;
 using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GrilledCheese.Starters.Bruschetta
+namespace ModdedKitchen.Starters.Bruschetta
 {
     internal class AssembledBruschetta : CustomItemGroup<MyItemGroupView>
     {

@@ -6,7 +6,7 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GrilledCheese.GrilledCheeseXToppings
+namespace ModdedKitchen.GrilledCheeseXToppings
 {
     class GrilledCheeseBT : CustomItemGroup<MyItemGroupView>
     {

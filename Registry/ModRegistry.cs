@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using Unity.Collections;
 using Unity.Entities;
 
-namespace GrilledCheese.Registry
+namespace ModdedKitchen.Registry
 {
     [UpdateBefore(typeof(GrantUpgrades))]
     internal class ModRegistry : GenericSystemBase

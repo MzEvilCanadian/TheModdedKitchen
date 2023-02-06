@@ -4,7 +4,7 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GrilledCheese.MonteCristoProcess
+namespace ModdedKitchen.Mains.GrilledCheese.MonteCristo
 {
     class BurntMonteCristo : CustomItem
     {

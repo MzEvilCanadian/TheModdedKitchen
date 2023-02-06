@@ -1,10 +1,9 @@
 ﻿using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace GrilledCheese.GrilledCheeseProcess
+namespace ModdedKitchen.Mains.GrilledCheese
 {
     class BurnedGrilledCheese : CustomItem
     {

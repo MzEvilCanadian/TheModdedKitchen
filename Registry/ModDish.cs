@@ -1,9 +1,9 @@
 ﻿using KitchenData;
-using GrilledCheese.Registry;
 using KitchenLib.Customs;
+using ModdedKitchen.Registry;
 using System.Collections.Generic;
 
-namespace GrilledCheese.Dishes
+namespace ModdedKitchen.Dishes
 {
     public abstract class ModDish : CustomDish, ILocalisedRecipeHolder
     {

@@ -1,11 +1,10 @@
-﻿using GrilledCheese;
-using KitchenData;
+﻿using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MacNCheese.Customs.MacNCheeseProcess
+namespace ModdedKitchen.Sides.MacNCheese
 {
     class CookedMacNCheesePot : CustomItem
     {

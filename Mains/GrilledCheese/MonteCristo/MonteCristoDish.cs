@@ -5,7 +5,7 @@ using UnityEngine;
 using System;
 using KitchenLib.References;
 
-namespace GrilledCheese.Dishes
+namespace ModdedKitchen.Dishes
 {
     class MonteCristoDish : ModDish
     {

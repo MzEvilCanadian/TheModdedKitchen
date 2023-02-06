@@ -1,11 +1,9 @@
-﻿using GrilledCheese;
-using KitchenData;
+﻿using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace GrilledCheese.Desserts.AppleRings
+namespace ModdedKitchen.Desserts.AppleRings
 {
     class BurntAppleRings : CustomItem
     {

@@ -5,7 +5,7 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GrilledCheese.AppleCrisp
+namespace ModdedKitchen.AppleCrisp
 {
     class UncookedAppleCrisp : CustomItemGroup<MyItemGroupView>
     {

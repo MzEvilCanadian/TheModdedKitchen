@@ -1,11 +1,10 @@
-﻿using GrilledCheese;
-using KitchenData;
+﻿using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GrilledCheese.Starters.GarlicBread
+namespace ModdedKitchen.Starters.GarlicBread
 {
     internal class PlatedGarlicBread : CustomItemGroup
     {

@@ -4,7 +4,7 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GrilledCheese.Desserts.AppleRings
+namespace ModdedKitchen.Desserts.AppleRings
 {
     class UncookedAppleRings : CustomItemGroup
     {

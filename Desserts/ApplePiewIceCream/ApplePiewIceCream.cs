@@ -5,7 +5,7 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GrilledCheese.ApplePiewIceCream
+namespace ModdedKitchen.Desserts.ApplePiewIcecream
 {
     class ApplePieWithIceCream : CustomItemGroup
     {

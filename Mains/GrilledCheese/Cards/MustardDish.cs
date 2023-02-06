@@ -1,11 +1,8 @@
 ﻿using KitchenLib.Utils;
 using System.Collections.Generic;
-using UnityEngine;
-using System;
-using KitchenLib.References;
 using KitchenData;
 
-namespace GrilledCheese.Dishes
+namespace ModdedKitchen.Dishes
 {
     class MustardDish : ModDish
     {

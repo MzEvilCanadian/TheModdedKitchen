@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-namespace GrilledCheese.Dishes
+namespace ModdedKitchen.Dishes
 {
     class AppleRingsDish : ModDish
     {

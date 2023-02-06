@@ -1,10 +1,4 @@
-﻿using GrilledCheese.AppleCrisp;
-using GrilledCheese.ApplePiewIceCream;
-using GrilledCheese.GrilledCheeseProcess;
-using GrilledCheese.MonteCristoProcess;
-using GrilledCheese.Registry;
-using GrilledCheese.Dishes;
-using KitchenData;
+﻿using KitchenData;
 using KitchenLib;
 using KitchenLib.Event;
 using KitchenLib.References;
@@ -15,26 +9,29 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using ItemReference = KitchenLib.References.ItemReferences;
-using MacNCheese.Customs.MacNCheeseProcess;
-using Bruschetta;
-using GarlicBreadMod;
-using GrilledCheese.Starters.MozzaSticks;
-using GrilledCheese.Starters.Bruschetta;
-using GrilledCheese.Starters.GarlicBread;
-using GrilledCheese.Desserts.ChocolatePuddingPie;
-using GrilledCheese.Desserts.AppleRings;
-using GrilledCheese.GrilledCheeseXToppings;
-using MacNCheese.Dishes;
 using KitchenLib.Customs;
+using ModdedKitchen.Mains.GrilledCheese;
+using ModdedKitchen.Mains.GrilledCheese.MonteCristo;
+using ModdedKitchen.Dishes;
+using ModdedKitchen.GrilledCheeseXToppings;
+using ModdedKitchen.Desserts.ApplePiewIcecream;
+using ModdedKitchen.AppleCrisp;
+using ModdedKitchen.Sides.MacNCheese;
+using ModdedKitchen.Starters.Bruschetta;
+using ModdedKitchen.Starters.GarlicBread;
+using ModdedKitchen.Desserts.ChocolatePuddingPie;
+using ModdedKitchen.Starters.MozzaSticks;
+using ModdedKitchen.Desserts.AppleRings;
+using ModdedKitchen.Registry;
 
-namespace GrilledCheese
+namespace ModdedKitchen
 {
     class Main : BaseMod
     {
-        internal const string MOD_ID = "MzEvil'sKitchen";
-        internal const string MOD_NAME = "MzEvil's Kitchen";
-        internal const string MOD_VERSION = "1.0.1";
-        internal const string MOD_AUTHOR = "MzEvilCanadian";
+        internal const string MOD_ID = "The Modded Kitchen";
+        internal const string MOD_NAME = "The Modded Kitchen";
+        internal const string MOD_VERSION = "1.0.2";
+        internal const string MOD_AUTHOR = "MzEvilCanadian, QuackAndCheese, DepletedSupernova";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
         public static AssetBundle bundle;
@@ -184,7 +181,7 @@ namespace GrilledCheese
             // Dishes
             // Starters
             AddGameDataObject<BruschettaDish>();
-            AddGameDataObject<Dishes.GarlicBreadDish>();
+            AddGameDataObject<GarlicBreadDish>();
             //   AddGameDataObject<MozzaSticksDish>();       // No Models yet. Not Tested
             AddGameDataObject<MacNCheeseDish>();        // Side but wont show when merged on the plate
 
@@ -288,7 +285,6 @@ namespace GrilledCheese
         {
             return GDOUtils.GetCastedGDO<T, C>();
         }
-
         internal static T Find<T>(string modName, string name) where T : GameDataObject
         {
             return GDOUtils.GetCastedGDO<T>(modName, name);

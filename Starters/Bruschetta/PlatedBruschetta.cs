@@ -1,11 +1,10 @@
-﻿using GrilledCheese;
-using KitchenData;
+﻿using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GrilledCheese.Starters.Bruschetta
+namespace ModdedKitchen.Starters.Bruschetta
 {
     class PlatedBruschetta : CustomItemGroup
     {
@@ -21,19 +20,11 @@ namespace GrilledCheese.Starters.Bruschetta
         {
             new ItemGroup.ItemSet
             {
-                Max = 1,
-                Min = 1,
+                Max = 2,
+                Min = 2,
                 Items = new List<Item>
                 {
-                    Main.AssembledBruschetta
-                }
-            },
-            new ItemGroup.ItemSet
-            {
-                Max = 1,
-                Min = 1,
-                Items = new List<Item>
-                {
+                    Main.AssembledBruschetta,
                     Main.ServingBoard
                 }
             }

@@ -4,7 +4,7 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GrilledCheese.Starters.MozzaSticks
+namespace ModdedKitchen.Starters.MozzaSticks
 {
     class MaranaraSauce : CustomItemGroup
     {

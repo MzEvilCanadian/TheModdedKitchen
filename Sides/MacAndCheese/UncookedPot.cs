@@ -1,12 +1,11 @@
-﻿using GrilledCheese;
-using Kitchen;
+﻿using Kitchen;
 using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MacNCheese.Customs.MacNCheeseProcess
+namespace ModdedKitchen.Sides.MacNCheese
 {
     class UncookedPot : CustomItemGroup<MyItemGroupView>
     {

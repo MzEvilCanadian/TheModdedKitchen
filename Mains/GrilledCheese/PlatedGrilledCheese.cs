@@ -1,11 +1,10 @@
-﻿using Kitchen;
-using KitchenData;
+﻿using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GrilledCheese.GrilledCheeseProcess
+namespace ModdedKitchen.Mains.GrilledCheese
 {
     class PlatedGrilledCheese : CustomItemGroup
     {
@@ -21,21 +20,12 @@ namespace GrilledCheese.GrilledCheeseProcess
         {
             new ItemGroup.ItemSet()
             {
-                Max = 1,
-                Min = 1,
+                Max = 2,
+                Min = 2,
                 IsMandatory = true,
                 Items = new List<Item>()
                 {
-                    Main.CookedGrilledCheese
-                }
-            },
-            new ItemGroup.ItemSet()
-            {
-                Max = 1,
-                Min = 1,
-                IsMandatory = true,
-                Items = new List<Item>()
-                {
+                    Main.CookedGrilledCheese,
                     Main.Plate
                 }
             }
