@@ -13,7 +13,6 @@ namespace ModdedKitchen.GrilledCheeseXToppings
         public override string UniqueNameID => "Plated Grilled Cheese with toppings";
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("GrilledCheeseXToppings");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
-        public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.Large;
         public override Item DisposesTo => Main.Plate;
         public override Item DirtiesTo => Main.DirtyPlate;

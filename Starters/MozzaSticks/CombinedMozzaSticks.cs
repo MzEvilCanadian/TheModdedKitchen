@@ -19,19 +19,11 @@ namespace ModdedKitchen.Starters.MozzaSticks
         {
             new ItemGroup.ItemSet()
             {
-                Max = 1,
-                Min = 1,
+                Max = 2,
+                Min = 2,
                 Items = new List<Item>()
                 {
-                    Main.CookedMozzaSticks
-                }
-            },
-            new ItemGroup.ItemSet()
-            {
-                Max = 1,
-                Min = 1,
-                Items = new List<Item>()
-                {
+                    Main.CookedMozzaSticks,
                     Main.MaranaraSauce
                 }
             }
