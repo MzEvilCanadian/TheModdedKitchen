@@ -30,7 +30,8 @@ namespace ModdedKitchen.Dishes
             "Yes, Cheese!",
             "The Cheese Knees",
             "Sink Cheese",
-            "Toasty Squares"
+            "Toasty Squares",
+            "The Soaking Sink"
         };
         public override List<Dish.MenuItem> ResultingMenuItems => new List<Dish.MenuItem>
         {

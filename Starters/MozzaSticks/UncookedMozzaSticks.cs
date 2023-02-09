@@ -17,6 +17,7 @@ namespace ModdedKitchen.Starters.MozzaSticks
             {
                 Max = 2,
                 Min = 2,
+                IsMandatory = true,
                 Items = new List<Item>()
                 {
                     Main.GratedCheese,

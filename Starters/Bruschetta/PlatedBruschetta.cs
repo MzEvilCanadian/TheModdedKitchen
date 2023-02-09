@@ -22,6 +22,7 @@ namespace ModdedKitchen.Starters.Bruschetta
             {
                 Max = 2,
                 Min = 2,
+                IsMandatory = true,
                 Items = new List<Item>
                 {
                     Main.AssembledBruschetta,

@@ -12,7 +12,7 @@ namespace ModdedKitchen.Dishes
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Medium;
         public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
         public override CardType CardType => CardType.Default;
-        public override bool IsUnlockable => true;
+        public override bool IsUnlockable => false;
         public override List<Unlock> HardcodedRequirements => new () 
         { 
             Main.GrilledCheeseDish

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace ModdedKitchen.Dishes
 {
+
     public abstract class ModDish : CustomDish, ILocalisedRecipeHolder
     {
         public virtual IDictionary<Locale, string> LocalisedRecipe { get; }
@@ -36,5 +37,6 @@ namespace ModdedKitchen.Dishes
                 ModRegistry.AddBaseDish(dish);
             }
         }
+
     }
 }

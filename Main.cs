@@ -30,7 +30,7 @@ namespace ModdedKitchen
     {
         internal const string MOD_ID = "The Modded Kitchen";
         internal const string MOD_NAME = "The Modded Kitchen";
-        internal const string MOD_VERSION = "1.0.2";
+        internal const string MOD_VERSION = "1.1.0";
         internal const string MOD_AUTHOR = "MzEvilCanadian, QuackAndCheese, DepletedSupernova";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 

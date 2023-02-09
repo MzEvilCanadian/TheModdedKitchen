@@ -18,24 +18,16 @@ namespace ModdedKitchen.Starters.Bruschetta
         {
             new ItemGroup.ItemSet()
             {
-                Max = 1,
-                Min = 1,
+                Max = 3,
+                Min = 3,
                 IsMandatory = true,
                 Items = new List<Item>()
                 {
                     Main.CookedBread,
-                }
-            },
-            new ItemGroup.ItemSet()
-            {
-                Max = 2,
-                Min = 2,
-                Items = new List<Item>()
-                {
                     Main.TomatoSlice,
                     Main.OnionChopped
                 }
-            }
+            },
         };
         
         public override void OnRegister(GameDataObject gameDataObject)

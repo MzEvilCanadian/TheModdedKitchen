@@ -13,7 +13,7 @@ namespace ModdedKitchen.Starters.MozzaSticks
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.Small;
-        public override string ColourBlindTag => "MS";
+ //       public override string ColourBlindTag => "MS";
 
         public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
         {
@@ -21,6 +21,7 @@ namespace ModdedKitchen.Starters.MozzaSticks
             {
                 Max = 2,
                 Min = 2,
+                IsMandatory = true,
                 Items = new List<Item>()
                 {
                     Main.CookedMozzaSticks,

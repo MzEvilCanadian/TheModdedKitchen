@@ -20,22 +20,15 @@ namespace ModdedKitchen.Desserts.ApplePiewIcecream
         {
             new ItemGroup.ItemSet()
             {
-                Max = 1,
-                Min = 1,
+                Max = 2,
+                Min = 2,
+                IsMandatory = true,
                 Items = new List<Item>()
                 {
-                    Main.ApplePie
-                }
-            },
-            new ItemGroup.ItemSet()
-            {
-                Max = 1,
-                Min = 1,
-                Items = new List<Item>()
-                {
+                    Main.ApplePie,
                     Main.VanillaIceCream
                 }
-            }
+            },
 
             /*
               public override void OnRegister(GameDataObject gameDataObject)

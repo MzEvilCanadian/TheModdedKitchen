@@ -15,7 +15,7 @@ namespace ModdedKitchen.Mains.GrilledCheese
         public override Item DisposesTo => Main.Plate;
         public override Item DirtiesTo => Main.DirtyPlate;
         public override string ColourBlindTag => "GC";
-        public override bool CanContainSide => true;
+        public override bool CanContainSide => false;
         public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
         {
             new ItemGroup.ItemSet()

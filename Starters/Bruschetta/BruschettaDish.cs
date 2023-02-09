@@ -39,7 +39,7 @@ namespace ModdedKitchen.Dishes
 
         public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
         {
-            { Locale.English, "Put oil on a bread slice then toast. Add chopped tomato and chopped onion. Place on Serving Board. Serves multiple Customers" }
+            { Locale.English, "Put oil on a bread slice then toast. Combine chopped tomato and chopped onion together then with the toasted bread slice. Place on Serving Board. Serves multiple Customers" }
         };
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {
