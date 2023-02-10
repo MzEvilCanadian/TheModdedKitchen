@@ -23,6 +23,7 @@ using ModdedKitchen.Desserts.ChocolatePuddingPie;
 using ModdedKitchen.Starters.MozzaSticks;
 using ModdedKitchen.Desserts.AppleRings;
 using ModdedKitchen.Registry;
+using ModdedKitchen.Desserts.BananaBread;
 
 namespace ModdedKitchen
 {
@@ -30,8 +31,8 @@ namespace ModdedKitchen
     {
         internal const string MOD_ID = "The Modded Kitchen";
         internal const string MOD_NAME = "The Modded Kitchen";
-        internal const string MOD_VERSION = "1.1.0";
-        internal const string MOD_AUTHOR = "MzEvilCanadian, QuackAndCheese, DepletedSupernova";
+        internal const string MOD_VERSION = "1.1.1";
+        internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
         public static AssetBundle bundle;
@@ -46,7 +47,7 @@ namespace ModdedKitchen
         internal static Process Oven => GetExistingGDO<Process>(ProcessReferences.RequireOven);
 
 
-        // Vanilla Ingredients
+        // Vanilla Items
 
         internal static Item Flour => GetExistingGDO<Item>(ItemReference.Flour);
         internal static Item Cheese => GetExistingGDO<Item>(ItemReference.Cheese);
@@ -68,6 +69,8 @@ namespace ModdedKitchen
         internal static Item Onion => GetExistingGDO<Item>(ItemReference.Onion);
         internal static Item OnionChopped => GetExistingGDO<Item>(ItemReference.OnionChopped);
         internal static Item PieCrust => GetExistingGDO<Item>(ItemReference.PieCrustCooked);
+        internal static Item BurntBread => GetExistingGDO<Item>(ItemReference.BurnedBread);
+        internal static Item Dough => GetExistingGDO<Item>(ItemReference.Dough);
 
         // Vanilla Items
         internal static Item Plate => GetExistingGDO<Item>(ItemReference.Plate);
@@ -92,8 +95,11 @@ namespace ModdedKitchen
         public static Item Garlic => Find<Item>(IngredientLib.References.GetIngredient("garlic"));
         public static Item MincedGarlic => Find<Item>(IngredientLib.References.GetIngredient("minced garlic"));
         public static Item Chocolate => Find<Item>(IngredientLib.References.GetIngredient("chocolate"));
+        public static Item ChoppedChocolate => Find<Item>(IngredientLib.References.GetIngredient("chopped chocolate"));
         public static Item ChocolateFilling => Find<Item>(IngredientLib.References.GetIngredient("chocolate sauce"));
         public static Item Cinnamon => Find<Item>(IngredientLib.References.GetIngredient("cinnamon"));
+        public static Item Banana => Find<Item>(IngredientLib.References.GetIngredient("banana"));
+        public static Item PeeledBanana => Find<Item>(IngredientLib.References.GetIngredient("peeled banana"));
 
         // Grilled Cheese
         internal static Item BurnedGrilledCheese => GetModdedGDO<Item, BurnedGrilledCheese>();
@@ -149,6 +155,12 @@ namespace ModdedKitchen
         internal static Item CookedAppleRings => GetModdedGDO<Item, CookedAppleRings>();
         internal static ItemGroup UncookeAppleRings => GetModdedGDO<ItemGroup, UncookedAppleRings>();
 
+        // Banana Bread
+
+        internal static Item BananaBreadLoaf => GetModdedGDO<Item, BananaBreadLoaf>();
+        internal static Item BananaBreadSlice => GetModdedGDO<Item, BananaBreadSlice>();
+        internal static ItemGroup UncookedBananaBread => GetModdedGDO<ItemGroup, UncookedBananaBread>();
+
 
 
         internal static bool debug = true;
@@ -180,27 +192,28 @@ namespace ModdedKitchen
 
             // Dishes
             // Starters
-            AddGameDataObject<BruschettaDish>();
-            AddGameDataObject<GarlicBreadDish>();
+               AddGameDataObject<BruschettaDish>();
+               AddGameDataObject<GarlicBreadDish>();
             //   AddGameDataObject<MozzaSticksDish>();       // No Models yet. Not Tested
-            AddGameDataObject<MacNCheeseDish>();        // Side but wont show when merged on the plate
+               AddGameDataObject<MacNCheeseDish>();        // Side, but wont show when merged on the plate
 
             // Mains
-            AddGameDataObject<GrilledCheeseDish>();
-            AddGameDataObject<MonteCristoDish>();
+               AddGameDataObject<GrilledCheeseDish>();
+               AddGameDataObject<MonteCristoDish>();
 
             // Extras
-            AddGameDataObject<KetchupDish>();
-            AddGameDataObject<MustardDish>();
-            AddGameDataObject<AdditionalToppings>();
+               AddGameDataObject<KetchupDish>();
+               AddGameDataObject<MustardDish>();
+               AddGameDataObject<AdditionalToppings>();
 
             // Sides
 
 
             // Desserts
-            AddGameDataObject<ChocolatePuddingPieDish>();
+               AddGameDataObject<ChocolatePuddingPieDish>();
             //   AddGameDataObject<AppleRingsDish>();        // No Models Yet. Not tested
-            AddGameDataObject<AppleCrispDish>();
+               AddGameDataObject<AppleCrispDish>();
+               AddGameDataObject<BananaBreadDish>();
 
 
 
@@ -260,6 +273,11 @@ namespace ModdedKitchen
             AddGameDataObject<BurntAppleCrisp>();
             AddGameDataObject<CookedAppleCrisp>();
             AddGameDataObject<UncookedAppleCrisp>();
+
+            // Banana Bread
+            AddGameDataObject<BananaBreadLoaf>();
+            AddGameDataObject<BananaBreadSlice>();
+            AddGameDataObject<UncookedBananaBread>();
 
 
             Events.BuildGameDataEvent += delegate (object s, BuildGameDataEventArgs args)
