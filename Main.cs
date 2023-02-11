@@ -31,7 +31,7 @@ namespace ModdedKitchen
     {
         internal const string MOD_ID = "The Modded Kitchen";
         internal const string MOD_NAME = "The Modded Kitchen";
-        internal const string MOD_VERSION = "1.1.1";
+        internal const string MOD_VERSION = "1.2.0";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
@@ -71,6 +71,8 @@ namespace ModdedKitchen
         internal static Item PieCrust => GetExistingGDO<Item>(ItemReference.PieCrustCooked);
         internal static Item BurntBread => GetExistingGDO<Item>(ItemReference.BurnedBread);
         internal static Item Dough => GetExistingGDO<Item>(ItemReference.Dough);
+        internal static Item SteakWellDone => GetExistingGDO<Item>(ItemReference.SteakWelldone);
+        internal static Item Meat => GetExistingGDO<Item>(ItemReference.Meat);
 
         // Vanilla Items
         internal static Item Plate => GetExistingGDO<Item>(ItemReference.Plate);
@@ -100,6 +102,7 @@ namespace ModdedKitchen
         public static Item Cinnamon => Find<Item>(IngredientLib.References.GetIngredient("cinnamon"));
         public static Item Banana => Find<Item>(IngredientLib.References.GetIngredient("banana"));
         public static Item PeeledBanana => Find<Item>(IngredientLib.References.GetIngredient("peeled banana"));
+        public static Item Oats => Find<Item>(IngredientLib.References.GetIngredient("oats"));
 
         // Grilled Cheese
         internal static Item BurnedGrilledCheese => GetModdedGDO<Item, BurnedGrilledCheese>();
@@ -176,7 +179,6 @@ namespace ModdedKitchen
             Debug.Log($"{MOD_NAME} {MOD_VERSION} {MOD_AUTHOR}: Loaded");
             Debug.Log($"Assets Loaded From {bundlePath}");
         }
-
         public override void PostActivate(KitchenMods.Mod mod)
         {
             base.PostActivate(mod);
@@ -211,7 +213,7 @@ namespace ModdedKitchen
 
             // Desserts
                AddGameDataObject<ChocolatePuddingPieDish>();
-            //   AddGameDataObject<AppleRingsDish>();        // No Models Yet. Not tested
+               AddGameDataObject<AppleRingsDish>();        
                AddGameDataObject<AppleCrispDish>();
                AddGameDataObject<BananaBreadDish>();
 

@@ -11,12 +11,13 @@ namespace ModdedKitchen.Sides.MacNCheese
         public override string UniqueNameID => "CookedMacNCheesePot";
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Cooked Mac Pot");
         public override Item DisposesTo => Main.Pot;
-        public override int SplitCount => 5;
+        public override int SplitCount => 10;
         public override Item SplitSubItem => Main.MacNCheeseServing;
         public override List<Item> SplitDepletedItems => new List<Item>
         {
-            Main.CookedMacNCheeseHalfPot
+            Main.Pot
         };
+
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.Dish;
 
@@ -35,4 +36,5 @@ namespace ModdedKitchen.Sides.MacNCheese
             MaterialUtils.ApplyMaterial(Prefab, "Mac", materials);
         }
     }
+
 }

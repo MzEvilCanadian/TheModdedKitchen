@@ -9,8 +9,8 @@ namespace ModdedKitchen.Desserts.AppleRings
 {
     class UncookedAppleRings : CustomItemGroup<MyItemGroupView>
     {
-        public override string UniqueNameID => "UncookedAppleRings";
-        public override GameObject Prefab => Main.Cheese.Prefab;
+        public override string UniqueNameID => "Uncooked Apple Rings";
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("UncookedAppleRings");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
 
@@ -22,7 +22,7 @@ namespace ModdedKitchen.Desserts.AppleRings
                 Min = 3,
                 Items = new List<Item>()
                 {
-                    Main.Apple,
+                    Main.AppleSlices,
                     Main.Sugar,
                     Main.Cinnamon
                 }
@@ -48,7 +48,7 @@ namespace ModdedKitchen.Desserts.AppleRings
         };
             MaterialUtils.ApplyMaterial(Prefab, "Apples", materials);
 
-            materials[0] = MaterialUtils.GetExistingMaterial("plate");
+            materials[0] = MaterialUtils.GetExistingMaterial("Plate");
             materials[1] = MaterialUtils.GetExistingMaterial("Bread - Cooked");
             MaterialUtils.ApplyMaterial(Prefab, "Cinnamon", materials);
 
@@ -69,13 +69,13 @@ namespace ModdedKitchen.Desserts.AppleRings
             {
                 new()
                 {
-                    GameObject = GameObjectUtils.GetChildObject(prefab, "Apple"),
+                    GameObject = GameObjectUtils.GetChildObject(prefab, "Apples"),
                     Item = Main.AppleSlices
                 },
                 new()
                 {
                     GameObject = GameObjectUtils.GetChildObject(prefab, "Sugar"),
-                    Item = Main.Sugar,
+                    Item = Main.Sugar
                 },
                 new()
                 {

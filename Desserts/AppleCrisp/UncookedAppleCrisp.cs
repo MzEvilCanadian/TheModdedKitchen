@@ -24,7 +24,7 @@ namespace ModdedKitchen.AppleCrisp
                 {
                     Main.AppleSlices,
                     Main.Sugar,
-                    Main.BreadCrumbs
+                    Main.Oats
                 }
             }
         };
@@ -83,7 +83,7 @@ namespace ModdedKitchen.AppleCrisp
                 new()
                 {
                     GameObject = GameObjectUtils.GetChildObject(prefab, "BreadCrumbs"),
-                    Item = Main.BreadCrumbs
+                    Item = Main.Oats
                 }
             };
     }

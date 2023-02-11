@@ -9,7 +9,7 @@ namespace ModdedKitchen.Desserts.AppleRings
     class CookedAppleRings : CustomItem
     {
         public override string UniqueNameID => "Cooked Apple Rings";
-        public override GameObject Prefab => Main.Cheese.Prefab;
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("CookedAppleRings");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.Small;
@@ -25,23 +25,16 @@ namespace ModdedKitchen.Desserts.AppleRings
                 IsBad = true
             }
         };
-        /*
-                public override void OnRegister(GameDataObject gameDataObject)
-                {
-                    var materials = new Material[]
-                    {
-                        MaterialUtils.GetExistingMaterial("Bread - Inside Cooked"),
-                     };
-                    MaterialUtils.ApplyMaterial(Prefab, "GameObject", materials);
-                    materials[0] = MaterialUtils.GetExistingMaterial("Bread - Cooked");
-                    MaterialUtils.ApplyMaterial(Prefab, "GameObject (1)", materials);
-                    materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
-                    MaterialUtils.ApplyMaterial(Prefab, "GameObject (2)", materials);
-                    materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Dark Green");
-                    MaterialUtils.ApplyMaterial(Prefab, "GameObject (3)", materials);
+        public override void OnRegister(GameDataObject gameDataObject)
+        {
+            var materials = new Material[]
+            {
+                MaterialUtils.GetExistingMaterial("Bread - Cooked"),
+            };
+            MaterialUtils.ApplyMaterial(Prefab, "Apples", materials);
 
-                    // MaterialUtils.ApplyMaterial([object], [name], [material list]
-                }
-        */
+            materials[0] = MaterialUtils.GetExistingMaterial("Plate");
+            MaterialUtils.ApplyMaterial(Prefab, "Plate", materials);
+        }
     }
 }

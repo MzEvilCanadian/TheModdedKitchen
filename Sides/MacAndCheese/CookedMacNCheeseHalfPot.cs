@@ -34,6 +34,5 @@ namespace ModdedKitchen.Sides.MacNCheese
             materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
             MaterialUtils.ApplyMaterial(Prefab, "Mac", materials);
         }
-        
     }
 }

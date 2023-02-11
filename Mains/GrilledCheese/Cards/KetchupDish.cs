@@ -6,6 +6,7 @@ namespace ModdedKitchen.Dishes
 {
     class KetchupDish : ModDish
     {
+        public override string UniqueNameID => "Grilled Cheese Ketchup";
         public override DishType Type => DishType.Extra;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Medium;
         public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;

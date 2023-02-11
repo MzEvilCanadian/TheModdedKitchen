@@ -16,7 +16,7 @@ namespace ModdedKitchen.GrilledCheeseXToppings
         public override ItemValue ItemValue => ItemValue.Large;
         public override Item DisposesTo => Main.Plate;
         public override Item DirtiesTo => Main.DirtyPlate;
-        public override bool CanContainSide => true;
+        public override bool CanContainSide => false;
         
 
         public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()

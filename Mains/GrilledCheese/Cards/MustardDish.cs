@@ -6,6 +6,7 @@ namespace ModdedKitchen.Dishes
 {
     class MustardDish : ModDish
     {
+        public override string UniqueNameID => "Grilled Cheese Mustard";
         public override DishType Type => DishType.Extra;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Medium;
         public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;

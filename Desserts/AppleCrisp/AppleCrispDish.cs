@@ -24,7 +24,7 @@ namespace ModdedKitchen.Dishes
         };
         public override HashSet<Item> MinimumIngredients => new HashSet<Item>
         {
-            Main.Flour,
+            Main.Oats,
             Main.Apple,
             Main.Sugar
         };
@@ -37,7 +37,7 @@ namespace ModdedKitchen.Dishes
 
         public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
         {
-            { Locale.English, "Combine a chopped apple, sugar, and bread crumbs and cook." }
+            { Locale.English, "Combine a chopped apple, sugar, and oats and cook." }
         };
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {
