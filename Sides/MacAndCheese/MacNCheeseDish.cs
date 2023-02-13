@@ -7,7 +7,7 @@ namespace ModdedKitchen.Dishes
     public class MacNCheeseDish : ModDish
     {
         public override string UniqueNameID => "Mac and Cheese Dish";
-        public override DishType Type => DishType.Starter;
+        public override DishType Type => DishType.Side;
         public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
         public override CardType CardType => CardType.Default;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Small;
@@ -18,7 +18,7 @@ namespace ModdedKitchen.Dishes
             new Dish.MenuItem
             {
                 Item = Main.MacNCheeseServing,
-                Phase = MenuPhase.Starter,
+                Phase = MenuPhase.Side,
                 Weight = 1
             }
         };     
@@ -42,7 +42,7 @@ namespace ModdedKitchen.Dishes
         };
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {
-            { Locale.English, LocalisationUtils.CreateUnlockInfo("Mac and Cheese", "Adds Mac and Cheese as a Starter", "Seconds Please?") }
+            { Locale.English, LocalisationUtils.CreateUnlockInfo("Mac and Cheese", "Adds Mac and Cheese as a Side", "Seconds Please?") }
         };
     }
 }

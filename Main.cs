@@ -31,7 +31,7 @@ namespace ModdedKitchen
     {
         internal const string MOD_ID = "The Modded Kitchen";
         internal const string MOD_NAME = "The Modded Kitchen";
-        internal const string MOD_VERSION = "1.2.1";
+        internal const string MOD_VERSION = "1.2.2";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
@@ -75,10 +75,11 @@ namespace ModdedKitchen
         internal static Item Meat => GetExistingGDO<Item>(ItemReference.Meat);
 
 
-      //  internal static Appliance Grabber => Find<Appliance>(ApplianceReferences.Grabber);
-      //  internal static Appliance MixerPusher => Find<Appliance>(ApplianceReferences.MixerPusher);
-      //  internal static Appliance Combiner => Find<Appliance>(ApplianceReferences.Combiner);
-      //  internal static Appliance SaftyHob => Find<Appliance>(ApplianceReferences.HobSafe);
+        //  internal static Appliance Grabber => Find<Appliance>(ApplianceReferences.Grabber);
+        //  internal static Appliance MixerPusher => Find<Appliance>(ApplianceReferences.MixerPusher);
+        //  internal static Appliance Combiner => Find<Appliance>(ApplianceReferences.Combiner);
+        //  internal static Appliance SaftyHob => Find<Appliance>(ApplianceReferences.HobSafe);
+       //   internal static Appliance FrozenPrep => Find<Appliance>(ApplianceReferences.FrozenPrepStation);
 
         // Vanilla Items
         internal static Item Plate => GetExistingGDO<Item>(ItemReference.Plate);
@@ -185,9 +186,8 @@ namespace ModdedKitchen
             Debug.Log($"{MOD_NAME} {MOD_VERSION} {MOD_AUTHOR}: Loaded");
             Debug.Log($"Assets Loaded From {bundlePath}");
         }
-        public override void PostActivate(KitchenMods.Mod mod)
+        protected override void OnPostActivate(KitchenMods.Mod mod)
         {
-            base.PostActivate(mod);
             bundle = mod.GetPacks<AssetBundleModPack>().SelectMany(e => e.AssetBundles).ToList()[0];
 
             Events.BuildGameDataEvent += delegate (object s, BuildGameDataEventArgs args)
