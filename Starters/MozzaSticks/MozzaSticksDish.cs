@@ -11,6 +11,7 @@ namespace ModdedKitchen.Dishes
         public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Medium;
         public override CardType CardType => CardType.Default;
+        public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
         public override bool IsUnlockable => true;
         public override List<Dish.MenuItem> ResultingMenuItems => new List<Dish.MenuItem>
         {

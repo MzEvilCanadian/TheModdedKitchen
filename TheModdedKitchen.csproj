@@ -43,6 +43,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cards\Automation.cs" />
     <Compile Include="Desserts\AppleCrisp\AppleCrispDish.cs" />
     <Compile Include="Desserts\AppleCrisp\BurntAppleCrisp.cs" />
     <Compile Include="Desserts\AppleCrisp\CookedAppleCrisp.cs" />

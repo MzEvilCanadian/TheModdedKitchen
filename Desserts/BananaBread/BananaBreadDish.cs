@@ -8,6 +8,7 @@ namespace ModdedKitchen.Dishes
     {
         public override string UniqueNameID => "Banana Bread Dish";
         public override DishType Type => DishType.Dessert;
+        public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
         public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Small;
         public override CardType CardType => CardType.Default;

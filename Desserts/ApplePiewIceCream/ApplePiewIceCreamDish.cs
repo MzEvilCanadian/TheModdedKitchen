@@ -1,9 +1,6 @@
 ﻿using KitchenData;
 using KitchenLib.Utils;
 using System.Collections.Generic;
-using UnityEngine;
-using System;
-using KitchenLib.References;
 
 namespace ModdedKitchen.Dishes
 {
@@ -14,6 +11,7 @@ namespace ModdedKitchen.Dishes
         public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Small;
         public override CardType CardType => CardType.Default;
+        public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
         public override bool IsUnlockable => true;
 
         public override List<Dish.MenuItem> ResultingMenuItems => new List<Dish.MenuItem>

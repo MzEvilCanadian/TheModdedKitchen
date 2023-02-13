@@ -15,6 +15,7 @@ namespace ModdedKitchen.Dishes
         public override GameObject IconPrefab => Main.bundle.LoadAsset<GameObject>("Grilled_Cheese_Icon");
         public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Medium;
+        public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
         public override CardType CardType => CardType.Default;
         public override bool IsSpecificFranchiseTier => false;
         public override bool IsAvailableAsLobbyOption => true;

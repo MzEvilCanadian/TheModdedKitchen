@@ -31,7 +31,7 @@ namespace ModdedKitchen
     {
         internal const string MOD_ID = "The Modded Kitchen";
         internal const string MOD_NAME = "The Modded Kitchen";
-        internal const string MOD_VERSION = "1.2.0";
+        internal const string MOD_VERSION = "1.2.1";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
@@ -73,6 +73,12 @@ namespace ModdedKitchen
         internal static Item Dough => GetExistingGDO<Item>(ItemReference.Dough);
         internal static Item SteakWellDone => GetExistingGDO<Item>(ItemReference.SteakWelldone);
         internal static Item Meat => GetExistingGDO<Item>(ItemReference.Meat);
+
+
+      //  internal static Appliance Grabber => Find<Appliance>(ApplianceReferences.Grabber);
+      //  internal static Appliance MixerPusher => Find<Appliance>(ApplianceReferences.MixerPusher);
+      //  internal static Appliance Combiner => Find<Appliance>(ApplianceReferences.Combiner);
+      //  internal static Appliance SaftyHob => Find<Appliance>(ApplianceReferences.HobSafe);
 
         // Vanilla Items
         internal static Item Plate => GetExistingGDO<Item>(ItemReference.Plate);
@@ -216,6 +222,10 @@ namespace ModdedKitchen
                AddGameDataObject<AppleRingsDish>();        
                AddGameDataObject<AppleCrispDish>();
                AddGameDataObject<BananaBreadDish>();
+
+            // Cards
+
+          //  AddGameDataObject<Automation>();    // WIP
 
 
 
