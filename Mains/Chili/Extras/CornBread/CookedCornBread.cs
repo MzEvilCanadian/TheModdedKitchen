@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace ModdedKitchen.Mains.Chili.Extras
 {
-    class CookedCornBread : CustomItem 
+    class CookedCornBread : CustomItem
     {
         public override string UniqueNameID => "Cooked Cornbread";
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("CookedCornBread");
@@ -29,7 +29,7 @@ namespace ModdedKitchen.Mains.Chili.Extras
                 Result = Main.BurntCornBread
             }
         };
-        
+
         public override void OnRegister(GameDataObject gameDataObject)
         {
             var materials = new Material[]
@@ -46,28 +46,28 @@ namespace ModdedKitchen.Mains.Chili.Extras
             MaterialUtils.ApplyMaterial(Prefab, "Slice 7", materials);
             MaterialUtils.ApplyMaterial(Prefab, "Slice 8", materials);
 
-            if (!Prefab.HasComponent<CornbreadItemView>())
+            if (!Prefab.HasComponent<CookedCornbreadItemView>())
             {
-                var view = Prefab.AddComponent<CornbreadItemView>();
+                var view = Prefab.AddComponent<CookedCornbreadItemView>();
                 view.Setup(Prefab);
             }
         }
     }
-    public class CornbreadItemView : ObjectsSplittableView
+    public class CookedCornbreadItemView : ObjectsSplittableView
     {
         internal void Setup(GameObject prefab)
         {
             var fObjects = ReflectionUtils.GetField<ObjectsSplittableView>("Objects");
             fObjects.SetValue(this, new List<GameObject>()
             {
-                prefab.GetChild("Slice 1"),
-                prefab.GetChild("Slice 2"),
-                prefab.GetChild("Slice 3"),
-                prefab.GetChild("Slice 4"),
-                prefab.GetChild("Slice 5"),
-                prefab.GetChild("Slice 6"),
-                prefab.GetChild("Slice 7"),
-                prefab.GetChild("Slice 8")
+                GameObjectUtils.GetChildObject(prefab, "Slice 1"),
+                GameObjectUtils.GetChildObject(prefab, "Slice 2"),
+                GameObjectUtils.GetChildObject(prefab, "Slice 3"),
+                GameObjectUtils.GetChildObject(prefab, "Slice 4"),
+                GameObjectUtils.GetChildObject(prefab, "Slice 5"),
+                GameObjectUtils.GetChildObject(prefab, "Slice 6"),
+                GameObjectUtils.GetChildObject(prefab, "Slice 7"),
+                GameObjectUtils.GetChildObject(prefab, "Slice 8")
             });
         }
     }
