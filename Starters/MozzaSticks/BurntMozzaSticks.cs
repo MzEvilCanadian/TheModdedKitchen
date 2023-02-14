@@ -8,30 +8,17 @@ namespace ModdedKitchen.Starters.MozzaSticks
     class BurntMozzaSticks : CustomItem
     {
         public override string UniqueNameID => "Burnt Mozza Sticks";
-        public override GameObject Prefab => Main.CookedDumplings.Prefab; // Temp prefab until models are made
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("BurntMozzaSticks");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
 
-        /*
+        
         public override void OnRegister(GameDataObject gameDataObject)
         {
             var materials = new Material[]
             {
-                   MaterialUtils.GetExistingMaterial("Metal"),
+                   MaterialUtils.GetExistingMaterial("Burned"),
              };
             MaterialUtils.ApplyMaterial(Prefab, "Pot/Pot", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Metal Dark");
-            MaterialUtils.ApplyMaterial(Prefab, "Pot/Handles", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Piano White");
-            MaterialUtils.ApplyMaterial(Prefab, "Milk", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Egg Dough\"");
-            MaterialUtils.ApplyMaterial(Prefab, "Mac", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Butter\"");
-            MaterialUtils.ApplyMaterial(Prefab, "Butter", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Cheese - Default");
-            MaterialUtils.ApplyMaterial(Prefab, "Cheese/Shaving0", materials);
-            MaterialUtils.ApplyMaterial(Prefab, "Cheese/Shaving1", materials);
-            MaterialUtils.ApplyMaterial(Prefab, "Cheese/Shaving2", materials);
-        }
-        */
+        }    
     }
 }

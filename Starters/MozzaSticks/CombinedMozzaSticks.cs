@@ -9,11 +9,11 @@ namespace ModdedKitchen.Starters.MozzaSticks
     class CombinedMozzaSticks : CustomItemGroup
     {
         public override string UniqueNameID => "Combined Mozza Sticks";
-        public override GameObject Prefab => Main.Cheese.Prefab;
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("CombinedMozzaSticks");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.Small;
- //       public override string ColourBlindTag => "MS";
+        public override string ColourBlindTag => "MS";
 
         public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
         {
@@ -29,21 +29,22 @@ namespace ModdedKitchen.Starters.MozzaSticks
                 }
             }
         };
-        /*
+        
         public override void OnRegister(GameDataObject gameDataObject)
         {
             var materials = new Material[]
             {
-                MaterialUtils.GetExistingMaterial("Bread - Inside"),
+                MaterialUtils.GetExistingMaterial("Plate"),
+                MaterialUtils.GetExistingMaterial("Tomato")
              };
-            MaterialUtils.ApplyMaterial(Prefab, "GameObject", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Bread");
-            MaterialUtils.ApplyMaterial(Prefab, "GameObject (1)", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Olive Oil Bottle");
-            MaterialUtils.ApplyMaterial(Prefab, "GameObject (2)", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "Sauce", materials);
 
-            // MaterialUtils.ApplyMaterial([object], [name], [material list]
-        }
-        */
+            materials[0] = MaterialUtils.GetExistingMaterial("Plate");
+            MaterialUtils.ApplyMaterial(Prefab, "Plate", materials);
+
+            materials[0] = MaterialUtils.GetExistingMaterial("Bread");
+            materials[0] = MaterialUtils.GetExistingMaterial("Bread");
+            MaterialUtils.ApplyMaterial(Prefab, "MozzaSticks", materials);
+        }      
     }
 }

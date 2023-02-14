@@ -9,7 +9,7 @@ namespace ModdedKitchen.Starters.MozzaSticks
     class MaranaraSauce : CustomItemGroup
     {
         public override string UniqueNameID => "Maranara Sauce";
-        public override GameObject Prefab => Main.Cheese.Prefab;
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("MaranaraSauce");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
 
@@ -19,6 +19,7 @@ namespace ModdedKitchen.Starters.MozzaSticks
             {
                 Max = 2,
                 Min = 2,
+                IsMandatory = true,
                 Items = new List<Item>()
                 {
                     Main.OilIngredient,
@@ -27,21 +28,15 @@ namespace ModdedKitchen.Starters.MozzaSticks
             }
         };
 
-        /*
+        
         public override void OnRegister(GameDataObject gameDataObject)
         {
             var materials = new Material[]
             {
-                MaterialUtils.GetExistingMaterial("Bread - Inside"),
+                MaterialUtils.GetExistingMaterial("Plate"),
+                MaterialUtils.GetExistingMaterial("Tomato")
              };
-            MaterialUtils.ApplyMaterial(Prefab, "GameObject", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Bread");
-            MaterialUtils.ApplyMaterial(Prefab, "GameObject (1)", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Olive Oil Bottle");
-            MaterialUtils.ApplyMaterial(Prefab, "GameObject (2)", materials);
-
-            // MaterialUtils.ApplyMaterial([object], [name], [material list]
-        }
-        */
+            MaterialUtils.ApplyMaterial(Prefab, "Sauce", materials);
+        }  
     }
 }

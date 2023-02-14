@@ -24,6 +24,8 @@ using ModdedKitchen.Starters.MozzaSticks;
 using ModdedKitchen.Desserts.AppleRings;
 using ModdedKitchen.Registry;
 using ModdedKitchen.Desserts.BananaBread;
+using ModdedKitchen.Sides.Milk;
+using ModdedKitchen.Mains.Chili.Extras;
 
 namespace ModdedKitchen
 {
@@ -31,7 +33,7 @@ namespace ModdedKitchen
     {
         internal const string MOD_ID = "The Modded Kitchen";
         internal const string MOD_NAME = "The Modded Kitchen";
-        internal const string MOD_VERSION = "1.2.2";
+        internal const string MOD_VERSION = "1.2.3";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
@@ -73,13 +75,18 @@ namespace ModdedKitchen
         internal static Item Dough => GetExistingGDO<Item>(ItemReference.Dough);
         internal static Item SteakWellDone => GetExistingGDO<Item>(ItemReference.SteakWelldone);
         internal static Item Meat => GetExistingGDO<Item>(ItemReference.Meat);
+        internal static Item Corn => GetExistingGDO<Item>(ItemReference.CornRaw);
+        internal static Item HuskedCorn => GetExistingGDO<Item>(ItemReference.CornHusked);
+        internal static Item ChoppedMeat => GetExistingGDO<Item>(ItemReference.MeatChopped);
+        internal static Item Rice => GetExistingGDO<Item>(ItemReference.Rice);
+        internal static Item RiceCooked => GetExistingGDO<Item>(ItemReference.RiceContainerCooked);
 
 
         //  internal static Appliance Grabber => Find<Appliance>(ApplianceReferences.Grabber);
         //  internal static Appliance MixerPusher => Find<Appliance>(ApplianceReferences.MixerPusher);
         //  internal static Appliance Combiner => Find<Appliance>(ApplianceReferences.Combiner);
         //  internal static Appliance SaftyHob => Find<Appliance>(ApplianceReferences.HobSafe);
-       //   internal static Appliance FrozenPrep => Find<Appliance>(ApplianceReferences.FrozenPrepStation);
+        //   internal static Appliance FrozenPrep => Find<Appliance>(ApplianceReferences.FrozenPrepStation);
 
         // Vanilla Items
         internal static Item Plate => GetExistingGDO<Item>(ItemReference.Plate);
@@ -89,6 +96,8 @@ namespace ModdedKitchen
         internal static Item Pot => GetExistingGDO<Item>(ItemReference.Pot);
         internal static Item Water => GetExistingGDO<Item>(ItemReference.Water);
         internal static Item ServingBoard => GetExistingGDO<Item>(ItemReference.ServingBoard);
+        internal static Item Wok => GetExistingGDO<Item>(ItemReference.Wok);
+
 
         // Ingredients Lib Ingredients
 
@@ -110,6 +119,10 @@ namespace ModdedKitchen
         public static Item Banana => Find<Item>(IngredientLib.References.GetIngredient("banana"));
         public static Item PeeledBanana => Find<Item>(IngredientLib.References.GetIngredient("peeled banana"));
         public static Item Oats => Find<Item>(IngredientLib.References.GetIngredient("oats"));
+        public static Item Peppers => Find<Item>(IngredientLib.References.GetIngredient("peppers"));
+        public static Item ChoppedPeppers => Find<Item>(IngredientLib.References.GetIngredient("chopped peppers"));
+        public static Item WhippingCream => Find<Item>(IngredientLib.References.GetIngredient("whipping cream"));
+        public static Item WhippingCreamIngredient => Find<Item>(IngredientLib.References.GetSplitIngredient("whipping cream"));
 
         // Grilled Cheese
         internal static Item BurnedGrilledCheese => GetModdedGDO<Item, BurnedGrilledCheese>();
@@ -133,24 +146,20 @@ namespace ModdedKitchen
 
         // Mac n Cheese
         internal static Item CookedMacNCheesePot => GetModdedGDO<Item, CookedMacNCheesePot>();
-        internal static Item CookedMacNCheeseHalfPot => GetModdedGDO<Item, CookedMacNCheeseHalfPot>();
         internal static Item MacNCheeseServing => GetModdedGDO<Item, MacNCheeseServing>();
 
         // Bruschetta
         internal static Item BurntBruschetta => GetModdedGDO<Item, BurntBruschetta>();
         internal static Item CookedBread => GetModdedGDO<Item, CookedBread>();
-        internal static ItemGroup UncookedBruschetta => GetModdedGDO<ItemGroup, UncookedBruschetta>();
         internal static ItemGroup AssembledBruschetta => GetModdedGDO<ItemGroup, AssembledBruschetta>();
         internal static ItemGroup PlatedBruschetta => GetModdedGDO<ItemGroup, PlatedBruschetta>();
 
         // Garlic Bread
         internal static Item BurntGarlicBread => GetModdedGDO<Item, BurntGarlicBread>();
-        internal static ItemGroup UncookedGarlicBread => GetModdedGDO<ItemGroup, UncookedGarlicBread>();
         internal static ItemGroup PlatedGarlicBread => GetModdedGDO<ItemGroup, PlatedGarlicBread>();
         internal static Item CookedGarlicBread => GetModdedGDO<Item, CookedGarlicBread>();
 
         // Chocolate Pudding Pie
-        internal static ItemGroup ChocolatePuddingPieA => GetModdedGDO<ItemGroup, ChocolatePuddingPieA>();
         internal static Item ChocolatePuddingPieServing => GetModdedGDO<Item, ChocolatePuddingPieServing>();
 
         // Mozza Sticks
@@ -158,18 +167,22 @@ namespace ModdedKitchen
         internal static ItemGroup CombinedMozzaSticks => GetModdedGDO<ItemGroup, CombinedMozzaSticks>();
         internal static Item CookedMozzaSticks => GetModdedGDO<Item, CookedMozzaSticks>();
         internal static ItemGroup MaranaraSauce => GetModdedGDO<ItemGroup, MaranaraSauce>();
-        internal static ItemGroup UncookedMozzaSticks => GetModdedGDO<ItemGroup, UncookedMozzaSticks>();
 
         // Apple Rings
         internal static Item BurntAppleRings => GetModdedGDO<Item, BurntAppleRings>();
         internal static Item CookedAppleRings => GetModdedGDO<Item, CookedAppleRings>();
-        internal static ItemGroup UncookeAppleRings => GetModdedGDO<ItemGroup, UncookedAppleRings>();
 
         // Banana Bread
-
         internal static Item BananaBreadLoaf => GetModdedGDO<Item, BananaBreadLoaf>();
         internal static Item BananaBreadSlice => GetModdedGDO<Item, BananaBreadSlice>();
-        internal static ItemGroup UncookedBananaBread => GetModdedGDO<ItemGroup, UncookedBananaBread>();
+
+        // Cornbread
+        internal static Item CornBreadPortion => GetModdedGDO<Item, CornBreadPortion>();
+        internal static Item CookedCornBread => GetModdedGDO<Item, CookedCornBread>();
+        internal static Item BurntCornBread => GetModdedGDO<Item, BurntCornBread>();
+
+        // Milk
+        internal static ItemGroup MilkGlass => GetModdedGDO<ItemGroup, MilkGlass>();
 
 
 
@@ -202,8 +215,8 @@ namespace ModdedKitchen
             // Starters
                AddGameDataObject<BruschettaDish>();
                AddGameDataObject<GarlicBreadDish>();
-            //   AddGameDataObject<MozzaSticksDish>();       // No Models yet. Not Tested
-               AddGameDataObject<MacNCheeseDish>();        // Side, but wont show when merged on the plate
+               AddGameDataObject<MozzaSticksDish>();       
+                       
 
             // Mains
                AddGameDataObject<GrilledCheeseDish>();
@@ -215,7 +228,9 @@ namespace ModdedKitchen
                AddGameDataObject<AdditionalToppings>();
 
             // Sides
-
+               AddGameDataObject<MacNCheeseDish>();
+            //   AddGameDataObject<MilkDish>();         // WIP
+               AddGameDataObject<CornBreadDish>();      // WIP
 
             // Desserts
                AddGameDataObject<ChocolatePuddingPieDish>();
@@ -290,6 +305,15 @@ namespace ModdedKitchen
             AddGameDataObject<BananaBreadLoaf>();
             AddGameDataObject<BananaBreadSlice>();
             AddGameDataObject<UncookedBananaBread>();
+
+            // Cornbread
+            AddGameDataObject<UncookedCornBread>();
+            AddGameDataObject<CornBreadPortion>();
+            AddGameDataObject<CookedCornBread>();
+            AddGameDataObject<BurntCornBread>();
+
+            // Milk
+            AddGameDataObject<MilkGlass>();
 
 
             Events.BuildGameDataEvent += delegate (object s, BuildGameDataEventArgs args)
