@@ -46,20 +46,21 @@ namespace ModdedKitchen.Mains.Chili.Extras
             MaterialUtils.ApplyMaterial(Prefab, "Slice 7", materials);
             MaterialUtils.ApplyMaterial(Prefab, "Slice 8", materials);
 
-            if (!Prefab.HasComponent<CookedCornbreadItemView>())
+            if (!Prefab.HasComponent<CookedCornBreadItemView>())
             {
-                var view = Prefab.AddComponent<CookedCornbreadItemView>();
+                var view = Prefab.AddComponent<CookedCornBreadItemView>();
                 view.Setup(Prefab);
             }
         }
     }
-    public class CookedCornbreadItemView : ObjectsSplittableView
+    public class CookedCornBreadItemView : ObjectsSplittableView
     {
         internal void Setup(GameObject prefab)
         {
             var fObjects = ReflectionUtils.GetField<ObjectsSplittableView>("Objects");
             fObjects.SetValue(this, new List<GameObject>()
             {
+                // Invisible models
                 GameObjectUtils.GetChildObject(prefab, "Slice 1"),
                 GameObjectUtils.GetChildObject(prefab, "Slice 2"),
                 GameObjectUtils.GetChildObject(prefab, "Slice 3"),
@@ -67,7 +68,20 @@ namespace ModdedKitchen.Mains.Chili.Extras
                 GameObjectUtils.GetChildObject(prefab, "Slice 5"),
                 GameObjectUtils.GetChildObject(prefab, "Slice 6"),
                 GameObjectUtils.GetChildObject(prefab, "Slice 7"),
-                GameObjectUtils.GetChildObject(prefab, "Slice 8")
+                GameObjectUtils.GetChildObject(prefab, "Slice 8"),
+                
+
+                // This doesnt let me launch the game
+                /*
+                prefab.GetChild("Slice 1"),
+                prefab.GetChild("Slice 2"),
+                prefab.GetChild("Slice 3"),
+                prefab.GetChild("Slice 4"),
+                prefab.GetChild("Slice 5"),
+                prefab.GetChild("Slice 6"),
+                prefab.GetChild("Slice 7"),
+                prefab.GetChild("Slice 8")
+                */
             });
         }
     }

@@ -35,7 +35,7 @@ namespace ModdedKitchen.Desserts.BananaBread
             {
                    MaterialUtils.GetExistingMaterial("Bread - Inside"),
                    MaterialUtils.GetExistingMaterial("Bread")
-        };
+            };
             MaterialUtils.ApplyMaterial(Prefab, "Slice - End/Bread", materials);
             MaterialUtils.ApplyMaterial(Prefab, "Slice 2/Bread", materials);
             MaterialUtils.ApplyMaterial(Prefab, "Slice 3/Bread", materials);

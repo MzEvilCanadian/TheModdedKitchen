@@ -40,14 +40,14 @@ namespace ModdedKitchen.Mains.Chili.Extras
                 Result = Main.CookedCornBread
             }
         };
-        
+
 
         public override void OnRegister(GameDataObject gameDataObject)
         {
             var materials = new Material[]
             {
-                   MaterialUtils.GetExistingMaterial("Piano White"),
-                   MaterialUtils.GetExistingMaterial("Plastic")
+                   MaterialUtils.GetExistingMaterial("Metal Dark"),
+                   MaterialUtils.GetExistingMaterial("Metal Dark")
              };
             MaterialUtils.ApplyMaterial(Prefab, "Egg", materials);
 
@@ -70,12 +70,13 @@ namespace ModdedKitchen.Mains.Chili.Extras
 
             Prefab.GetComponent<MyItemGroupView>()?.Setup(Prefab);
         }
-
     }
+
+    // Invisible models when used
     public class MyItemGroupView : ItemGroupView
     {
-        internal void Setup(GameObject prefab)
-        {
+        internal void Setup(GameObject prefab) =>
+        
             // This tells which sub-object of the prefab corresponds to each component of the ItemGroup
             // All of these sub-objects are hidden unless the item is present
             ComponentGroups = new()
@@ -97,11 +98,15 @@ namespace ModdedKitchen.Mains.Chili.Extras
                 },
                 new()
                 {
-                    GameObject = GameObjectUtils.GetChildObject(prefab, "Flour"),
+                    Objects = new()
+                    {
+                        GameObjectUtils.GetChildObject(prefab, "Flour"),
+                        GameObjectUtils.GetChildObject(prefab, "Bowl")
+                    },
                     Item = Main.Flour
                 },
             };
-        }
+        
     }
 
 }

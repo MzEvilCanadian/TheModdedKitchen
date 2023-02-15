@@ -47,8 +47,6 @@ namespace ModdedKitchen.Mains.GrilledCheese
                 Result = Main.CookedGrilledCheese
             }
         };
-        
-        
         public override void OnRegister(GameDataObject gameDataObject)
         {
             var materials = new Material[]

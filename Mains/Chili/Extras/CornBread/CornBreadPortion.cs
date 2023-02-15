@@ -20,14 +20,10 @@ namespace ModdedKitchen.Mains.Chili.Extras
 
             var materials = new Material[]
             {
-                  MaterialUtils.GetExistingMaterial("Plate"),
+                  MaterialUtils.GetExistingMaterial("Bread"),
                   MaterialUtils.GetExistingMaterial("Plastic - Yellow")
             };
             MaterialUtils.ApplyMaterial(Prefab, "CornBread", materials);
-
-            materials[0] = MaterialUtils.GetExistingMaterial("Plate");
-            materials[1] = MaterialUtils.GetExistingMaterial("Plate");
-            MaterialUtils.ApplyMaterial(Prefab, "Plate", materials);
         }
     }
 }
