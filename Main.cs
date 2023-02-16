@@ -26,6 +26,7 @@ using ModdedKitchen.Registry;
 using ModdedKitchen.Desserts.BananaBread;
 using ModdedKitchen.Sides.Milk;
 using ModdedKitchen.Mains.Chili.Extras;
+using ModdedKitchen.Mains.Chili;
 
 namespace ModdedKitchen
 {
@@ -33,7 +34,7 @@ namespace ModdedKitchen
     {
         internal const string MOD_ID = "The Modded Kitchen";
         internal const string MOD_NAME = "The Modded Kitchen";
-        internal const string MOD_VERSION = "1.2.4";
+        internal const string MOD_VERSION = "1.2.5";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
@@ -80,6 +81,7 @@ namespace ModdedKitchen
         internal static Item ChoppedMeat => GetExistingGDO<Item>(ItemReference.MeatChopped);
         internal static Item Rice => GetExistingGDO<Item>(ItemReference.Rice);
         internal static Item RiceCooked => GetExistingGDO<Item>(ItemReference.RiceContainerCooked);
+        internal static Item Beans => GetExistingGDO<Item>(ItemReference.BeansIngredient);
 
 
         //  internal static Appliance Grabber => Find<Appliance>(ApplianceReferences.Grabber);
@@ -184,6 +186,14 @@ namespace ModdedKitchen
         // Milk
         internal static ItemGroup MilkGlass => GetModdedGDO<ItemGroup, MilkGlass>();
 
+        // Chili
+        internal static ItemGroup ChiliPlated => GetModdedGDO<ItemGroup, ChiliPlated>();
+        internal static Item ChiliPot => GetModdedGDO<Item, ChiliPot>();
+        internal static Item ChiliPortion => GetModdedGDO<Item, ChiliPortion>();
+        internal static Dish ChiliDish => GetModdedGDO<Dish, ChiliDish>();
+        internal static ItemGroup UncookedChiliPot => GetModdedGDO<ItemGroup, UncookedChiliPot>();
+        
+
 
 
         internal static bool debug = true;
@@ -209,6 +219,7 @@ namespace ModdedKitchen
                 Find<Unlock, KetchupDish>().BlockedBy.Clear();
                 Find<Unlock, MustardDish>().BlockedBy.Clear();
                 Find<Unlock, MonteCristoDish>().BlockedBy.Clear();
+                Find<Unlock, ChiliBeans>().BlockedBy.Clear();
             };
 
             // Dishes
@@ -221,6 +232,7 @@ namespace ModdedKitchen
             // Mains
                AddGameDataObject<GrilledCheeseDish>();
                AddGameDataObject<MonteCristoDish>();
+               AddGameDataObject<ChiliDish>();
 
             // Extras
                AddGameDataObject<KetchupDish>();
@@ -230,7 +242,7 @@ namespace ModdedKitchen
             // Sides
                AddGameDataObject<MacNCheeseDish>();
             //   AddGameDataObject<MilkDish>();         // WIP
-               AddGameDataObject<CornBreadDish>();      // WIP
+            //   AddGameDataObject<CornBreadDish>();      // Broken, invisible models when using splitview and item views
 
             // Desserts
                AddGameDataObject<ChocolatePuddingPieDish>();
@@ -314,6 +326,14 @@ namespace ModdedKitchen
 
             // Milk
             AddGameDataObject<MilkGlass>();
+
+            // Chili
+            AddGameDataObject<ChiliPlated>();
+            AddGameDataObject<ChiliPortion>();
+            AddGameDataObject<ChiliPot>();
+            AddGameDataObject<UncookedChiliPot>();
+
+            AddGameDataObject<ChiliBeans>();
 
 
             Events.BuildGameDataEvent += delegate (object s, BuildGameDataEventArgs args)

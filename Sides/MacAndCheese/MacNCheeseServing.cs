@@ -11,7 +11,7 @@ namespace ModdedKitchen.Sides.MacNCheese
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Mac and Cheese");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
-        public override ItemValue ItemValue => ItemValue.Small;
+        public override ItemValue ItemValue => ItemValue.SideMedium;
         public override bool IsMergeableSide =>  true;
         public override string ColourBlindTag => "M&C";
 
