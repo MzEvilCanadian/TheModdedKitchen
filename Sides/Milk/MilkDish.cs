@@ -6,6 +6,7 @@ namespace ModdedKitchen.Dishes
 {
     class MilkDish : ModDish
     {
+        /*
         public override string UniqueNameID => "Milk Dish";
         public override DishType Type => DishType.Side;
         public override CardType CardType => CardType.Default;
@@ -31,7 +32,8 @@ namespace ModdedKitchen.Dishes
         };
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {
-            { Locale.English, LocalisationUtils.CreateUnlockInfo("Milk", "Adds Milk Side", "Got Milk?") }
+            { Locale.English, LocalisationUtils.CreateUnlockInfo("Milk", "Adds Milk Side", "Jay's Milk") }
         };
+        */
     }
 }

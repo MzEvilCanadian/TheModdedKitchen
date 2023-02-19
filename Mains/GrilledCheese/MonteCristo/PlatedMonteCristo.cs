@@ -11,7 +11,7 @@ namespace ModdedKitchen.Mains.GrilledCheese.MonteCristo
         public override string UniqueNameID => "Plated Monte Cristo";
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Monte Cristo");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
-        public override ItemValue ItemValue => ItemValue.MediumLarge;
+        public override ItemValue ItemValue => ItemValue.Large;
         public override Item DisposesTo => Main.Plate;
         public override Item DirtiesTo => Main.DirtyPlate;
         public override string ColourBlindTag => "MC";
@@ -45,11 +45,13 @@ namespace ModdedKitchen.Mains.GrilledCheese.MonteCristo
             materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
             materials[1] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
             MaterialUtils.ApplyMaterial(Prefab, "Cheese", materials);
+
             materials[0] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Bacon\"");
+            materials[1] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Bacon\"");
             MaterialUtils.ApplyMaterial(Prefab, "Pork", materials);
 
             materials[0] = MaterialUtils.GetExistingMaterial("Plate");
-            materials[0] = MaterialUtils.GetExistingMaterial("Plate - Ring");
+            materials[1] = MaterialUtils.GetExistingMaterial("Plate - Ring");
             MaterialUtils.ApplyMaterial(Prefab, "Plate", materials);
 
 

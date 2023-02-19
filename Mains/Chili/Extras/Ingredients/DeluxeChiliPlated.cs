@@ -6,16 +6,17 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ModdedKitchen.Mains.Chili.Extras.Toppings
+namespace ModdedKitchen.Mains.Chili.Extras.Deluxe
 {
-    class ChiliXT : CustomItemGroup<MyItemGroupView>
+    class DeluxeChiliPlated : CustomItemGroup <MyItemGroupView>
     {
-        public override string UniqueNameID => "Plated Chili XT";
-        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("ChiliXT");
+        public override string UniqueNameID => "Deluxe Plated Chili";
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("PlatedDeluxeChili");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
-        public override ItemValue ItemValue => ItemValue.Large;
+        public override ItemValue ItemValue => ItemValue.MediumLarge;
         public override Item DisposesTo => Main.Plate;
         public override Item DirtiesTo => Main.DirtyPlate;
+        public override string ColourBlindTag => "DCh";
         public override bool CanContainSide => true;
 
         public override List<ItemGroup.ItemSet> Sets => new()
@@ -27,23 +28,22 @@ namespace ModdedKitchen.Mains.Chili.Extras.Toppings
                 IsMandatory = true,
                 Items = new List<Item>()
                 {
-                    Main.Plate,
-                    Main.ChiliPortion
+                    Main.DeluxeChiliPortion,
+                    Main.Plate
                 }
             },
             new ItemGroup.ItemSet()
             {
                 Max = 2,
-                Min = 1,
+                Min = 0,
+                RequiresUnlock = true,
                 Items = new List<Item>()
                 {
-                    Main.WhippedCream,
                     Main.GratedCheese,
+                    Main.WhippingCream
                 }
             },
         };
-
-        private bool GameDataBuilt = false;
         public override void OnRegister(GameDataObject gameDataObject)
         {
 
@@ -51,7 +51,7 @@ namespace ModdedKitchen.Mains.Chili.Extras.Toppings
             {
                   MaterialUtils.GetExistingMaterial("Plate"),
                   MaterialUtils.GetExistingMaterial("Plate - Ring")
-            };
+        };
             MaterialUtils.ApplyMaterial(Prefab, "Bowl", materials);
 
             MaterialUtils.ApplyMaterial(Prefab, "Plate", materials);
@@ -70,6 +70,18 @@ namespace ModdedKitchen.Mains.Chili.Extras.Toppings
             MaterialUtils.ApplyMaterial(Prefab, "Onion", materials);
             MaterialUtils.ApplyMaterial(Prefab, "Onion 2", materials);
 
+            materials[0] = MaterialUtils.GetExistingMaterial("Metal Dark");
+            materials[1] = MaterialUtils.GetExistingMaterial("Metal Dark");
+            MaterialUtils.ApplyMaterial(Prefab, "Meat", materials);
+
+            materials[0] = MaterialUtils.GetExistingMaterial("Metal Dark");
+            materials[1] = MaterialUtils.GetExistingMaterial("Metal Dark");
+            MaterialUtils.ApplyMaterial(Prefab, "Corn", materials);
+
+            materials[0] = MaterialUtils.GetExistingMaterial("Metal Dark");
+            materials[1] = MaterialUtils.GetExistingMaterial("Metal Dark");
+            MaterialUtils.ApplyMaterial(Prefab, "Beans", materials);
+
             materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
             materials[1] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
             MaterialUtils.ApplyMaterial(Prefab, "Cheese", materials);
@@ -79,19 +91,15 @@ namespace ModdedKitchen.Mains.Chili.Extras.Toppings
             MaterialUtils.ApplyMaterial(Prefab, "Sour Cream", materials);
 
             Prefab.GetComponent<MyItemGroupView>()?.Setup(Prefab);
-
-            if (Prefab.TryGetComponent<ItemGroupView>(out var itemGroupView))
+            if (!Prefab.TryGetComponent<ItemGroupView>(out var itemGroupView))
             {
                 GameObject clonedColourBlind = ColorblindUtils.cloneColourBlindObjectAndAddToItem(GameDataObject as ItemGroup);
                 ColorblindUtils.setColourBlindLabelObjectOnItemGroupView(itemGroupView, clonedColourBlind);
             }
-
-            GameDataBuilt = true;
         }
     }
     public class MyItemGroupView : ItemGroupView
     {
-
         internal void Setup(GameObject prefab)
         {
             // This tells which sub-object of the prefab corresponds to each component of the ItemGroup
@@ -100,21 +108,47 @@ namespace ModdedKitchen.Mains.Chili.Extras.Toppings
             {
                 new()
                 {
+                    Objects = new()
+                    {
+                        GameObjectUtils.GetChildObject(prefab, "Bowl"),
+                        GameObjectUtils.GetChildObject(prefab, "Sauce"),
+                        GameObjectUtils.GetChildObject(prefab, "Tomato"),
+                        GameObjectUtils.GetChildObject(prefab, "Tomato 2"),
+                        GameObjectUtils.GetChildObject(prefab, "Onion"),
+                        GameObjectUtils.GetChildObject(prefab, "Onion 2"),
+                        GameObjectUtils.GetChildObject(prefab, "Meat"),
+                        GameObjectUtils.GetChildObject(prefab, "Corn"),
+                        GameObjectUtils.GetChildObject(prefab, "Beans"),
+                    },
+                    Item = Main.DeluxeChiliPortion,
+                    DrawAll = true
+                },
+                new()
+                {
+
+                    GameObject = GameObjectUtils.GetChildObject(prefab, "Plate"),
+                    Item = Main.Plate,
+                },
+                new()
+                {
+
                     GameObject = GameObjectUtils.GetChildObject(prefab, "Cheese"),
                     Item = Main.GratedCheese,
                 },
                 new()
                 {
+
                     GameObject = GameObjectUtils.GetChildObject(prefab, "Sour Cream"),
                     Item = Main.WhippedCream,
                 },
+
             };
             ComponentLabels = new()
             {
                 new()
                 {
-                    Item = Main.ChiliPortion,
-                    Text = "C"
+                    Item = Main.DeluxeChiliPortion,
+                    Text = "DC"
                 },
                 new()
                 {
@@ -131,6 +165,7 @@ namespace ModdedKitchen.Mains.Chili.Extras.Toppings
                     Item = Main.WhippedCream,
                     Text = "Sc"
                 },
+
             };
         }
     }

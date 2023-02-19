@@ -31,7 +31,6 @@ namespace ModdedKitchen.Dishes
             "The Ultimate Chili",
             "Mean Mama Chili",
             "Bubble and Simmer"
-
         };
         public override List<Dish.MenuItem> ResultingMenuItems => new()
         {

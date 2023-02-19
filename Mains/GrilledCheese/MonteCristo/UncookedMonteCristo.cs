@@ -65,6 +65,7 @@ namespace ModdedKitchen.Mains.GrilledCheese.MonteCristo
             MaterialUtils.ApplyMaterial(Prefab, "Cheese", materials);
 
             materials[0] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Bacon\"");
+            materials[1] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Bacon\"");
             MaterialUtils.ApplyMaterial(Prefab, "Pork", materials);
 
             materials[0] = MaterialUtils.GetExistingMaterial("Egg - White");

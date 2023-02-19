@@ -58,7 +58,7 @@ namespace ModdedKitchen.Dishes
         };
         public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
         {
-            { Locale.English, "Knead flour into dough and cook. Combine two bread slices, cheese, and butter then cook. " }
+            { Locale.English, "Knead flour into dough and cook. Combine chopped cheese with two bread slices then a butter slice then cook. " }
         };
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {

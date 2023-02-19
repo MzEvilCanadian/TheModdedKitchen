@@ -48,6 +48,8 @@ namespace ModdedKitchen.Mains.Chili.Extras
             MaterialUtils.ApplyMaterial(Prefab, "GameObject/Slice 7", materials);
             MaterialUtils.ApplyMaterial(Prefab, "GameObject/Slice 8", materials);
 
+            Prefab.GetComponent<MyItemGroupView>()?.Setup(Prefab);
+
             if (!Prefab.HasComponent<CookedCornBreadItemView>())
             {
                 var view = Prefab.AddComponent<CookedCornBreadItemView>();
@@ -74,8 +76,8 @@ namespace ModdedKitchen.Mains.Chili.Extras
                 GameObjectUtils.GetChildObject(prefab, "GameObject/Slice 6"),
                 GameObjectUtils.GetChildObject(prefab, "GameObject/Slice 7"),
                 GameObjectUtils.GetChildObject(prefab, "GameObject/Slice 8"),
+                
                 /*
-
                 // This doesnt let me launch the game
                 
                 prefab.GetChild("GameObject/Slice 1"),

@@ -1,5 +1,6 @@
 ﻿using Kitchen;
 using KitchenData;
+using KitchenLib.Colorblind;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using UnityEngine;
 
 namespace ModdedKitchen.Mains.Chili.Extras
 {
-    class UncookedCornBread : CustomItemGroup //<MyItemGroupView>
+    class UncookedCornBread : CustomItemGroup <MyItemGroupView>
     {
         
         public override string UniqueNameID => "Uncooked Cornbread";
@@ -51,8 +52,8 @@ namespace ModdedKitchen.Mains.Chili.Extras
             };
             MaterialUtils.ApplyMaterial(Prefab, "Egg", materials);
 
-            materials[0] = MaterialUtils.GetExistingMaterial("Metal Dark");
-            materials[1] = MaterialUtils.GetExistingMaterial("Metal Dark");
+            materials[0] = MaterialUtils.GetExistingMaterial("Raw Pastry");
+            materials[1] = MaterialUtils.GetExistingMaterial("Raw Pastry");
             MaterialUtils.ApplyMaterial(Prefab, "Corn", materials);
 
             materials[0] = MaterialUtils.GetExistingMaterial("Metal Dark");
@@ -69,9 +70,16 @@ namespace ModdedKitchen.Mains.Chili.Extras
 
 
             Prefab.GetComponent<MyItemGroupView>()?.Setup(Prefab);
+            if (Prefab.TryGetComponent<ItemGroupView>(out var itemGroupView))
+            {
+                GameObject clonedColourBlind = ColorblindUtils.cloneColourBlindObjectAndAddToItem(GameDataObject as ItemGroup);
+                ColorblindUtils.setColourBlindLabelObjectOnItemGroupView(itemGroupView, clonedColourBlind);
+            }
         }
+        
     }
 
+    
     // Invisible models when used
     public class MyItemGroupView : ItemGroupView
     {
@@ -85,19 +93,16 @@ namespace ModdedKitchen.Mains.Chili.Extras
                 {
                     GameObject = GameObjectUtils.GetChildObject(prefab, "Corn"),
                     Item = Main.HuskedCorn,
-                    DrawAll = true
                 },
                 new()
                 {
                     GameObject = GameObjectUtils.GetChildObject(prefab, "Egg"),
                     Item = Main.EggCracked,
-                    DrawAll = true
                 },
                 new()
                 {
                     GameObject = GameObjectUtils.GetChildObject(prefab, "Sugar"),
                     Item = Main.Sugar,
-                    DrawAll = true
                 },
                 new()
                 {
@@ -112,5 +117,6 @@ namespace ModdedKitchen.Mains.Chili.Extras
             };
         }
     }
+    
 }
 

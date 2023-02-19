@@ -27,6 +27,9 @@ using ModdedKitchen.Desserts.BananaBread;
 using ModdedKitchen.Sides.Milk;
 using ModdedKitchen.Mains.Chili.Extras;
 using ModdedKitchen.Mains.Chili;
+using ModdedKitchen.Mains.Chili.Extras.Toppings;
+using ModdedKitchen.Mains.Chili.Extras.Ingredients;
+using ModdedKitchen.Mains.Chili.Extras.Deluxe;
 
 namespace ModdedKitchen
 {
@@ -34,7 +37,7 @@ namespace ModdedKitchen
     {
         internal const string MOD_ID = "The Modded Kitchen";
         internal const string MOD_NAME = "The Modded Kitchen";
-        internal const string MOD_VERSION = "1.2.5";
+        internal const string MOD_VERSION = "1.3.1";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
@@ -124,7 +127,7 @@ namespace ModdedKitchen
         public static Item Peppers => Find<Item>(IngredientLib.References.GetIngredient("peppers"));
         public static Item ChoppedPeppers => Find<Item>(IngredientLib.References.GetIngredient("chopped peppers"));
         public static Item WhippingCream => Find<Item>(IngredientLib.References.GetIngredient("whipping cream"));
-        public static Item WhippingCreamIngredient => Find<Item>(IngredientLib.References.GetSplitIngredient("whipping cream"));
+        public static Item WhippedCream => Find<Item>(IngredientLib.References.GetIngredient("whipped cream"));
 
         // Grilled Cheese
         internal static Item BurnedGrilledCheese => GetModdedGDO<Item, BurnedGrilledCheese>();
@@ -192,7 +195,13 @@ namespace ModdedKitchen
         internal static Item ChiliPortion => GetModdedGDO<Item, ChiliPortion>();
         internal static Dish ChiliDish => GetModdedGDO<Dish, ChiliDish>();
         internal static ItemGroup UncookedChiliPot => GetModdedGDO<ItemGroup, UncookedChiliPot>();
-        
+        internal static ItemGroup ChiliXT => GetModdedGDO<ItemGroup, ChiliXT>();
+
+        // Deluxe Chili
+        internal static Item DeluxeChiliPortion => GetModdedGDO<Item, DeluxeChiliPortion>();
+        internal static Item DeluxeChiliPot => GetModdedGDO<Item, DeluxeChiliPot>();
+        internal static ItemGroup DeluxeChiliPlated => GetModdedGDO<ItemGroup, DeluxeChiliPlated>();
+
 
 
 
@@ -219,7 +228,8 @@ namespace ModdedKitchen
                 Find<Unlock, KetchupDish>().BlockedBy.Clear();
                 Find<Unlock, MustardDish>().BlockedBy.Clear();
                 Find<Unlock, MonteCristoDish>().BlockedBy.Clear();
-                Find<Unlock, ChiliBeans>().BlockedBy.Clear();
+                Find<Unlock, DeluxeChiliDish>().BlockedBy.Clear();
+                Find<Unlock, ChiliXTDish>().BlockedBy.Clear();
             };
 
             // Dishes
@@ -233,11 +243,15 @@ namespace ModdedKitchen
                AddGameDataObject<GrilledCheeseDish>();
                AddGameDataObject<MonteCristoDish>();
                AddGameDataObject<ChiliDish>();
+               AddGameDataObject<DeluxeChiliDish>();
 
             // Extras
                AddGameDataObject<KetchupDish>();
                AddGameDataObject<MustardDish>();
                AddGameDataObject<AdditionalToppings>();
+
+               AddGameDataObject<ChiliXTDish>();
+            //   AddGameDataObject<ChiliBeansDish>();
 
             // Sides
                AddGameDataObject<MacNCheeseDish>();
@@ -319,13 +333,13 @@ namespace ModdedKitchen
             AddGameDataObject<UncookedBananaBread>();
 
             // Cornbread
-            AddGameDataObject<UncookedCornBread>();
-            AddGameDataObject<CornBreadPortion>();
-            AddGameDataObject<CookedCornBread>();
-            AddGameDataObject<BurntCornBread>();
+         //   AddGameDataObject<UncookedCornBread>();
+         //   AddGameDataObject<CornBreadPortion>();
+         //   AddGameDataObject<CookedCornBread>();
+         //   AddGameDataObject<BurntCornBread>();
 
             // Milk
-            AddGameDataObject<MilkGlass>();
+         //   AddGameDataObject<MilkGlass>();
 
             // Chili
             AddGameDataObject<ChiliPlated>();
@@ -333,7 +347,14 @@ namespace ModdedKitchen
             AddGameDataObject<ChiliPot>();
             AddGameDataObject<UncookedChiliPot>();
 
-            AddGameDataObject<ChiliBeans>();
+            // Deluxe Chili
+            AddGameDataObject<DeluxeChiliPlated>();
+            AddGameDataObject<DeluxeChiliPortion>();
+            AddGameDataObject<DeluxeChiliPot>();
+            AddGameDataObject<UncookedDeluxeChili>();
+
+            AddGameDataObject<ChiliXT>();
+
 
 
             Events.BuildGameDataEvent += delegate (object s, BuildGameDataEventArgs args)
