@@ -11,12 +11,11 @@ namespace ModdedKitchen.Mains.Chili.Extras.Deluxe
     class DeluxeChiliPlated : CustomItemGroup <MyItemGroupView>
     {
         public override string UniqueNameID => "Deluxe Plated Chili";
-        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("PlatedDeluxeChili");
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("DelxueChiliPlated");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemValue ItemValue => ItemValue.MediumLarge;
         public override Item DisposesTo => Main.Plate;
         public override Item DirtiesTo => Main.DirtyPlate;
-        public override string ColourBlindTag => "DCh";
         public override bool CanContainSide => true;
 
         public override List<ItemGroup.ItemSet> Sets => new()
@@ -70,16 +69,16 @@ namespace ModdedKitchen.Mains.Chili.Extras.Deluxe
             MaterialUtils.ApplyMaterial(Prefab, "Onion", materials);
             MaterialUtils.ApplyMaterial(Prefab, "Onion 2", materials);
 
-            materials[0] = MaterialUtils.GetExistingMaterial("Metal Dark");
-            materials[1] = MaterialUtils.GetExistingMaterial("Metal Dark");
+            materials[0] = MaterialUtils.GetExistingMaterial("Soup - Meat");
+            materials[1] = MaterialUtils.GetExistingMaterial("Soup - Meat");
             MaterialUtils.ApplyMaterial(Prefab, "Meat", materials);
 
-            materials[0] = MaterialUtils.GetExistingMaterial("Metal Dark");
-            materials[1] = MaterialUtils.GetExistingMaterial("Metal Dark");
+            materials[0] = MaterialUtils.GetExistingMaterial("Sweetcorn - Cooked");
+            materials[1] = MaterialUtils.GetExistingMaterial("Sweetcorn - Cooked");
             MaterialUtils.ApplyMaterial(Prefab, "Corn", materials);
 
-            materials[0] = MaterialUtils.GetExistingMaterial("Metal Dark");
-            materials[1] = MaterialUtils.GetExistingMaterial("Metal Dark");
+            materials[0] = MaterialUtils.GetExistingMaterial("Bean - Cooked");
+            materials[1] = MaterialUtils.GetExistingMaterial("Bean - Cooked");
             MaterialUtils.ApplyMaterial(Prefab, "Beans", materials);
 
             materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");

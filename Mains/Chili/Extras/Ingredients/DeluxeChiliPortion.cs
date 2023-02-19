@@ -33,13 +33,13 @@ namespace ModdedKitchen.Mains.Chili.Extras.Ingredients
             MaterialUtils.ApplyMaterial(Prefab, "Onion", materials);
             MaterialUtils.ApplyMaterial(Prefab, "Onion 2", materials);
 
-            materials[0] = MaterialUtils.GetExistingMaterial("Tomato");
+            materials[0] = MaterialUtils.GetExistingMaterial("Soup - Meat");
             MaterialUtils.ApplyMaterial(Prefab, "Meat", materials);
 
-            materials[0] = MaterialUtils.GetExistingMaterial("Tomato");
+            materials[0] = MaterialUtils.GetExistingMaterial("Sweetcorn - Cooked");
             MaterialUtils.ApplyMaterial(Prefab, "Corn", materials);
 
-            materials[0] = MaterialUtils.GetExistingMaterial("Tomato");
+            materials[0] = MaterialUtils.GetExistingMaterial("Bean - Cooked");
             MaterialUtils.ApplyMaterial(Prefab, "Beans", materials);
         }
     }

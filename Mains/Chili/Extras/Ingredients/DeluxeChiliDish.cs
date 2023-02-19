@@ -7,7 +7,7 @@ namespace ModdedKitchen.Dishes
     class DeluxeChiliDish : ModDish
     {
         public override string UniqueNameID => "Deluxe Chili Dish";
-        public override DishType Type => DishType.Extra;
+        public override DishType Type => DishType.Main;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Medium;
         public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
         public override CardType CardType => CardType.Default;

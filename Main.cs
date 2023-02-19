@@ -251,7 +251,7 @@ namespace ModdedKitchen
                AddGameDataObject<AdditionalToppings>();
 
                AddGameDataObject<ChiliXTDish>();
-            //   AddGameDataObject<ChiliBeansDish>();
+            
 
             // Sides
                AddGameDataObject<MacNCheeseDish>();
