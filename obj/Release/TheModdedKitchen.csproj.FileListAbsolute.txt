@@ -1,0 +1,7 @@
+C:\Users\Quack\source\repos\TheModdedKitchen\bin\Release\GrilledCheese.dll.config
+C:\Users\Quack\source\repos\TheModdedKitchen\bin\Release\GrilledCheese.dll
+C:\Users\Quack\source\repos\TheModdedKitchen\bin\Release\GrilledCheese.pdb
+C:\Users\Quack\source\repos\TheModdedKitchen\obj\Release\TheModdedKitchen.csproj.AssemblyReference.cache
+C:\Users\Quack\source\repos\TheModdedKitchen\obj\Release\TheModdedKitchen.csproj.CoreCompileInputs.cache
+C:\Users\Quack\source\repos\TheModdedKitchen\obj\Release\GrilledCheese.dll
+C:\Users\Quack\source\repos\TheModdedKitchen\obj\Release\GrilledCheese.pdb
