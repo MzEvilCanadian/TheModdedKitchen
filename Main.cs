@@ -30,6 +30,7 @@ using ModdedKitchen.Mains.Chili;
 using ModdedKitchen.Mains.Chili.Extras.Toppings;
 using ModdedKitchen.Mains.Chili.Extras.Ingredients;
 using ModdedKitchen.Mains.Chili.Extras.Deluxe;
+using ModdedKitchen.Desserts.RicePudding;
 
 namespace ModdedKitchen
 {
@@ -202,6 +203,11 @@ namespace ModdedKitchen
         internal static Item DeluxeChiliPot => GetModdedGDO<Item, DeluxeChiliPot>();
         internal static ItemGroup DeluxeChiliPlated => GetModdedGDO<ItemGroup, DeluxeChiliPlated>();
 
+        // Rice Pudding
+        internal static ItemGroup RicePuddingPot => GetModdedGDO<ItemGroup, RicePuddingPot>();
+        internal static Item RicePuddingPotCooked => GetModdedGDO<Item, RicePuddingPotCooked>();
+        internal static Item RicePudding => GetModdedGDO<Item, RicePudding>();
+        internal static Dish RicePuddingDish => GetModdedGDO<Dish, RicePuddingDish>();
 
 
 
@@ -263,10 +269,11 @@ namespace ModdedKitchen
                AddGameDataObject<AppleRingsDish>();        
                AddGameDataObject<AppleCrispDish>();
                AddGameDataObject<BananaBreadDish>();
+               AddGameDataObject<RicePuddingDish>();
 
             // Cards
 
-          //  AddGameDataObject<Automation>();    // WIP
+            //  AddGameDataObject<Automation>();    // WIP
 
 
 
@@ -331,6 +338,11 @@ namespace ModdedKitchen
             AddGameDataObject<BananaBreadLoaf>();
             AddGameDataObject<BananaBreadSlice>();
             AddGameDataObject<UncookedBananaBread>();
+
+            // Rice Pudding
+            AddGameDataObject<RicePudding>();
+            AddGameDataObject<RicePuddingPot>();
+            AddGameDataObject<RicePuddingPotCooked>();
 
             // Cornbread
          //   AddGameDataObject<UncookedCornBread>();

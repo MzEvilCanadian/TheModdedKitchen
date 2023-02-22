@@ -58,6 +58,10 @@
     <Compile Include="Desserts\BananaBread\BananaBreadLoaf.cs" />
     <Compile Include="Desserts\BananaBread\BananaBreadSlice.cs" />
     <Compile Include="Desserts\BananaBread\UncookedBananaBread.cs" />
+    <Compile Include="Desserts\RicePudding\RicePudding.cs" />
+    <Compile Include="Desserts\RicePudding\RicePuddingDish.cs" />
+    <Compile Include="Desserts\RicePudding\RicePuddingPot.cs" />
+    <Compile Include="Desserts\RicePudding\RicePuddingPotCooked.cs" />
     <Compile Include="Mains\Chili\ChiliDish.cs" />
     <Compile Include="Mains\Chili\ChiliPlated.cs" />
     <Compile Include="Mains\Chili\ChiliPortion.cs" />

@@ -5,3 +5,10 @@ C:\Users\Amber-PC2\source\repos\GrilledCheese\GrilledCheese\obj\Debug\TheModdedK
 C:\Users\Amber-PC2\source\repos\GrilledCheese\GrilledCheese\obj\Debug\GrilledCheese.dll
 C:\Users\Amber-PC2\source\repos\GrilledCheese\GrilledCheese\obj\Debug\GrilledCheese.pdb
 C:\Users\Amber-PC2\source\repos\GrilledCheese\GrilledCheese\obj\Debug\TheModdedKitchen.csproj.AssemblyReference.cache
+C:\Users\Quack\source\repos\TheModdedKitchen\bin\Debug\GrilledCheese.dll.config
+C:\Users\Quack\source\repos\TheModdedKitchen\bin\Debug\GrilledCheese.dll
+C:\Users\Quack\source\repos\TheModdedKitchen\bin\Debug\GrilledCheese.pdb
+C:\Users\Quack\source\repos\TheModdedKitchen\obj\Debug\TheModdedKitchen.csproj.AssemblyReference.cache
+C:\Users\Quack\source\repos\TheModdedKitchen\obj\Debug\TheModdedKitchen.csproj.CoreCompileInputs.cache
+C:\Users\Quack\source\repos\TheModdedKitchen\obj\Debug\GrilledCheese.dll
+C:\Users\Quack\source\repos\TheModdedKitchen\obj\Debug\GrilledCheese.pdb
