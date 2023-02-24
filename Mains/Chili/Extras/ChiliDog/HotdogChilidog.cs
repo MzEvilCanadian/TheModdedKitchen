@@ -4,10 +4,10 @@ using KitchenData;
 
 namespace ModdedKitchen.Dishes
 {
-    class ChiliXTDish : ModDish
+    class HotdogChilidog : ModDish
     {
-        public override string UniqueNameID => "Chili Extra Toppings";
-        public override DishType Type => DishType.Extra;
+        public override string UniqueNameID => "Hotdog Chili Dog Dish";
+        public override DishType Type => DishType.Main;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Medium;
         public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
         public override CardType CardType => CardType.Default;
@@ -15,53 +15,48 @@ namespace ModdedKitchen.Dishes
         public override bool IsUnlockable => true;
         public override List<Unlock> HardcodedRequirements => new()
         {
-            Main.ChiliDish
+            Main.HotdogDish
         };
-
         public override List<Dish.MenuItem> ResultingMenuItems => new List<Dish.MenuItem>
         {
             new Dish.MenuItem
             {
-               Item = Main.ChiliXT,
+               Item = Main.ChiliDogPlated,
                Phase = MenuPhase.Main,
                Weight = 1
             }
         };
-        public override HashSet<Dish.IngredientUnlock> IngredientsUnlocks => new()
+        public override HashSet<Dish.IngredientUnlock> ExtraOrderUnlocks => new HashSet<Dish.IngredientUnlock>()
         {
             new Dish.IngredientUnlock
             {
-                Ingredient = Main.GratedCheese,
-                MenuItem = Main.DeluxeChiliPlated
-            },
-            new Dish.IngredientUnlock
-            {
-                Ingredient = Main.WhippingCream,
-                MenuItem = Main.DeluxeChiliPlated
-            },
+                MenuItem = Main.ChiliDogPlated,
+                Ingredient = Main.Ketchup
+            }
         };
         public override HashSet<Item> MinimumIngredients => new HashSet<Item>
         {
-            Main.Cheese,
             Main.Tomato,
             Main.Onion,
             Main.Peppers,
             Main.Plate,
             Main.Pot,
-            Main.WhippedCream
+            Main.HotDog,
+            Main.DogBun,
+            Main.Cheese
         };
         public override HashSet<Process> RequiredProcesses => new HashSet<Process>
         {
-            Main.Chop,
-            Main.Cook
+            Main.Cook,
+            Main.Chop
         };
         public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
         {
-            { Locale.English, "Chop cheese and add to plated chili. For sour cream take cream and knead then add to plated chili. Also can be added to deluxe chili." }
+            { Locale.English, "Cook a hotdog and place on a bun. Add chili, grated cheese, and plate." }
         };
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {
-            { Locale.English, LocalisationUtils.CreateUnlockInfo("Chili - Toppings", "Customers can request cheese and sour cream with their chili", "It's how my mom likes it.") }
+            { Locale.English, LocalisationUtils.CreateUnlockInfo("Hotdog - Chili Dog", "Adds chili dogs to the menu - They can request ketchup", "Because you love your spicy weiner.") }
         };
     }
 }

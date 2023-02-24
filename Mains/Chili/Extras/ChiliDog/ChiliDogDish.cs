@@ -1,31 +1,27 @@
-﻿using KitchenData;
-using KitchenLib.Utils;
+﻿using KitchenLib.Utils;
 using System.Collections.Generic;
-using UnityEngine;
-using System;
-using KitchenLib.References;
+using KitchenData;
 
-namespace GrilledCheese.Dishes
+namespace ModdedKitchen.Dishes
 {
-    class AdditionalToppings : ModDish
+    class ChiliDogDish : ModDish
     {
-        public override string UniqueNameID => "Grilled Cheese Extras";
+        public override string UniqueNameID => "Chili Dog Dish";
         public override DishType Type => DishType.Main;
-        public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Medium;
-        public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
+        public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
         public override CardType CardType => CardType.Default;
+        public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
         public override bool IsUnlockable => true;
-        public  HashSet<Dish> PrerequisiteDishes => new HashSet<Dish>()
+        public override List<Unlock> HardcodedRequirements => new()
         {
-            Main.GrilledCheeseDish
+            Main.ChiliDish
         };
-
         public override List<Dish.MenuItem> ResultingMenuItems => new List<Dish.MenuItem>
         {
             new Dish.MenuItem
             {
-               Item = Main.GrilledCheeseAdditionalToppings,
+               Item = Main.ChiliDogPlated,
                Phase = MenuPhase.Main,
                Weight = 1
             }
@@ -33,22 +29,26 @@ namespace GrilledCheese.Dishes
         public override HashSet<Item> MinimumIngredients => new HashSet<Item>
         {
             Main.Tomato,
-            Main.Pork
+            Main.Onion,
+            Main.Peppers,
+            Main.Plate,
+            Main.Pot,
+            Main.HotDog,
+            Main.DogBun,
+            Main.Cheese
         };
         public override HashSet<Process> RequiredProcesses => new HashSet<Process>
         {
             Main.Cook,
-            Main.Chop,
+            Main.Chop
         };
-
         public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
         {
-            { Locale.English, "Cut pork into bacon strips and cook. Slice Tomatos. Add to the plate." }
+            { Locale.English, "Combine a cooked hotdog, bun, chili, grated cheese, and plate." }
         };
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {
-            { Locale.English, LocalisationUtils.CreateUnlockInfo("Grilled Cheese Toppings", "Adds Bacon and Tomato slices for Grilled Cheese", "Ohhhh yeahh.") }
+            { Locale.English, LocalisationUtils.CreateUnlockInfo("Chili - Chili Dog", "Adds chili dogs to the menu", "Because you love your spicy weiner.") }
         };
-
     }
 }

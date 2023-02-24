@@ -43,11 +43,11 @@ namespace ModdedKitchen.Dishes
         };
         public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
         {
-            { Locale.English, "Add beans, husked corn, and chopped meat into a pot of chili and cook." }
+            { Locale.English, "Add beans, husked corn, and chopped meat into a pot of uncooked chili and cook." }
         };
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {
-            { Locale.English, LocalisationUtils.CreateUnlockInfo("Chili - Bean", "Adds a deluxe chili to the menu", "Much more filling?") }
+            { Locale.English, LocalisationUtils.CreateUnlockInfo("Chili - Deluxe Chili", "Adds a deluxe chili to the menu", "Much more filling!") }
         };
     }
 }

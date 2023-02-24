@@ -96,7 +96,7 @@ namespace ModdedKitchen.Mains.Chili.Extras.Ingredients
             MaterialUtils.ApplyMaterial(Prefab, "Meat", materials);
 
             Prefab.GetComponent<MyItemGroupView>()?.Setup(Prefab);
-            if (!Prefab.TryGetComponent<ItemGroupView>(out var itemGroupView))
+            if (Prefab.TryGetComponent<ItemGroupView>(out var itemGroupView))
             {
                 GameObject clonedColourBlind = ColorblindUtils.cloneColourBlindObjectAndAddToItem(GameDataObject as ItemGroup);
                 ColorblindUtils.setColourBlindLabelObjectOnItemGroupView(itemGroupView, clonedColourBlind);

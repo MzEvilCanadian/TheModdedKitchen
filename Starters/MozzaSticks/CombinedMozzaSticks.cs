@@ -40,10 +40,11 @@ namespace ModdedKitchen.Starters.MozzaSticks
             MaterialUtils.ApplyMaterial(Prefab, "Sauce", materials);
 
             materials[0] = MaterialUtils.GetExistingMaterial("Plate");
+            materials[1] = MaterialUtils.GetExistingMaterial("Plate");
             MaterialUtils.ApplyMaterial(Prefab, "Plate", materials);
 
             materials[0] = MaterialUtils.GetExistingMaterial("Bread");
-            materials[0] = MaterialUtils.GetExistingMaterial("Bread");
+            materials[1] = MaterialUtils.GetExistingMaterial("Bread");
             MaterialUtils.ApplyMaterial(Prefab, "MozzaSticks", materials);
         }      
     }

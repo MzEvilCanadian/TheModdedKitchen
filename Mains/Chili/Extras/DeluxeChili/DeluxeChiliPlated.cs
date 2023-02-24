@@ -39,7 +39,7 @@ namespace ModdedKitchen.Mains.Chili.Extras.Deluxe
                 Items = new List<Item>()
                 {
                     Main.GratedCheese,
-                    Main.WhippingCream
+                    Main.WhippedCream
                 }
             },
         };
@@ -90,7 +90,7 @@ namespace ModdedKitchen.Mains.Chili.Extras.Deluxe
             MaterialUtils.ApplyMaterial(Prefab, "Sour Cream", materials);
 
             Prefab.GetComponent<MyItemGroupView>()?.Setup(Prefab);
-            if (!Prefab.TryGetComponent<ItemGroupView>(out var itemGroupView))
+            if (Prefab.TryGetComponent<ItemGroupView>(out var itemGroupView))
             {
                 GameObject clonedColourBlind = ColorblindUtils.cloneColourBlindObjectAndAddToItem(GameDataObject as ItemGroup);
                 ColorblindUtils.setColourBlindLabelObjectOnItemGroupView(itemGroupView, clonedColourBlind);

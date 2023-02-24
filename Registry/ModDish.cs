@@ -12,7 +12,7 @@ namespace ModdedKitchen.Dishes
 
         public virtual IDictionary<Locale, UnlockInfo> LocalisedInfo { get; }
 
-        /*
+        
         public override LocalisationObject<UnlockInfo> Info
         {
             get
@@ -27,7 +27,7 @@ namespace ModdedKitchen.Dishes
                 return info;
             }
         }
-        */
+        
 
         public override void OnRegister(GameDataObject gameDataObject)
         {

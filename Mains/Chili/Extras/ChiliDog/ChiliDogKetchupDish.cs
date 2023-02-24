@@ -2,46 +2,51 @@
 using System.Collections.Generic;
 using KitchenData;
 
+
 namespace ModdedKitchen.Dishes
 {
-    class ChiliBeans : ModDish
+    class ChiliDogKetchupDish : ModDish
     {
-        public override string UniqueNameID => "Chili Beans";
+        public override string UniqueNameID => "Chili dogs Ketchup";
         public override DishType Type => DishType.Extra;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Medium;
-    //    public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
+        public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
         public override CardType CardType => CardType.Default;
         public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
         public override bool IsUnlockable => true;
         public override List<Unlock> HardcodedRequirements => new()
         {
-            Main.ChiliDish
+            Main.ChilidogDish
         };
 
-        public override HashSet<Dish.IngredientUnlock> IngredientsUnlocks => new()
+        public override HashSet<Dish.IngredientUnlock> ExtraOrderUnlocks => new HashSet<Dish.IngredientUnlock>()
         {
             new Dish.IngredientUnlock
             {
-                MenuItem = Main.UncookedChiliPot,
-                Ingredient = Main.Beans
+                MenuItem = Main.ChiliDogPlated,
+                Ingredient = Main.Ketchup
             }
         };
 
         public override HashSet<Item> MinimumIngredients => new HashSet<Item>
         {
-            Main.Beans
-        };
-        public override HashSet<Process> RequiredProcesses => new HashSet<Process>
-        {
-            Main.Cook
+            Main.Ketchup,
+            Main.Tomato,
+            Main.Onion,
+            Main.Peppers,
+            Main.Plate,
+            Main.Pot,
+            Main.HotDog,
+            Main.DogBun,
+            Main.Cheese
         };
         public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
         {
-            { Locale.English, "Adds Beans into your chili recipe" }
+            { Locale.English, "Customers can request Ketchup while eating chili dogs" }
         };
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {
-            { Locale.English, LocalisationUtils.CreateUnlockInfo("Chili - Bean", "Making chili now requires beans", "You know you like it.") }
+            { Locale.English, LocalisationUtils.CreateUnlockInfo("Chili Dog Ketchup", "Customers can request Ketchup while eating chili dogs", "Because it wasnt sloppy enough before") }
         };
     }
 }
