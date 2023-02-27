@@ -262,7 +262,7 @@ namespace ModdedKitchen
             // Sides
                AddGameDataObject<MacNCheeseDish>();
             //   AddGameDataObject<MilkDish>();         // WIP
-            //   AddGameDataObject<CornBreadDish>();      // Broken, invisible models when using splitview and item views
+            AddGameDataObject<CornBreadDish>();      // Broken, invisible models when using splitview and item views
 
             // Desserts
                AddGameDataObject<ChocolatePuddingPieDish>();
@@ -345,10 +345,10 @@ namespace ModdedKitchen
             AddGameDataObject<RicePuddingPotCooked>();
 
             // Cornbread
-         //   AddGameDataObject<UncookedCornBread>();
-         //   AddGameDataObject<CornBreadPortion>();
-         //   AddGameDataObject<CookedCornBread>();
-         //   AddGameDataObject<BurntCornBread>();
+         AddGameDataObject<UncookedCornBread>();
+         AddGameDataObject<CornBreadPortion>();
+         AddGameDataObject<CookedCornBread>();
+         AddGameDataObject<BurntCornBread>();
 
             // Milk
          //   AddGameDataObject<MilkGlass>();

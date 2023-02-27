@@ -8,11 +8,45 @@ using UnityEngine;
 
 namespace ModdedKitchen.Mains.Chili.Extras
 {
+    public class CookedCornBreadItemView : ObjectsSplittableView
+    {
+        internal void Setup(GameObject prefab)
+        {
+            var fObjects = ReflectionUtils.GetField<ObjectsSplittableView>("Objects");
+            fObjects.SetValue(this, new List<GameObject>()
+            {
+                /*
+                // Invisible models
+                GameObjectUtils.GetChildObject(prefab, "GameObject/Slice 1"),
+                GameObjectUtils.GetChildObject(prefab, "GameObject/Slice 2"),
+                GameObjectUtils.GetChildObject(prefab, "GameObject/Slice 3"),
+                GameObjectUtils.GetChildObject(prefab, "GameObject/Slice 4"),
+                GameObjectUtils.GetChildObject(prefab, "GameObject/Slice 5"),
+                GameObjectUtils.GetChildObject(prefab, "GameObject/Slice 6"),
+                GameObjectUtils.GetChildObject(prefab, "GameObject/Slice 7"),
+                GameObjectUtils.GetChildObject(prefab, "GameObject/Slice 8"),
+                */
+                
+                // This doesnt let me launch the game
+                
+                //prefab.GetChildFromPath("GameObject/Slice 8"),
+                prefab.GetChildFromPath("GameObject/Slice 7"),
+                prefab.GetChildFromPath("GameObject/Slice 6"),
+                prefab.GetChildFromPath("GameObject/Slice 5"),
+                prefab.GetChildFromPath("GameObject/Slice 4"),
+                prefab.GetChildFromPath("GameObject/Slice 3"),
+                prefab.GetChildFromPath("GameObject/Slice 2"),
+                prefab.GetChildFromPath("GameObject/Slice 1")
+
+            });
+        }
+    }
+
     class CookedCornBread : CustomItem
     {
         public override string UniqueNameID => "Cooked Cornbread";
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("CookedCornBread");
-        public override int SplitCount => 8;
+        public override int SplitCount => 7;
         public override Item SplitSubItem => Main.CornBreadPortion;
         public override List<Item> SplitDepletedItems => new()
         {
@@ -20,6 +54,8 @@ namespace ModdedKitchen.Mains.Chili.Extras
         };
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.Dish;
+        public override bool PreventExplicitSplit => false;
+        public override bool AllowSplitMerging => false;
 
         public override List<Item.ItemProcess> Processes => new()
         {
@@ -36,8 +72,8 @@ namespace ModdedKitchen.Mains.Chili.Extras
         {
             var materials = new Material[]
             {
-                   MaterialUtils.GetExistingMaterial("Bread - Inside"),
-                   MaterialUtils.GetExistingMaterial("Bread")
+                  MaterialUtils.GetExistingMaterial("Bread"),
+                  MaterialUtils.GetExistingMaterial("Plastic - Yellow")
             };
             MaterialUtils.ApplyMaterial(Prefab, "GameObject/Slice 1", materials);
             MaterialUtils.ApplyMaterial(Prefab, "GameObject/Slice 2", materials);
@@ -48,7 +84,7 @@ namespace ModdedKitchen.Mains.Chili.Extras
             MaterialUtils.ApplyMaterial(Prefab, "GameObject/Slice 7", materials);
             MaterialUtils.ApplyMaterial(Prefab, "GameObject/Slice 8", materials);
 
-            Prefab.GetComponent<MyItemGroupView>()?.Setup(Prefab);
+            //Prefab.GetComponent<MyItemGroupView>()?.Setup(Prefab);
 
             if (!Prefab.HasComponent<CookedCornBreadItemView>())
             {
@@ -56,40 +92,6 @@ namespace ModdedKitchen.Mains.Chili.Extras
                 view.Setup(Prefab);
             }
 
-        }
-    }
-    
-    public class CookedCornBreadItemView : ObjectsSplittableView
-    {
-        internal void Setup(GameObject prefab)
-        {
-            var fObjects = ReflectionUtils.GetField<ObjectsSplittableView>("Objects");
-            fObjects.SetValue(this, new List<GameObject>()
-            {
-                
-                // Invisible models
-                GameObjectUtils.GetChildObject(prefab, "GameObject/Slice 1"),
-                GameObjectUtils.GetChildObject(prefab, "GameObject/Slice 2"),
-                GameObjectUtils.GetChildObject(prefab, "GameObject/Slice 3"),
-                GameObjectUtils.GetChildObject(prefab, "GameObject/Slice 4"),
-                GameObjectUtils.GetChildObject(prefab, "GameObject/Slice 5"),
-                GameObjectUtils.GetChildObject(prefab, "GameObject/Slice 6"),
-                GameObjectUtils.GetChildObject(prefab, "GameObject/Slice 7"),
-                GameObjectUtils.GetChildObject(prefab, "GameObject/Slice 8"),
-                
-                /*
-                // This doesnt let me launch the game
-                
-                prefab.GetChild("GameObject/Slice 1"),
-                prefab.GetChild("GameObject/Slice 2"),
-                prefab.GetChild("GameObject/Slice 3"),
-                prefab.GetChild("GameObject/Slice 4"),
-                prefab.GetChild("GameObject/Slice 5"),
-                prefab.GetChild("GameObject/Slice 6"),
-                prefab.GetChild("GameObject/Slice 7"),
-                prefab.GetChild("GameObject/Slice 8")
-                */
-            });
         }
     }
 }

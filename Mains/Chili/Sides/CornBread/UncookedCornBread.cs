@@ -45,28 +45,23 @@ namespace ModdedKitchen.Mains.Chili.Extras
 
         public override void OnRegister(GameDataObject gameDataObject)
         {
-            var materials = new Material[]
-            {
-                   MaterialUtils.GetExistingMaterial("Metal Dark"),
-                   MaterialUtils.GetExistingMaterial("Metal Dark")
-            };
-            MaterialUtils.ApplyMaterial(Prefab, "Egg", materials);
+            var materials = new Material[2];
 
-            materials[0] = MaterialUtils.GetExistingMaterial("Raw Pastry");
-            materials[1] = MaterialUtils.GetExistingMaterial("Raw Pastry");
+            materials[0] = MaterialUtils.GetExistingMaterial("Sweetcorn");
             MaterialUtils.ApplyMaterial(Prefab, "Corn", materials);
 
-            materials[0] = MaterialUtils.GetExistingMaterial("Metal Dark");
-            materials[1] = MaterialUtils.GetExistingMaterial("Metal Dark");
+            materials[0] = MaterialUtils.GetExistingMaterial("Sugar");
             MaterialUtils.ApplyMaterial(Prefab, "Sugar", materials);
 
             materials[0] = MaterialUtils.GetExistingMaterial("Metal Dark");
-            materials[1] = MaterialUtils.GetExistingMaterial("Metal Dark");
             MaterialUtils.ApplyMaterial(Prefab, "Bowl", materials);
 
-            materials[0] = MaterialUtils.GetExistingMaterial("Raw Pastry");
-            materials[1] = MaterialUtils.GetExistingMaterial("Raw Pastry");
+            materials[0] = MaterialUtils.GetExistingMaterial("Flour");
             MaterialUtils.ApplyMaterial(Prefab, "Flour", materials);
+
+            materials[0] = MaterialUtils.GetExistingMaterial("Egg - White");
+            materials[1] = MaterialUtils.GetExistingMaterial("Egg - Yolk");
+            MaterialUtils.ApplyMaterial(Prefab, "Egg", materials);
 
 
             Prefab.GetComponent<MyItemGroupView>()?.Setup(Prefab);
@@ -106,13 +101,8 @@ namespace ModdedKitchen.Mains.Chili.Extras
                 },
                 new()
                 {
-                    Objects = new()
-                    {
-                        GameObjectUtils.GetChildObject(prefab, "Flour"),
-                        GameObjectUtils.GetChildObject(prefab, "Bowl")
-                    },
-                    Item = Main.Flour,
-                    DrawAll = true
+                    GameObject = GameObjectUtils.GetChildObject(prefab, "Flour"),
+                    Item = Main.Flour
                 },
             };
         }
