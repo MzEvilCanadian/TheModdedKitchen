@@ -32,6 +32,7 @@ using ModdedKitchen.Mains.Chili.Extras.Ingredients;
 using ModdedKitchen.Mains.Chili.Extras.Deluxe;
 using ModdedKitchen.Mains.Chili.Extras.ChiliDog;
 using ModdedKitchen.Desserts.RicePudding;
+using ApplianceLib.Api.References;
 
 namespace ModdedKitchen
 {
@@ -39,9 +40,10 @@ namespace ModdedKitchen
     {
         internal const string MOD_ID = "The Modded Kitchen";
         internal const string MOD_NAME = "The Modded Kitchen";
-        internal const string MOD_VERSION = "1.3.4";
+        internal const string MOD_VERSION = "1.3.6";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
+
 
         public static AssetBundle bundle;
 
@@ -54,9 +56,7 @@ namespace ModdedKitchen
         internal static Process Knead => GetExistingGDO<Process>(ProcessReferences.Knead);
         internal static Process Oven => GetExistingGDO<Process>(ProcessReferences.RequireOven);
 
-
         // Vanilla Items
-
         internal static Item Flour => GetExistingGDO<Item>(ItemReference.Flour);
         internal static Item Cheese => GetExistingGDO<Item>(ItemReference.Cheese);
         internal static Item GratedCheese => GetExistingGDO<Item>(ItemReference.CheeseGrated);
@@ -133,6 +133,14 @@ namespace ModdedKitchen
         public static Item ChoppedPeppers => Find<Item>(IngredientLib.References.GetIngredient("chopped peppers"));
         public static Item WhippingCream => Find<Item>(IngredientLib.References.GetIngredient("whipping cream"));
         public static Item WhippedCream => Find<Item>(IngredientLib.References.GetIngredient("whipped cream"));
+        public static Item Tortilla => Find<Item>(IngredientLib.References.GetIngredient("tortilla"));
+
+
+
+        // Appliance Lib
+         public static Item Cup => ApplianceLibGDOs.Refs.Cup;
+
+
 
         // Grilled Cheese
         internal static Item BurnedGrilledCheese => GetModdedGDO<Item, BurnedGrilledCheese>();
@@ -193,6 +201,8 @@ namespace ModdedKitchen
 
         // Milk
         internal static ItemGroup MilkGlass => GetModdedGDO<ItemGroup, MilkGlass>();
+        internal static Dish MilkDish => GetModdedGDO<Dish, MilkDish>();
+        internal static Item DirtyMilkCarton => Find<Item, DirtyMilkCarton>();
 
         // Chili
         internal static ItemGroup ChiliPlated => GetModdedGDO<ItemGroup, ChiliPlated>();
@@ -246,6 +256,7 @@ namespace ModdedKitchen
                 Find<Unlock, ChiliXTDish>().BlockedBy.Clear();
                 Find<Unlock, ChiliDogDish>().BlockedBy.Clear();
                 Find<Unlock, ChiliDogKetchupDish>().BlockedBy.Clear();
+                Find<Unlock, ThrowOutMilkCartonsCard>().BlockedBy.Clear();
             };
 
             // Dishes
@@ -275,8 +286,8 @@ namespace ModdedKitchen
 
             // Sides
                AddGameDataObject<MacNCheeseDish>();
-            //   AddGameDataObject<MilkDish>();         // WIP
-            //   AddGameDataObject<CornBreadDish>();      // Broken, invisible models when using splitview and item views
+               AddGameDataObject<MilkDish>();         // WIP
+               AddGameDataObject<CornBreadDish>();      
 
             // Desserts
                AddGameDataObject<ChocolatePuddingPieDish>();
@@ -286,6 +297,7 @@ namespace ModdedKitchen
                AddGameDataObject<RicePuddingDish>();
 
             // Cards
+               AddGameDataObject<ThrowOutMilkCartonsCard>();
 
             //  AddGameDataObject<Automation>();    // WIP
 
@@ -354,13 +366,14 @@ namespace ModdedKitchen
             AddGameDataObject<UncookedBananaBread>();
 
             // Cornbread
-         //   AddGameDataObject<UncookedCornBread>();
-         //   AddGameDataObject<CornBreadPortion>();
-         //   AddGameDataObject<CookedCornBread>();
-         //   AddGameDataObject<BurntCornBread>();
+            AddGameDataObject<UncookedCornBread>();
+            AddGameDataObject<CornBreadPortion>();
+            AddGameDataObject<CookedCornBread>();
+            AddGameDataObject<BurntCornBread>();
 
             // Milk
-         //   AddGameDataObject<MilkGlass>();
+            AddGameDataObject<MilkGlass>();
+            AddGameDataObject<DirtyMilkCarton>();
 
             // Chili
             AddGameDataObject<ChiliPlated>();

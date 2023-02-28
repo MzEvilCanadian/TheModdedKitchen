@@ -6,8 +6,8 @@ namespace ModdedKitchen.Dishes
 {
     class MilkDish : ModDish
     {
-        /*
-        public override string UniqueNameID => "Milk Dish";
+        
+        public override string UniqueNameID => "Milk Glass Dish";
         public override DishType Type => DishType.Side;
         public override CardType CardType => CardType.Default;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Small;
@@ -24,16 +24,17 @@ namespace ModdedKitchen.Dishes
         };
         public override HashSet<Item> MinimumIngredients => new HashSet<Item>
         {
-            Main.Milk
+            Main.Milk,
+            Main.Cup
         };
         public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
         {
-            { Locale.English, "Customers may order Milk as a side" }
+            { Locale.English, "Combine a cup and a portion of milk and serve." }
         };
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {
             { Locale.English, LocalisationUtils.CreateUnlockInfo("Milk", "Adds Milk Side", "Jay's Milk") }
         };
-        */
+        
     }
 }

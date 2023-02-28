@@ -19,8 +19,6 @@ namespace ModdedKitchen.Dishes
         public override CardType CardType => CardType.Default;
         public override bool IsSpecificFranchiseTier => false;
         public override bool IsAvailableAsLobbyOption => true;
-        public override bool DestroyAfterModUninstall => false;
-        public override bool IsUnlockable => false;
 
         public override List<string> StartingNameSet => new()
         {

@@ -36,7 +36,7 @@ namespace ModdedKitchen.Dishes
         };
         public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
         {
-            { Locale.English, "Combine an peeled corn, flour, cracked egg, and sugar then cook. Makes 8 servings" }
+            { Locale.English, "Combine an husked corn, flour, cracked egg, and sugar then cook. Makes 8 servings" }
         };
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {

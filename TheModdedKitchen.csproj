@@ -83,8 +83,10 @@
     <Compile Include="Mains\Chili\Sides\CornBread\UncookedCornBread.cs" />
     <Compile Include="Mains\Chili\Extras\Toppings\ChiliXTDish.cs" />
     <Compile Include="Mains\Chili\UncookedChiliPot.cs" />
+    <Compile Include="Sides\Milk\DirtyMilkCarton.cs" />
     <Compile Include="Sides\Milk\MilkDish.cs" />
     <Compile Include="Sides\Milk\MilkGlass.cs" />
+    <Compile Include="Sides\Milk\ThrowOutMilkCartonsCard.cs" />
     <Compile Include="Starters\Bruschetta\AssembledBruschetta.cs" />
     <Compile Include="Starters\Bruschetta\BruschettaDish.cs" />
     <Compile Include="Starters\Bruschetta\BurntBruschetta.cs" />

@@ -47,25 +47,25 @@ namespace ModdedKitchen.Mains.Chili.Extras
         {
             var materials = new Material[]
             {
-                   MaterialUtils.GetExistingMaterial("Metal Dark"),
-                   MaterialUtils.GetExistingMaterial("Metal Dark")
+                   MaterialUtils.GetExistingMaterial("Egg - White"),
+                   MaterialUtils.GetExistingMaterial("Egg - Yolk")
             };
             MaterialUtils.ApplyMaterial(Prefab, "Egg", materials);
 
-            materials[0] = MaterialUtils.GetExistingMaterial("Raw Pastry");
-            materials[1] = MaterialUtils.GetExistingMaterial("Raw Pastry");
+            materials[0] = MaterialUtils.GetExistingMaterial("Sweetcorn");
+            materials[1] = MaterialUtils.GetExistingMaterial("Sweetcorn");
             MaterialUtils.ApplyMaterial(Prefab, "Corn", materials);
 
-            materials[0] = MaterialUtils.GetExistingMaterial("Metal Dark");
-            materials[1] = MaterialUtils.GetExistingMaterial("Metal Dark");
+            materials[0] = MaterialUtils.GetExistingMaterial("Sugar");
+            materials[1] = MaterialUtils.GetExistingMaterial("S");
             MaterialUtils.ApplyMaterial(Prefab, "Sugar", materials);
 
-            materials[0] = MaterialUtils.GetExistingMaterial("Metal Dark");
-            materials[1] = MaterialUtils.GetExistingMaterial("Metal Dark");
+            materials[0] = MaterialUtils.GetExistingMaterial("Plate");
+            materials[1] = MaterialUtils.GetExistingMaterial("Plate");
             MaterialUtils.ApplyMaterial(Prefab, "Bowl", materials);
 
-            materials[0] = MaterialUtils.GetExistingMaterial("Raw Pastry");
-            materials[1] = MaterialUtils.GetExistingMaterial("Raw Pastry");
+            materials[0] = MaterialUtils.GetExistingMaterial("Flour");
+            materials[1] = MaterialUtils.GetExistingMaterial("Flour");
             MaterialUtils.ApplyMaterial(Prefab, "Flour", materials);
 
 

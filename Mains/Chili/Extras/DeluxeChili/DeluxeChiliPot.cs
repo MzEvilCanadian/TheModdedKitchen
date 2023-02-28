@@ -15,6 +15,7 @@ namespace ModdedKitchen.Mains.Chili.Extras.Ingredients
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("DeluxeChiliPot");
         public override Item DisposesTo => Main.Pot;
         public override int SplitCount => 8;
+        public override float SplitSpeed => 2f;
         public override Item SplitSubItem => Main.DeluxeChiliPortion;
         public override List<Item> SplitDepletedItems => new List<Item>
         {

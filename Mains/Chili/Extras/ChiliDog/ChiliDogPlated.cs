@@ -16,21 +16,31 @@ namespace ModdedKitchen.Mains.Chili.Extras.ChiliDog
         public override ItemValue ItemValue => ItemValue.Large;
         public override Item DisposesTo => Main.Plate;
         public override Item DirtiesTo => Main.DirtyPlate;
+        public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override bool CanContainSide => true;
 
         public override List<ItemGroup.ItemSet> Sets => new()
         {
             new ItemGroup.ItemSet()
             {
-                Max = 5,
-                Min = 5,
+                Max = 2,
+                Min = 2,
+                IsMandatory = true,
+                Items = new List<Item>()
+                {
+                    Main.CookedHotDog,
+                    Main.DogBun
+                }
+            },
+            new ItemGroup.ItemSet()
+            {
+                Max = 3,
+                Min = 3,
                 Items = new List<Item>()
                 {
                     Main.ChiliPortion,
                     Main.Plate,
-                    Main.GratedCheese,
-                    Main.CookedHotDog,
-                    Main.DogBun
+                    Main.GratedCheese
                 }
             },
         };

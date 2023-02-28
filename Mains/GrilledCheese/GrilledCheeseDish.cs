@@ -19,8 +19,6 @@ namespace ModdedKitchen.Dishes
         public override CardType CardType => CardType.Default;
         public override bool IsSpecificFranchiseTier => false;
         public override bool IsAvailableAsLobbyOption => true;
-        public override bool DestroyAfterModUninstall => false;
-        public override bool IsUnlockable => false;
         
         public override List<string> StartingNameSet => new List<string>
         {
@@ -48,7 +46,7 @@ namespace ModdedKitchen.Dishes
             Main.Cheese,
             Main.Flour,
             Main.Butter,
-            Main.Plate
+            Main.Plate,
         };
         public override HashSet<Process> RequiredProcesses => new HashSet<Process>
         {

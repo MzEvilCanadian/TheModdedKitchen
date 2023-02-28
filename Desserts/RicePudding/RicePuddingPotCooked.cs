@@ -31,7 +31,7 @@ namespace ModdedKitchen.Desserts.RicePudding
     {
         public override string UniqueNameID => "Rice Pudding Pot Cooked";
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("RicePuddingPotCooked");
-        public override float SplitSpeed => 1f;
+        public override float SplitSpeed => 2f;
         public override int SplitCount => 10;
         public override Item SplitSubItem => Main.RicePudding;
         public override List<Item> SplitDepletedItems => new() { Main.Pot };
