@@ -33,6 +33,8 @@ using ModdedKitchen.Mains.Chili.Extras.Deluxe;
 using ModdedKitchen.Mains.Chili.Extras.ChiliDog;
 using ModdedKitchen.Desserts.RicePudding;
 using ApplianceLib.Api.References;
+using ModdedKitchen.Starters.SoupoftheDay;
+using ModdedKitchen.Sides;
 
 namespace ModdedKitchen
 {
@@ -40,7 +42,7 @@ namespace ModdedKitchen
     {
         internal const string MOD_ID = "The Modded Kitchen";
         internal const string MOD_NAME = "The Modded Kitchen";
-        internal const string MOD_VERSION = "1.3.6";
+        internal const string MOD_VERSION = "1.3.7";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
@@ -90,6 +92,15 @@ namespace ModdedKitchen
         internal static Item DogBun => GetExistingGDO<Item>(ItemReference.HotdogBun);
         internal static Item CookedHotDog => GetExistingGDO<Item>(ItemReference.HotdogCooked);
         internal static Item HotDog => GetExistingGDO<Item>(ItemReference.HotdogRaw);
+        internal static Item DepletedSoup => GetExistingGDO<Item>(ItemReference.SoupDepleted);
+        internal static Item Broth => GetExistingGDO<Item>(ItemReference.BrothCookedOnion);
+        internal static Item Pumpkin => GetExistingGDO<Item>(ItemReference.Pumpkin);
+        internal static Item PumpkinHallow => GetExistingGDO<Item>(ItemReference.PumpkinHollow);
+        internal static Item Broccoli => GetExistingGDO<Item>(ItemReference.BroccoliRaw);
+        internal static Item Carrot => GetExistingGDO<Item>(ItemReference.Carrot);
+        internal static Item Lettuce => GetExistingGDO<Item>(ItemReference.Lettuce);
+        internal static Item Mushroom => GetExistingGDO<Item>(ItemReference.Mushroom);
+        internal static Item Potato => GetExistingGDO<Item>(ItemReference.Potato);
 
 
         //  internal static Appliance Grabber => Find<Appliance>(ApplianceReferences.Grabber);
@@ -138,8 +149,7 @@ namespace ModdedKitchen
 
 
         // Appliance Lib
-         public static Item Cup => ApplianceLibGDOs.Refs.Cup;
-
+        public static Item Cup => ApplianceLibGDOs.Refs.Cup;
 
 
         // Grilled Cheese
@@ -216,6 +226,7 @@ namespace ModdedKitchen
         internal static ItemGroup ChiliDogPlated => GetModdedGDO<ItemGroup, ChiliDogPlated>();
         internal static Dish ChilidogDish => GetModdedGDO<Dish, ChiliDogDish>();
         internal static Dish HotdogChilidog => GetModdedGDO<Dish, HotdogChilidog>();
+        internal static Item ChiliDogCombined => GetModdedGDO<Item, ChiliDogCombined>();
 
         // Deluxe Chili
         internal static Item DeluxeChiliPortion => GetModdedGDO<Item, DeluxeChiliPortion>();
@@ -225,6 +236,12 @@ namespace ModdedKitchen
         // Rice Pudding
         internal static Item RicePuddingPotCooked => GetModdedGDO<Item, RicePuddingPotCooked>();
         internal static Item RicePudding => GetModdedGDO<Item, RicePudding>();
+
+        // Soup of the Day
+        internal static Item SOTDServing => GetModdedGDO<Item, SOTDServing>();
+        internal static Item SOTDPot => GetModdedGDO<Item, SOTDPot>();
+
+        // internal static ItemGroup TomatoSide => GetModdedGDO<ItemGroup, TomatoSide>();
 
 
 
@@ -246,58 +263,50 @@ namespace ModdedKitchen
         {
             bundle = mod.GetPacks<AssetBundleModPack>().SelectMany(e => e.AssetBundles).ToList()[0];
 
-            Events.BuildGameDataEvent += delegate (object s, BuildGameDataEventArgs args)
-            {
-                Find<Unlock, AdditionalToppings>().BlockedBy.Clear();
-                Find<Unlock, KetchupDish>().BlockedBy.Clear();
-                Find<Unlock, MustardDish>().BlockedBy.Clear();
-                Find<Unlock, MonteCristoDish>().BlockedBy.Clear();
-                Find<Unlock, DeluxeChiliDish>().BlockedBy.Clear();
-                Find<Unlock, ChiliXTDish>().BlockedBy.Clear();
-                Find<Unlock, ChiliDogDish>().BlockedBy.Clear();
-                Find<Unlock, ChiliDogKetchupDish>().BlockedBy.Clear();
-                Find<Unlock, ThrowOutMilkCartonsCard>().BlockedBy.Clear();
-            };
 
             // Dishes
             // Starters
-               AddGameDataObject<BruschettaDish>();
-               AddGameDataObject<GarlicBreadDish>();
-               AddGameDataObject<MozzaSticksDish>();       
-                       
+            AddGameDataObject<BruschettaDish>();
+            AddGameDataObject<GarlicBreadDish>();
+            AddGameDataObject<MozzaSticksDish>();
+            AddGameDataObject<SOTDDish>();
+
 
             // Mains
-               AddGameDataObject<GrilledCheeseDish>();
-               AddGameDataObject<MonteCristoDish>();
+            AddGameDataObject<GrilledCheeseDish>();
+            AddGameDataObject<MonteCristoDish>();
 
-               AddGameDataObject<ChiliDish>();
-               AddGameDataObject<DeluxeChiliDish>();
-               AddGameDataObject<ChiliDogDish>();
-               AddGameDataObject<HotdogChilidog>();
+            AddGameDataObject<ChiliDish>();
+            AddGameDataObject<DeluxeChiliDish>();
+            AddGameDataObject<ChiliDogDish>();
+            AddGameDataObject<HotdogChilidog>();
 
             // Extras
-               AddGameDataObject<KetchupDish>();
-               AddGameDataObject<MustardDish>();
-               AddGameDataObject<AdditionalToppings>();
+            AddGameDataObject<KetchupDish>();
+            AddGameDataObject<MustardDish>();
+            AddGameDataObject<AdditionalToppings>();
 
-               AddGameDataObject<ChiliXTDish>();
-               AddGameDataObject<ChiliDogKetchupDish>();
-            
+            AddGameDataObject<ChiliXTDish>();
+            AddGameDataObject<ChiliDogKetchupDish>();
+
 
             // Sides
-               AddGameDataObject<MacNCheeseDish>();
-               AddGameDataObject<MilkDish>();         // WIP
-               AddGameDataObject<CornBreadDish>();      
+            AddGameDataObject<MacNCheeseDish>();
+            AddGameDataObject<MilkDish>();
+            AddGameDataObject<CornBreadDish>();
+            //  AddGameDataObject<TomatoDish>();        // WIP
+            //  AddGameDataObject<TomatoSide>();        // WIP
 
             // Desserts
-               AddGameDataObject<ChocolatePuddingPieDish>();
-               AddGameDataObject<AppleRingsDish>();        
-               AddGameDataObject<AppleCrispDish>();
-               AddGameDataObject<BananaBreadDish>();
-               AddGameDataObject<RicePuddingDish>();
+            AddGameDataObject<ChocolatePuddingPieDish>();
+            AddGameDataObject<AppleRingsDish>();
+            AddGameDataObject<AppleCrispDish>();
+            AddGameDataObject<BananaBreadDish>();
+            AddGameDataObject<RicePuddingDish>();
 
             // Cards
-               AddGameDataObject<ThrowOutMilkCartonsCard>();
+            //   AddGameDataObject<ThrowOutMilkCartonsCard>();    // WIP
+            AddGameDataObject<ExtraMilkCard>(); 
 
             //  AddGameDataObject<Automation>();    // WIP
 
@@ -373,7 +382,7 @@ namespace ModdedKitchen
 
             // Milk
             AddGameDataObject<MilkGlass>();
-            AddGameDataObject<DirtyMilkCarton>();
+            //  AddGameDataObject<DirtyMilkCarton>();
 
             // Chili
             AddGameDataObject<ChiliPlated>();
@@ -389,11 +398,17 @@ namespace ModdedKitchen
 
             AddGameDataObject<ChiliXT>();
             AddGameDataObject<ChiliDogPlated>();
+            AddGameDataObject<ChiliDogCombined>();
 
             // Rice Pudding 
             AddGameDataObject<RicePudding>();
             AddGameDataObject<RicePuddingPot>();
             AddGameDataObject<RicePuddingPotCooked>();
+
+            // Soup of the Day
+            AddGameDataObject<SOTDUncookedPot>();
+            AddGameDataObject<SOTDPot>();
+            AddGameDataObject<SOTDServing>();
 
 
 

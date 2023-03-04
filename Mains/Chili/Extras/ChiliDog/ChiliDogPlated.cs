@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace ModdedKitchen.Mains.Chili.Extras.ChiliDog
 {
-    class ChiliDogPlated : CustomItemGroup<MyItemGroupView>
+    class ChiliDogPlated : CustomItemGroup
     {
         public override string UniqueNameID => "Plated Chili Dog";
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("ChiliDog");
@@ -16,7 +16,6 @@ namespace ModdedKitchen.Mains.Chili.Extras.ChiliDog
         public override ItemValue ItemValue => ItemValue.Large;
         public override Item DisposesTo => Main.Plate;
         public override Item DirtiesTo => Main.DirtyPlate;
-        public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override bool CanContainSide => true;
 
         public override List<ItemGroup.ItemSet> Sets => new()
@@ -28,21 +27,10 @@ namespace ModdedKitchen.Mains.Chili.Extras.ChiliDog
                 IsMandatory = true,
                 Items = new List<Item>()
                 {
-                    Main.CookedHotDog,
-                    Main.DogBun
+                    Main.ChiliDogCombined,
+                    Main.Plate
                 }
-            },
-            new ItemGroup.ItemSet()
-            {
-                Max = 3,
-                Min = 3,
-                Items = new List<Item>()
-                {
-                    Main.ChiliPortion,
-                    Main.Plate,
-                    Main.GratedCheese
-                }
-            },
+            }
         };
         public override void OnRegister(GameDataObject gameDataObject)
         {
@@ -75,63 +63,7 @@ namespace ModdedKitchen.Mains.Chili.Extras.ChiliDog
             materials[2] = MaterialUtils.GetExistingMaterial("Tomato");
             MaterialUtils.ApplyMaterial(Prefab, "Chili", materials);
 
-            Prefab.GetComponent<MyItemGroupView>()?.Setup(Prefab);
-            if (Prefab.TryGetComponent<ItemGroupView>(out var itemGroupView))
-            {
-                GameObject clonedColourBlind = ColorblindUtils.cloneColourBlindObjectAndAddToItem(GameDataObject as ItemGroup);
-                ColorblindUtils.setColourBlindLabelObjectOnItemGroupView(itemGroupView, clonedColourBlind);
-            }
         }
-    }
-
-    public class MyItemGroupView : ItemGroupView
-    {
-        internal void Setup(GameObject prefab)
-        {
-            // This tells which sub-object of the prefab corresponds to each component of the ItemGroup
-            // All of these sub-objects are hidden unless the item is present
-            ComponentGroups = new()
-            {
-                new()
-                {
-                    GameObject = GameObjectUtils.GetChildObject(prefab, "Bun"),
-                    Item = Main.DogBun
-                },
-                new()
-                {
-                    GameObject = GameObjectUtils.GetChildObject(prefab, "Dog"),
-                    Item = Main.CookedHotDog
-                },
-                new()
-                {
-                    GameObject = GameObjectUtils.GetChildObject(prefab, "Cheese"),
-                    Item = Main.GratedCheese
-                },
-                new()
-                {
-                    GameObject = GameObjectUtils.GetChildObject(prefab, "Plate"),
-                    Item = Main.Plate
-                },
-                new()
-                {
-                    GameObject = GameObjectUtils.GetChildObject(prefab, "Chili"),
-                    Item = Main.ChiliPortion
-                },
-            };
-            ComponentLabels = new()
-            {
-                new()
-                {
-                    Item = Main.ChiliPortion,
-                    Text = "Ch"
-                },
-                new()
-                {
-                    Item = Main.CookedHotDog,
-                    Text = "Dog"
-                },
-            };
-        }
-
     }
 }
+

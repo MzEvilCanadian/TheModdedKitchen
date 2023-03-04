@@ -1,5 +1,4 @@
-﻿using ApplianceLib.Api.Prefab;
-using KitchenData;
+﻿using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
 using System.Collections.Generic;

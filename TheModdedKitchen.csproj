@@ -66,6 +66,7 @@
     <Compile Include="Mains\Chili\ChiliPlated.cs" />
     <Compile Include="Mains\Chili\ChiliPortion.cs" />
     <Compile Include="Mains\Chili\ChiliPot.cs" />
+    <Compile Include="Mains\Chili\Extras\ChiliDog\ChiliDogCombined.cs" />
     <Compile Include="Mains\Chili\Extras\ChiliDog\ChiliDogDish.cs" />
     <Compile Include="Mains\Chili\Extras\ChiliDog\ChiliDogKetchupDish.cs" />
     <Compile Include="Mains\Chili\Extras\ChiliDog\ChiliDogPlated.cs" />
@@ -83,10 +84,13 @@
     <Compile Include="Mains\Chili\Sides\CornBread\UncookedCornBread.cs" />
     <Compile Include="Mains\Chili\Extras\Toppings\ChiliXTDish.cs" />
     <Compile Include="Mains\Chili\UncookedChiliPot.cs" />
-    <Compile Include="Sides\Milk\DirtyMilkCarton.cs" />
+    <Compile Include="Sides\Milk\Dirty Cartons\DirtyMilkCarton.cs" />
+    <Compile Include="Sides\Milk\Extra Milk\ExtraMilkCard.cs" />
     <Compile Include="Sides\Milk\MilkDish.cs" />
     <Compile Include="Sides\Milk\MilkGlass.cs" />
-    <Compile Include="Sides\Milk\ThrowOutMilkCartonsCard.cs" />
+    <Compile Include="Sides\Milk\Dirty Cartons\ThrowOutMilkCartonsCard.cs" />
+    <Compile Include="Sides\TomatoDish.cs" />
+    <Compile Include="Sides\TomatoSide.cs" />
     <Compile Include="Starters\Bruschetta\AssembledBruschetta.cs" />
     <Compile Include="Starters\Bruschetta\BruschettaDish.cs" />
     <Compile Include="Starters\Bruschetta\BurntBruschetta.cs" />
@@ -130,6 +134,10 @@
     <Compile Include="Starters\MozzaSticks\MaranaraSauce.cs" />
     <Compile Include="Starters\MozzaSticks\MozzaSticksDish.cs" />
     <Compile Include="Starters\MozzaSticks\UncookedMozzaSticks.cs" />
+    <Compile Include="Starters\SoupoftheDay\SOTDDish.cs" />
+    <Compile Include="Starters\SoupoftheDay\SOTDPot.cs" />
+    <Compile Include="Starters\SoupoftheDay\SOTDServing.cs" />
+    <Compile Include="Starters\SoupoftheDay\SOTDUncookedPot.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

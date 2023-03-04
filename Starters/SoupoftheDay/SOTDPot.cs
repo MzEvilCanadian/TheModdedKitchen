@@ -6,9 +6,9 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ModdedKitchen.Mains.Chili
+namespace ModdedKitchen.Starters.SoupoftheDay
 {
-    public class ChiliItemView : PositionSplittableView
+    public class SOTDItemView : PositionSplittableView
     {
         internal void Setup(GameObject prefab)
         {
@@ -25,18 +25,19 @@ namespace ModdedKitchen.Mains.Chili
             });
         }
     }
-    class ChiliPot : CustomItem
+
+    class SOTDPot : CustomItem
     {
-        public override string UniqueNameID => "Chili Pot";
-        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("CookedChili");
+        public override string UniqueNameID => "SOTD Pot";
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("CookedSoupOfTheDay");
         public override Item DisposesTo => Main.Pot;
-        public override int SplitCount => 8;
+        public override int SplitCount => 3;
         public override float SplitSpeed => 2f;
-        public override Item SplitSubItem => Main.ChiliPortion;
-        public override string ColourBlindTag => "Ch";
+        public override Item SplitSubItem => Main.SOTDServing;
+        public override string ColourBlindTag => "SOTD";
         public override List<Item> SplitDepletedItems => new List<Item>
         {
-            Main.Pot
+            Main.DepletedSoup
         };
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.Dish;
@@ -49,23 +50,17 @@ namespace ModdedKitchen.Mains.Chili
              };
             MaterialUtils.ApplyMaterial(Prefab, "Pot", materials);
             materials[0] = MaterialUtils.GetExistingMaterial("Metal Dark");
-            MaterialUtils.ApplyMaterial(Prefab, "PotHandles", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "Handles", materials);
 
-            materials[0] = MaterialUtils.GetExistingMaterial("Tomato Flesh");
-            MaterialUtils.ApplyMaterial(Prefab, "Objects/Sauce", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Soup");
+            MaterialUtils.ApplyMaterial(Prefab, "Objects/Liquid", materials);
 
-            materials[0] = MaterialUtils.GetExistingMaterial("Tomato");
-            MaterialUtils.ApplyMaterial(Prefab, "Objects/Tomatoes", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Pumpkin");
+            MaterialUtils.ApplyMaterial(Prefab, "Objects/Items", materials);
 
-            materials[0] = MaterialUtils.GetExistingMaterial("Tomato Flesh 3");
-            MaterialUtils.ApplyMaterial(Prefab, "Objects/Pepper", materials);
-
-            materials[0] = MaterialUtils.GetExistingMaterial("Onion - Flesh");
-            MaterialUtils.ApplyMaterial(Prefab, "Objects/Onion", materials);
-
-            if (!Prefab.HasComponent<ChiliItemView>())
+            if (!Prefab.HasComponent<SOTDItemView>())
             {
-                var view = Prefab.AddComponent<ChiliItemView>();
+                var view = Prefab.AddComponent<SOTDItemView>();
                 view.Setup(Prefab);
             }
         }
