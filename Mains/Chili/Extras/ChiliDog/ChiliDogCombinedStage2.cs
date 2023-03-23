@@ -8,15 +8,12 @@ using UnityEngine;
 
 namespace ModdedKitchen.Mains.Chili.Extras.ChiliDog
 {
-    class ChiliDogPlated : CustomItemGroup
+    class ChiliDogCombinedStage2 : CustomItemGroup
     {
-        public override string UniqueNameID => "Plated Chili Dog";
-        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("ChiliDog");
+        public override string UniqueNameID => "Combined Chili Dog Stage 2";
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Combined2");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
-        public override ItemValue ItemValue => ItemValue.Large;
-        public override Item DisposesTo => Main.Plate;
-        public override Item DirtiesTo => Main.DirtyPlate;
-        public override bool CanContainSide => true;
+        public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override string ColourBlindTag => "ChDogC";
 
         public override List<ItemGroup.ItemSet> Sets => new()
@@ -28,25 +25,20 @@ namespace ModdedKitchen.Mains.Chili.Extras.ChiliDog
                 IsMandatory = true,
                 Items = new List<Item>()
                 {
-                    Main.ChiliDogCombinedStage2,
-                    Main.Plate
+                    Main.ChiliDogCombined,
+                    Main.GratedCheese,
                 }
-            }
+            },
         };
         public override void OnRegister(GameDataObject gameDataObject)
         {
 
             var materials = new Material[]
             {
-                  MaterialUtils.GetExistingMaterial("Plate"),
-                  MaterialUtils.GetExistingMaterial("Plate - Ring"),
-                  MaterialUtils.GetExistingMaterial("Plate - Ring")
-            };
-            MaterialUtils.ApplyMaterial(Prefab, "Plate", materials);
-
-            materials[0] = MaterialUtils.GetExistingMaterial("Bread - Bun");
-            materials[1] = MaterialUtils.GetExistingMaterial("Bread - Bun");
-            materials[2] = MaterialUtils.GetExistingMaterial("Bread - Bun");
+                MaterialUtils.GetExistingMaterial("Bread - Bun"),
+                MaterialUtils.GetExistingMaterial("Bread - Bun"),
+                MaterialUtils.GetExistingMaterial("Bread - Bun")
+            };          
             MaterialUtils.ApplyMaterial(Prefab, "Bun", materials);
 
             materials[0] = MaterialUtils.GetExistingMaterial("Well-done  Burger"); // Well-done  Burger has 2 spaces
@@ -66,4 +58,3 @@ namespace ModdedKitchen.Mains.Chili.Extras.ChiliDog
         }
     }
 }
-

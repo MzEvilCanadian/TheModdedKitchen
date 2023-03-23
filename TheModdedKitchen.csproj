@@ -43,7 +43,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cards\Automation.cs" />
     <Compile Include="Desserts\AppleCrisp\AppleCrispDish.cs" />
     <Compile Include="Desserts\AppleCrisp\BurntAppleCrisp.cs" />
     <Compile Include="Desserts\AppleCrisp\CookedAppleCrisp.cs" />
@@ -66,6 +65,7 @@
     <Compile Include="Mains\Chili\ChiliPlated.cs" />
     <Compile Include="Mains\Chili\ChiliPortion.cs" />
     <Compile Include="Mains\Chili\ChiliPot.cs" />
+    <Compile Include="Mains\Chili\Extras\ChiliDog\ChiliDogCombinedStage2.cs" />
     <Compile Include="Mains\Chili\Extras\ChiliDog\ChiliDogCombined.cs" />
     <Compile Include="Mains\Chili\Extras\ChiliDog\ChiliDogDish.cs" />
     <Compile Include="Mains\Chili\Extras\ChiliDog\ChiliDogKetchupDish.cs" />
@@ -77,20 +77,18 @@
     <Compile Include="Mains\Chili\Extras\DeluxeChili\UncookedDeluxeChili.cs" />
     <Compile Include="Mains\Chili\Extras\DeluxeChili\DeluxeChiliDish.cs" />
     <Compile Include="Mains\Chili\Extras\Toppings\ChiliXT.cs" />
-    <Compile Include="Mains\Chili\Sides\CornBread\BurntCornBread.cs" />
-    <Compile Include="Mains\Chili\Sides\CornBread\CookedCornBread.cs" />
-    <Compile Include="Mains\Chili\Sides\CornBread\CornBreadDish.cs" />
-    <Compile Include="Mains\Chili\Sides\CornBread\CornBreadPortion.cs" />
-    <Compile Include="Mains\Chili\Sides\CornBread\UncookedCornBread.cs" />
+    <Compile Include="Sides\CornBread\BurntCornBread.cs" />
+    <Compile Include="Sides\CornBread\CookedCornBread.cs" />
+    <Compile Include="Sides\CornBread\CornBreadDish.cs" />
+    <Compile Include="Sides\CornBread\CornBreadPortion.cs" />
+    <Compile Include="Sides\CornBread\UncookedCornBread.cs" />
     <Compile Include="Mains\Chili\Extras\Toppings\ChiliXTDish.cs" />
     <Compile Include="Mains\Chili\UncookedChiliPot.cs" />
-    <Compile Include="Sides\Milk\Dirty Cartons\DirtyMilkCarton.cs" />
+    <Compile Include="Sides\Bacon\BaconDish.cs" />
+    <Compile Include="Sides\Bacon\BaconSide.cs" />
     <Compile Include="Sides\Milk\Extra Milk\ExtraMilkCard.cs" />
     <Compile Include="Sides\Milk\MilkDish.cs" />
     <Compile Include="Sides\Milk\MilkGlass.cs" />
-    <Compile Include="Sides\Milk\Dirty Cartons\ThrowOutMilkCartonsCard.cs" />
-    <Compile Include="Sides\TomatoDish.cs" />
-    <Compile Include="Sides\TomatoSide.cs" />
     <Compile Include="Starters\Bruschetta\AssembledBruschetta.cs" />
     <Compile Include="Starters\Bruschetta\BruschettaDish.cs" />
     <Compile Include="Starters\Bruschetta\BurntBruschetta.cs" />

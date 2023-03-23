@@ -52,7 +52,7 @@ namespace ModdedKitchen.Dishes
         };
         public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
         {
-            { Locale.English, "Cook a hotdog and place on a bun. Add chili, grated cheese, and plate." }
+            { Locale.English, "Cook a hotdog and place on a bun. Add chili then grated cheese then and plate. To make chili combine tomato sauce, chopped tomato, chopped onion, and chopped peppers into a pot and cook. Makes several servings" }
         };
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {

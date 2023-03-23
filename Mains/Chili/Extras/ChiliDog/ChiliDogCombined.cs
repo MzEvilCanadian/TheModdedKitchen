@@ -8,10 +8,10 @@ using UnityEngine;
 
 namespace ModdedKitchen.Mains.Chili.Extras.ChiliDog
 {
-    class ChiliDogCombined : CustomItemGroup<MyItemGroupView>
+    class ChiliDogCombined : CustomItemGroup<ChiliDogItemGroupView>
     {
         public override string UniqueNameID => "Combined Chili Dog";
-        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("ChiliDog");
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("CombinedChiliDog");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         
@@ -19,23 +19,14 @@ namespace ModdedKitchen.Mains.Chili.Extras.ChiliDog
         {
             new ItemGroup.ItemSet()
             {
-                Max = 2,
-                Min = 2,
+                Max = 3,
+                Min = 3,
                 IsMandatory = true,
                 Items = new List<Item>()
                 {
                     Main.CookedHotDog,
-                    Main.DogBun
-                }
-            },
-            new ItemGroup.ItemSet()
-            {
-                Max = 2,
-                Min = 2,
-                Items = new List<Item>()
-                {
+                    Main.DogBun,
                     Main.ChiliPortion,
-                    Main.GratedCheese
                 }
             },
         };
@@ -44,15 +35,10 @@ namespace ModdedKitchen.Mains.Chili.Extras.ChiliDog
 
             var materials = new Material[]
             {
-                  MaterialUtils.GetExistingMaterial("Plate"),
-                  MaterialUtils.GetExistingMaterial("Plate - Ring"),
-                  MaterialUtils.GetExistingMaterial("Plate - Ring")
-            };
-            MaterialUtils.ApplyMaterial(Prefab, "Plate", materials);
-
-            materials[0] = MaterialUtils.GetExistingMaterial("Bread - Bun");
-            materials[1] = MaterialUtils.GetExistingMaterial("Bread - Bun");
-            materials[2] = MaterialUtils.GetExistingMaterial("Bread - Bun");
+                MaterialUtils.GetExistingMaterial("Bread - Bun"),
+                MaterialUtils.GetExistingMaterial("Bread - Bun"),
+                MaterialUtils.GetExistingMaterial("Bread - Bun")
+            };          
             MaterialUtils.ApplyMaterial(Prefab, "Bun", materials);
 
             materials[0] = MaterialUtils.GetExistingMaterial("Well-done  Burger"); // Well-done  Burger has 2 spaces
@@ -70,7 +56,7 @@ namespace ModdedKitchen.Mains.Chili.Extras.ChiliDog
             materials[2] = MaterialUtils.GetExistingMaterial("Tomato");
             MaterialUtils.ApplyMaterial(Prefab, "Chili", materials);
 
-            Prefab.GetComponent<MyItemGroupView>()?.Setup(Prefab);
+            Prefab.GetComponent<ChiliDogItemGroupView>()?.Setup(Prefab);
             if (Prefab.TryGetComponent<ItemGroupView>(out var itemGroupView))
             {
                 GameObject clonedColourBlind = ColorblindUtils.cloneColourBlindObjectAndAddToItem(GameDataObject as ItemGroup);
@@ -79,7 +65,7 @@ namespace ModdedKitchen.Mains.Chili.Extras.ChiliDog
         }
     }
 
-    public class MyItemGroupView : ItemGroupView
+    public class ChiliDogItemGroupView : ItemGroupView
     {
         internal void Setup(GameObject prefab)
         {
@@ -99,18 +85,13 @@ namespace ModdedKitchen.Mains.Chili.Extras.ChiliDog
                 },
                 new()
                 {
-                    GameObject = GameObjectUtils.GetChildObject(prefab, "Cheese"),
-                    Item = Main.GratedCheese
-                },
-                new()
-                {
-                    GameObject = GameObjectUtils.GetChildObject(prefab, "Plate"),
-                    Item = Main.Plate
-                },
-                new()
-                {
                     GameObject = GameObjectUtils.GetChildObject(prefab, "Chili"),
                     Item = Main.ChiliPortion
+                },
+                new()
+                {
+                    GameObject = GameObjectUtils.GetChildObject(prefab, "Cheese"),
+                    Item = Main.GratedCheese
                 },
             };
             ComponentLabels = new()

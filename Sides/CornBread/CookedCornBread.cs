@@ -1,5 +1,4 @@
-﻿using IngredientLib.Util;
-using Kitchen;
+﻿using Kitchen;
 using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
@@ -12,7 +11,7 @@ namespace ModdedKitchen.Mains.Chili.Extras
     {
         public override string UniqueNameID => "Cooked Cornbread";
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("CookedCornBread");
-        public override int SplitCount => 7;
+        public override int SplitCount => 8;
         public override Item SplitSubItem => Main.CornBreadPortion;
         public override List<Item> SplitDepletedItems => new()
         {

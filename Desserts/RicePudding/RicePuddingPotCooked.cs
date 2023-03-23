@@ -4,7 +4,6 @@ using KitchenLib.Customs;
 using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
-using IngredientLib.Util;
 
 namespace ModdedKitchen.Desserts.RicePudding
 {
@@ -43,14 +42,13 @@ namespace ModdedKitchen.Desserts.RicePudding
         {
             var materials = new Material[1];
 
-            var pot = Prefab.GetChildFromPath("Pot/Pot.001/");
             var ricePudding = Prefab.GetChild("Rice Pudding");
 
             materials[0] = MaterialUtils.GetExistingMaterial("Metal");
-            MaterialUtils.ApplyMaterial(pot, "Cylinder", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "Pot/Pot.001/Cylinder", materials);
 
             materials[0] = MaterialUtils.GetExistingMaterial("Metal Dark");
-            MaterialUtils.ApplyMaterial(pot, "Cylinder.003", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "Pot/Pot.001/Cylinder.003", materials);
 
             materials[0] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Cinnamon\"");
             MaterialUtils.ApplyMaterial(ricePudding, "Cinnamon/Cinnamon.001", materials);
@@ -60,8 +58,6 @@ namespace ModdedKitchen.Desserts.RicePudding
 
             materials[0] = MaterialUtils.GetExistingMaterial("Rice");
             MaterialUtils.ApplyMaterial(ricePudding, "Rice/Cube", materials);
-
-            Prefab.GetChild("Steam").ApplyVisualEffect("Steam");
 
             
             if (!Prefab.HasComponent<RicePuddingPotCookedItemView>())

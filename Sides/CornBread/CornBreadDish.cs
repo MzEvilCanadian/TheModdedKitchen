@@ -1,13 +1,13 @@
 ﻿using KitchenData;
 using KitchenLib.Utils;
 using System.Collections.Generic;
+
 namespace ModdedKitchen.Dishes
 {
-    class TomatoDish : ModDish
+    class CornBreadDish : ModDish
     {
-        /*
-        public override string UniqueNameID => "Tomato Dish";
-        public override DishType Type => DishType.Extra;
+        public override string UniqueNameID => "Cornbread Dish";
+        public override DishType Type => DishType.Side;
         public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
         public override CardType CardType => CardType.Default;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Small;
@@ -17,23 +17,30 @@ namespace ModdedKitchen.Dishes
         {
             new Dish.MenuItem
             {
-                Item = Main.TomatoSide,
+                Item = Main.CornBreadPortion,
                 Phase = MenuPhase.Side,
                 Weight = 1
             }
         };
         public override HashSet<Item> MinimumIngredients => new HashSet<Item>
         {
-            Main.Tomato
+            Main.Flour,
+            Main.Corn,
+            Main.Sugar,
+            Main.Egg,
+        };
+        public override HashSet<Process> RequiredProcesses => new HashSet<Process>
+        {
+            Main.Cook,
+            Main.Chop,
         };
         public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
         {
-            { Locale.English, "Customers can request a sliced tomato as a side" }
+            { Locale.English, "Combine an husked corn, flour, cracked egg, and sugar then cook. Makes 8 servings" }
         };
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {
-            { Locale.English, LocalisationUtils.CreateUnlockInfo("Tomato Slice", "Adds Tomato Slice as a Side", "") }
+            { Locale.English, LocalisationUtils.CreateUnlockInfo("Cornbread", "Adds Corn Bread as a Side", "Ya gotta have it.") }
         };
-        */
     }
 }
