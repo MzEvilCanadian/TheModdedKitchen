@@ -36,6 +36,7 @@ using ModdedKitchen.Desserts.RicePudding;
 using ModdedKitchen.Starters.SoupoftheDay;
 using ModdedKitchen.Sides.Bacon;
 
+
 namespace ModdedKitchen
 {
     class Main : BaseMod
