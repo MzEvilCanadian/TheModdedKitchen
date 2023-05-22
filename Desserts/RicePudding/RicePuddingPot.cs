@@ -6,7 +6,6 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using static KitchenData.ItemGroup;
 using UnityEngine;
-using IngredientLib.Util;
 
 namespace ModdedKitchen.Desserts.RicePudding
 {
@@ -18,7 +17,7 @@ namespace ModdedKitchen.Desserts.RicePudding
         public override ItemStorage ItemStorageFlags => ItemStorage.Small;
         public override Item DisposesTo => Main.Pot;
 
-        public override List<ItemSet> Sets => new List<ItemSet>()
+        public override List<ItemSet> Sets => new()
         {
             new ItemSet()
             {
@@ -73,7 +72,7 @@ namespace ModdedKitchen.Desserts.RicePudding
         {
             var materials = new Material[1];
 
-            var pot = Prefab.GetChildFromPath("Pot/Pot.001");
+            var pot = Prefab.GetChild("Pot/Pot.001");
 
             materials[0] = MaterialUtils.GetExistingMaterial("Metal");
             MaterialUtils.ApplyMaterial(pot, "Cylinder", materials);

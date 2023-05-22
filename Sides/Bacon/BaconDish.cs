@@ -23,7 +23,7 @@ namespace ModdedKitchen.Dishes
                 Weight = 1
             }
         };
-        public override HashSet<Item> MinimumIngredients => new HashSet<Item>
+        public override HashSet<Item> MinimumIngredients => new()
         {
             Main.Pork,
         };
@@ -32,9 +32,9 @@ namespace ModdedKitchen.Dishes
             Main.Chop,
             Main.Cook
         };
-        public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
+        public override Dictionary<Locale, string> Recipe => new()
         {
-            { Locale.English, "Chop pork and cook. Combine two cooked portions of bacon then add to the plate" }
+            { Locale.English, "Chop two portions of pork and combine then cook. Portion out a serving and add to the plate. Makes 6 portions." }
         };
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {

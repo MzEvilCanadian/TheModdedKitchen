@@ -14,7 +14,7 @@ namespace ModdedKitchen.Dishes
         public override CardType CardType => CardType.Default;
         public override bool IsUnlockable => true;
 
-        public override List<Dish.MenuItem> ResultingMenuItems => new List<Dish.MenuItem>
+        public override List<Dish.MenuItem> ResultingMenuItems => new()
         {
             new Dish.MenuItem
             {
@@ -23,20 +23,20 @@ namespace ModdedKitchen.Dishes
                 Weight = 1,
             }
         };
-        public override HashSet<Item> MinimumIngredients => new HashSet<Item>
+        public override HashSet<Item> MinimumIngredients => new()
         {
             Main.Flour,
             Main.Chocolate,
             Main.Banana
         };
-        public override HashSet<Process> RequiredProcesses => new HashSet<Process>
+        public override HashSet<Process> RequiredProcesses => new()
         {
             Main.Oven,
             Main.Chop,
             Main.Knead,
         };
 
-        public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
+        public override Dictionary<Locale, string> Recipe => new()
         {
             { Locale.English, "Knead flour into dough and combine with chopped chocolate and a peeled banana and cook. Makes 10 portions" }
         };

@@ -5,10 +5,8 @@ using System.Collections.Generic;
 
 namespace ModdedKitchen.Dishes
 {
-
-#pragma warning disable CS0436 // Type conflicts with imported type
     public abstract class ModDish : CustomDish, ILocalisedRecipeHolder
-#pragma warning restore CS0436 // Type conflicts with imported type
+
     {
         public virtual IDictionary<Locale, string> LocalisedRecipe { get; }
 

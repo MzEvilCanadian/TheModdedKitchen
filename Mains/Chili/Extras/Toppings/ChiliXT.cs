@@ -42,8 +42,6 @@ namespace ModdedKitchen.Mains.Chili.Extras.Toppings
                 }
             },
         };
-
-        private bool GameDataBuilt = false;
         public override void OnRegister(GameDataObject gameDataObject)
         {
 
@@ -85,8 +83,6 @@ namespace ModdedKitchen.Mains.Chili.Extras.Toppings
                 GameObject clonedColourBlind = ColorblindUtils.cloneColourBlindObjectAndAddToItem(GameDataObject as ItemGroup);
                 ColorblindUtils.setColourBlindLabelObjectOnItemGroupView(itemGroupView, clonedColourBlind);
             }
-
-            GameDataBuilt = true;
         }
     }
     public class MyItemGroupView : ItemGroupView

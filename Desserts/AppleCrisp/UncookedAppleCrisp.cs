@@ -14,7 +14,7 @@ namespace ModdedKitchen.AppleCrisp
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
 
-        public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
+        public override List<ItemGroup.ItemSet> Sets => new()
         {
             new ItemGroup.ItemSet()
             {
@@ -28,7 +28,7 @@ namespace ModdedKitchen.AppleCrisp
                 }
             }
         };
-        public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
+        public override List<Item.ItemProcess> Processes => new()
         {
             new Item.ItemProcess
             {

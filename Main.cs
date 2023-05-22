@@ -35,7 +35,7 @@ using ModdedKitchen.Mains.Chili.Extras.ChiliDog;
 using ModdedKitchen.Desserts.RicePudding;
 using ModdedKitchen.Starters.SoupoftheDay;
 using ModdedKitchen.Sides.Bacon;
-
+using ModdedKitchen.Mains.Lasagna;
 
 namespace ModdedKitchen
 {
@@ -43,7 +43,7 @@ namespace ModdedKitchen
     {
         internal const string MOD_ID = "The Modded Kitchen";
         internal const string MOD_NAME = "The Modded Kitchen";
-        internal const string MOD_VERSION = "1.3.9";
+        internal const string MOD_VERSION = "1.4.0";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
@@ -117,6 +117,7 @@ namespace ModdedKitchen
         public static Item Butter => Find<Item>(IngredientLib.References.GetIngredient("butter"));
         public static Item ButterSlice => Find<Item>(IngredientLib.References.GetSplitIngredient("butter"));
         public static Item Bacon => Find<Item>(IngredientLib.References.GetIngredient("bacon"));
+        public static Item UncookedBacon => Find<Item>(IngredientLib.References.GetIngredient("chopped pork"));
         public static Item Pork => Find<Item>(IngredientLib.References.GetIngredient("pork"));
         public static Item Ham => Find<Item>(IngredientLib.References.GetIngredient("porkchop"));
         public static Item Milk => Find<Item>(IngredientLib.References.GetIngredient("milk"));
@@ -235,6 +236,14 @@ namespace ModdedKitchen
 
         // Bacon Side
         internal static Item BaconSide => GetModdedGDO<Item, BaconSide>();
+        internal static Item CookedBaconSide => GetModdedGDO<Item, CookedBaconSide>();
+        internal static Dish BaconDish => GetModdedGDO<Dish, BaconDish>();
+
+        // Lasagna
+
+        internal static Item LasagnaPortion => GetModdedGDO<Item, LasagnaPortion>();
+        internal static Item CookedLasagna => GetModdedGDO<Item, CookedLasagna>();
+        internal static ItemGroup PlatedLasagna => GetModdedGDO<ItemGroup, PlatedLasagna>();
 
 
         internal static bool debug = true;
@@ -272,7 +281,7 @@ namespace ModdedKitchen
             AddGameDataObject<ChiliDogDish>();
             AddGameDataObject<HotdogChilidog>();
 
-           // AddGameDataObject<LasagnaDish>();       // WIP
+            AddGameDataObject<LasagnaDish>();
 
             // Extras
             AddGameDataObject<KetchupDish>();
@@ -297,7 +306,7 @@ namespace ModdedKitchen
             AddGameDataObject<RicePuddingDish>();
 
             // Cards
-            AddGameDataObject<ExtraMilkCard>(); 
+            AddGameDataObject<ExtraMilkCard>();
 
             // Grilled cheese
             AddGameDataObject<BurnedGrilledCheese>();
@@ -398,6 +407,14 @@ namespace ModdedKitchen
 
             // Bacon Side
             AddGameDataObject<BaconSide>();
+            AddGameDataObject<UncookedBaconSide>();
+            AddGameDataObject<CookedBaconSide>();
+
+            // Lasagna
+            AddGameDataObject<LasagnaPortion>();
+            AddGameDataObject<CookedLasagna>();
+            AddGameDataObject<UncookedLasagna>();
+            AddGameDataObject<PlatedLasagna>();
 
             Events.BuildGameDataEvent += delegate (object s, BuildGameDataEventArgs args)
             {

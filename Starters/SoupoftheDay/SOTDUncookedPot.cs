@@ -48,7 +48,7 @@ namespace ModdedKitchen.Starters.SoupoftheDay
             },
         };
 
-        public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
+        public override List<Item.ItemProcess> Processes => new()
         {
             new Item.ItemProcess
             {

@@ -77,6 +77,14 @@
     <Compile Include="Mains\Chili\Extras\DeluxeChili\UncookedDeluxeChili.cs" />
     <Compile Include="Mains\Chili\Extras\DeluxeChili\DeluxeChiliDish.cs" />
     <Compile Include="Mains\Chili\Extras\Toppings\ChiliXT.cs" />
+    <Compile Include="Mains\Lasagna\Burnt Lasagna.cs" />
+    <Compile Include="Mains\Lasagna\CookedLasagna.cs" />
+    <Compile Include="Mains\Lasagna\LasagnaDish.cs" />
+    <Compile Include="Mains\Lasagna\LasagnaPortion.cs" />
+    <Compile Include="Mains\Lasagna\PlatedLasagna.cs" />
+    <Compile Include="Mains\Lasagna\UncookedLasagna.cs" />
+    <Compile Include="Sides\Bacon\CookedBaconSide.cs" />
+    <Compile Include="Sides\Bacon\UncookedBacocSide.cs" />
     <Compile Include="Sides\CornBread\BurntCornBread.cs" />
     <Compile Include="Sides\CornBread\CookedCornBread.cs" />
     <Compile Include="Sides\CornBread\CornBreadDish.cs" />
